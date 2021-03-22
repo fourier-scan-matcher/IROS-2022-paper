@@ -1,0 +1,81 @@
+Let the assumptions of Problem \ref{prob:the_problem} be standing. Assume that
+the two scans were captured from the same location but from different
+orientations. Denoting with $\mathcal{F}\{\mathcal{S}\}$ the Discrete Fourier
+Transform of signal $\mathcal{S}$, and with $\mathcal{F}^{-1}\{\mathcal{S}\}$
+its inverse, calculate $Q_{\mathcal{S}_0, \mathcal{S}_1}$:
+\begin{align}
+  Q_{\mathcal{S}_0, \mathcal{S}_1} \triangleq \dfrac{\mathcal{F}\{\mathcal{S}_0\}^{\ast} \cdot \mathcal{F}\{\mathcal{S}_1\}}{|\mathcal{F}\{\mathcal{S}_0\}| \cdot |\mathcal{F}\{\mathcal{S}_1\}|}
+\end{align}
+on the basis that if space is sampled sufficiently densely, for
+$k,\xi \in [0, N_s-1]$, $k,\xi \in \mathbb{Z}$:
+\begin{align}
+  \mathcal{S}_0[k] &\simeq \mathcal{S}_1[(k - \xi) \mod N_s] \Leftrightarrow \nonumber \\
+  \mathcal{F}\{\mathcal{S}_0\}(u) &\simeq e^{-j 2\pi \xi u / N_s} \cdot \mathcal{F}\{\mathcal{S}_1\}(u) \nonumber
+\end{align}
+and therefore since $2\pi \dfrac{\xi}{N_s} = \xi \dfrac{2\pi}{N_s} = \xi \gamma$
+
+\begin{align}
+  Q_{\mathcal{S}_0, \mathcal{S}_1}(u) &= \dfrac{\mathcal{F}\{\mathcal{S}_0\}^{\ast} \cdot \mathcal{F}\{\mathcal{S}_1\}}{|\mathcal{F}\{\mathcal{S}_0\}| \cdot |\mathcal{F}\{\mathcal{S}_1\}|}  \nonumber \\
+  &\simeq \dfrac{e^{-j \xi \gamma  u} \cdot \mathcal{F}\{\mathcal{S}_1\}^\ast \cdot \mathcal{F}\{\mathcal{S}_1\}}{|e^{-j \xi \gamma u} \cdot \mathcal{F}\{\mathcal{S}_1\}^\ast | \cdot | \mathcal{F}\{\mathcal{S}_1\}|} \nonumber \\
+  &= e^{-j \xi \gamma u} \cdot \dfrac{\mathcal{F}\{\mathcal{S}_1\}^\ast \cdot \mathcal{F}\{\mathcal{S}_1\}}{|\mathcal{F}\{\mathcal{S}_1\} | \cdot | \mathcal{F}\{\mathcal{S}_1\}|} \nonumber \\
+  &= e^{-j \xi \gamma u}
+  \label{eq:Q0}
+\end{align}
+The inverse of $Q_{\mathcal{S}_0, \mathcal{S}_1}$ is a Kronecker
+$\delta$-function
+$q_{\mathcal{S}_0, \mathcal{S}_1} = \mathcal{F}^{-1}\{Q_{\mathcal{S}_0, \mathcal{S}_1}\}$
+centered at $\xi$:
+\begin{align}
+  \xi = \operatorname*{arg\,max}\limits_u \ q_{\mathcal{S}_0, \mathcal{S}_1}(u)
+\end{align}
+If the difference in orientation between the two scans is $\Delta\theta$, then
+$\Delta\theta = \xi\gamma + \delta\theta$, where
+$\mod(|\delta\theta|, \gamma) = \lambda \in [0,\frac{\gamma}{2}]$. Therefore for
+a given number of emitted rays $N_s$ there remains an unresolved orientation
+error $|\delta\theta| \leq \gamma/2$. The contribution of this error to the
+scan-matching error is two-fold, as its existence is also propagated to the
+location correction method. In the following, a method for further reduction of
+the orientation error is presented.
+
+Let $\mathcal{S}_0$ be projected onto the 2D plane around an arbitrary but
+fixed pose $\bm{p}_0(x_0, y_0, \theta_0)$, producing point-set $\bm{M}_R$, which
+will hereafter be referred to as the map. Then compute $2^\nu$ map-scans (def.
+\ref{def:definition_3}) $\mathcal{S}_0^k$, $k = 0,\dots,2^\nu-1$, starting from
+orientation $\theta_0$, at $\gamma / 2^\nu$ angular increments. Then the
+orientation correction process is carried out once between $\mathcal{S}_1$ and
+map scan $\mathcal{S}_0^k$ taken from orientation $\theta_0^k = \theta_0 +
+k \cdot \gamma / 2^\nu$, for a total of $2^\nu$ times. An alignment metric
+between the $k$-th map scan $\mathcal{S}_0^k$ and scan $\mathcal{S}_1$ is
+computed according to
+\begin{align}
+  \text{PD}_k = \dfrac{2 \max q_{\mathcal{S}_0^k,\mathcal{S}_1}}{\max q_{\mathcal{S}_0^k,\mathcal{S}_0^k} + \max q_{\mathcal{S}_1,\mathcal{S}_1}}
+  \label{eq:pd}
+\end{align}
+
+The Percent Discrimination metric PD$_k$ $\in [0,1]$, and is proportional to
+the degree of alignment between map-scan $\mathcal{S}_0^k$ and
+scan $\mathcal{S}_1$, across all $2^\nu$ map-scans $\mathcal{S}_0^k$.
+The above analysis is the equivalent of the 2D Fourier-Mellin Invariant
+matching in one dimension \cite{fmt2d}.
+
+Let now $K$ denote the index of the $k$-th map scan
+$\mathcal{S}_0^K$ scoring the highest PD$_k$: $\text{PD}_K =
+\max \{\text{PD}_k\}$, $k = 0,\dots,2^\nu-1$. Let also $\Xi$ denote the integer
+multiple of angle increments $\gamma$ by which $\mathcal{S}_V^K$
+should be rotated counter-clockwise in order to achieve PD$_K$:
+$\Xi = \arg\max\ q_{\mathcal{S}_0^K, \mathcal{S}_1}$.  Then the sensor's
+orientation error is
+$\Delta\theta = \Xi\gamma + K \cdot \gamma/2^\nu + \delta\theta^\prime$.
+?? Consider CAER here ??
+
+If map-scans $\mathcal{S}_V^k$ were computed by raycasting the map of the
+environment instead of $\bm{M}_R$ then the residual and unresolved orientation
+error $|\delta\theta^\prime| \in [0,\gamma / 2^{1+\nu}]$. In this case, however,
+$\bm{M}_R$ is an approximation of the environment's map in the locality of
+$\bm{p}_0$. Depending on the magnitude of the sensor's angle increment and
+the arbitrariness of the environment, this approximation may be viewed as
+induced local perturbations in the map of the environment. This hold true also
+in the general case where $\mathcal{S}_0$ and $\mathcal{S}_1$ are captured
+from different locations. Therefore the guarantee of $|\delta\theta^\prime|
+\leq \gamma / 2^{1+\nu}$ may not always hold for all combinations of
+environments and sensor angle increments.

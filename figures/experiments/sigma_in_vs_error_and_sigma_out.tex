@@ -1,0 +1,203 @@
+% GNUPLOT: LaTeX picture with Postscript
+\begingroup
+  \makeatletter
+  \providecommand\color[2][]{%
+    \GenericError{(gnuplot) \space\space\space\@spaces}{%
+      Package color not loaded in conjunction with
+      terminal option `colourtext'%
+    }{See the gnuplot documentation for explanation.%
+    }{Either use 'blacktext' in gnuplot or load the package
+      color.sty in LaTeX.}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\includegraphics[2][]{%
+    \GenericError{(gnuplot) \space\space\space\@spaces}{%
+      Package graphicx or graphics not loaded%
+    }{See the gnuplot documentation for explanation.%
+    }{The gnuplot epslatex terminal needs graphicx.sty or graphics.sty.}%
+    \renewcommand\includegraphics[2][]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \@ifundefined{ifGPcolor}{%
+    \newif\ifGPcolor
+    \GPcolorfalse
+  }{}%
+  \@ifundefined{ifGPblacktext}{%
+    \newif\ifGPblacktext
+    \GPblacktexttrue
+  }{}%
+  % define a \g@addto@macro without @ in the name:
+  \let\gplgaddtomacro\g@addto@macro
+  % define empty templates for all commands taking text:
+  \gdef\gplbacktext{}%
+  \gdef\gplfronttext{}%
+  \makeatother
+  \ifGPblacktext
+    % no textcolor at all
+    \def\colorrgb#1{}%
+    \def\colorgray#1{}%
+  \else
+    % gray or color?
+    \ifGPcolor
+      \def\colorrgb#1{\color[rgb]{#1}}%
+      \def\colorgray#1{\color[gray]{#1}}%
+      \expandafter\def\csname LTw\endcsname{\color{white}}%
+      \expandafter\def\csname LTb\endcsname{\color{black}}%
+      \expandafter\def\csname LTa\endcsname{\color{black}}%
+      \expandafter\def\csname LT0\endcsname{\color[rgb]{1,0,0}}%
+      \expandafter\def\csname LT1\endcsname{\color[rgb]{0,1,0}}%
+      \expandafter\def\csname LT2\endcsname{\color[rgb]{0,0,1}}%
+      \expandafter\def\csname LT3\endcsname{\color[rgb]{1,0,1}}%
+      \expandafter\def\csname LT4\endcsname{\color[rgb]{0,1,1}}%
+      \expandafter\def\csname LT5\endcsname{\color[rgb]{1,1,0}}%
+      \expandafter\def\csname LT6\endcsname{\color[rgb]{0,0,0}}%
+      \expandafter\def\csname LT7\endcsname{\color[rgb]{1,0.3,0}}%
+      \expandafter\def\csname LT8\endcsname{\color[rgb]{0.5,0.5,0.5}}%
+    \else
+      % gray
+      \def\colorrgb#1{\color{black}}%
+      \def\colorgray#1{\color[gray]{#1}}%
+      \expandafter\def\csname LTw\endcsname{\color{white}}%
+      \expandafter\def\csname LTb\endcsname{\color{black}}%
+      \expandafter\def\csname LTa\endcsname{\color{black}}%
+      \expandafter\def\csname LT0\endcsname{\color{black}}%
+      \expandafter\def\csname LT1\endcsname{\color{black}}%
+      \expandafter\def\csname LT2\endcsname{\color{black}}%
+      \expandafter\def\csname LT3\endcsname{\color{black}}%
+      \expandafter\def\csname LT4\endcsname{\color{black}}%
+      \expandafter\def\csname LT5\endcsname{\color{black}}%
+      \expandafter\def\csname LT6\endcsname{\color{black}}%
+      \expandafter\def\csname LT7\endcsname{\color{black}}%
+      \expandafter\def\csname LT8\endcsname{\color{black}}%
+    \fi
+  \fi
+    \setlength{\unitlength}{0.0500bp}%
+    \ifx\gptboxheight\undefined%
+      \newlength{\gptboxheight}%
+      \newlength{\gptboxwidth}%
+      \newsavebox{\gptboxtext}%
+    \fi%
+    \setlength{\fboxrule}{0.5pt}%
+    \setlength{\fboxsep}{1pt}%
+\begin{picture}(5000.00,5000.00)%
+    \gplgaddtomacro\gplbacktext{%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,3799){\makebox(0,0)[r]{\strut{}\small $0.0012$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,3970){\makebox(0,0)[r]{\strut{}\small $0.0034$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,4144){\makebox(0,0)[r]{\strut{}\small $0.0057$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,4588){\makebox(0,0)[r]{\strut{}\small $0.0115$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(803,3482){\makebox(0,0){\strut{}}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(1108,3482){\makebox(0,0){\strut{}}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(1414,3482){\makebox(0,0){\strut{}}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(2177,3482){\makebox(0,0){\strut{}}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \colorrgb{0.00,0.00,0.00}%
+      \put(2600,5144){\makebox(0,0){\strut{}Mean pose error [m] versus $\sigma_R$ [m]}}%
+      \put(1400,4844){\makebox(0,0){\strut{}$\sigma_{\bm{M}} = 0.0$ [m]}}%
+      \put(3800,4844){\makebox(0,0){\strut{}$\sigma_{\bm{M}} = 0.05$ [m]}}%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(2865,3780){\makebox(0,0)[r]{\strut{}\small $0.0284$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(2865,4068){\makebox(0,0)[r]{\strut{}\small $0.0299$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(2865,4551){\makebox(0,0)[r]{\strut{}\small $0.0326$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(3150,3482){\makebox(0,0){\strut{}}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(3455,3482){\makebox(0,0){\strut{}}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(3761,3482){\makebox(0,0){\strut{}}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(4524,3482){\makebox(0,0){\strut{}}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,2138){\makebox(0,0)[r]{\strut{}\small $54$e-$06$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,2293){\makebox(0,0)[r]{\strut{}\small $113$e-$06$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,2430){\makebox(0,0)[r]{\strut{}\small $165$e-$06$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,2954){\makebox(0,0)[r]{\strut{}\small $364$e-$06$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(803,1906){\makebox(0,0){\strut{}}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(1108,1906){\makebox(0,0){\strut{}}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(1414,1906){\makebox(0,0){\strut{}}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(2177,1906){\makebox(0,0){\strut{}}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \colorrgb{0.00,0.00,0.00}%
+      \put(2600,3268){\makebox(0,0){\strut{}sd of pose error [m] versus $\sigma_R$ [m]}}%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(2865,2130){\makebox(0,0)[r]{\strut{}\small $0.7$e-$03$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(2865,2893){\makebox(0,0)[r]{\strut{}\small $1.1$e-$03$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(3150,1906){\makebox(0,0){\strut{}}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(3455,1906){\makebox(0,0){\strut{}}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(3761,1906){\makebox(0,0){\strut{}}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(4524,1906){\makebox(0,0){\strut{}}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,651){\makebox(0,0)[r]{\strut{}\small $87.9$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(518,1319){\makebox(0,0)[r]{\strut{}\small $101.0$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(683,330){\makebox(0,0){\strut{}\small $0.01$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(1108,330){\makebox(0,0){\strut{}\small $0.03$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(1513,330){\makebox(0,0){\strut{}\small $0.05$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(2177,330){\makebox(0,0){\strut{}\small $0.10$}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \colorrgb{0.00,0.00,0.00}%
+      \put(2500,1692){\makebox(0,0){\strut{}Mean execution time [ms] versus $\sigma_R$ [m]}}%
+    }%
+    \gplgaddtomacro\gplbacktext{%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(2865,658){\makebox(0,0)[r]{\strut{}\small $126.3$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(2865,1082){\makebox(0,0)[r]{\strut{}\small $127.4$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(2865,1461){\makebox(0,0)[r]{\strut{}\small $128.5$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(3050,330){\makebox(0,0){\strut{}\small $0.01$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(3455,330){\makebox(0,0){\strut{}\small $0.03$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(3860,330){\makebox(0,0){\strut{}\small $0.05$}}%
+      \colorrgb{0.15,0.15,0.15}%
+      \put(4524,330){\makebox(0,0){\strut{}\small $0.10$}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+    }%
+    \gplbacktext
+    \put(0,0){\includegraphics{./figures/experiments/sigma_in_vs_error_and_sigma_out}}%
+    \gplfronttext
+  \end{picture}%
+\endgroup

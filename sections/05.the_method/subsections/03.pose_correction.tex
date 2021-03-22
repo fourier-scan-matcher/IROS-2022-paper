@@ -1,0 +1,99 @@
+The previous two sections describe two methods of how it is possible to (a)
+reduce the error of the orientation estimate when the position estimate
+coincides with the sensor's position, and (b) reduce the error of the position
+estimate when the orientation estimate equals the sensor's orientation. In the
+general case, however, no equality stands. What is more is that the problem is
+coupled: the optimal orientation error cannot be attained in one step when the
+position error is not zero, and the optimal position error cannot be attained
+in one step when the orientation error is not zero. Therefore the first goal of
+a method reducing both would be to first reduce the orientation error and then
+reduce the location error. The second would be to iterate this process until
+some termination condition is met. This method is described in the following.
+
+Given an input pose estimate $\hat{\bm{p}}(\hat{x}, \hat{y}, \hat{\theta})$,
+the real scan $\mathcal{S}_R$, and the map $\bm{M}$, the pose correction method
+proposed (fig. \ref{fig:outer_system}) reduces the error of the pose estimate
+by iteratively invoking the One-step Pose Correction process (fig.
+\ref{fig:inner_system}) until a set of termination conditions is met. Denoting
+the former by FSMSM, FSMSM starts off with an initial degree of sampling the
+map $\nu$ = $\nu_{\min}$. The input pose estimate is processed by the One-step
+Pose Correction process, and its output $\hat{\bm{p}}^\prime$ is examined with
+regard to Recovery and Convergence conditions. If the resulting pose estimate
+falls outside of the map $\bm{M}$ then a new pose estimate is generated from
+the initially supplied pose estimate, and the process is reset. If no
+significant pose estimate correction is observed
+$\|\hat{\bm{p}}^\prime-\hat{\bm{p}}\|_2 < \varepsilon_{\delta p}$, then the
+degree of map sampling $\nu$ is increased. Its increase serves as a means of
+reducing the orientation and hence the position estimate error further.
+Otherwise, the One-step Pose Correction process is reiterated until no
+significant correction is observed. The process is iterated until a maximum
+degree of map sampling is reached $\nu$ = $\nu_{\max}$, at which point FSMSM
+terminates if a terminal condition is met. This terminal condition facilitates
+the avoidance of local maxima. In the case where this condition is not met,
+a new pose is generated, and the process is reset.
+
+
+
+Given an input pose estimate $\hat{\bm{p}}(\hat{x}, \hat{y}, \hat{\theta})$,
+the real scan $\mathcal{S}_R$, the map $\bm{M}$, and a sampling degree $\nu$,
+the One-step Pose Correction system first calculates $2^\nu$ pose estimates
+$\hat{\bm{P}}_{OC} = \{(\hat{x}, \hat{y}, \hat{\theta}_k)\}$,
+$k = 0,\dots,2^\nu$$-$$1$. The Orientation Correction system utilises Algorithm
+\ref{alg:algorithm_ufrcnu}. Its operation is denoted in fig.
+\ref{fig:inner_system} by the operator OC$(\cdot)$.
+
+Now, if the position of the input pose estimate coincided with the position of
+the real sensor, the Percent Discrimination metric (eq. \ref{eq:pd}) would
+suffice in serving as an accurate determinant of the pose estimate with the
+least orientation error. In practice, however, the ranking provided by the
+Percent Discrimination metric is confounded by the incoincidence of the two
+positions.  In order to mitigate this effect, each pose estimate in
+$\hat{\bm{P}}_{OC}$ is given over to the Position Correction system, where the
+position of each pose estimate is displaced once ($I$=$1$), according to
+Algorithm \ref{alg:algorithm_icte}. This operation, denoted by the operator
+RPC$(\cdot)$ in fig. \ref{fig:inner_system}, produces the set
+$\hat{\bm{P}}_{RPC} = \{(\hat{x}_k, \hat{y}_k, \hat{\theta}_k)\}$,
+$|\hat{\bm{P}}_{RPC}| = 2^\nu$.  The purpose of this operation is for it to
+provide an advance view of the next step of position correction: the less
+rotationally misaligned a pose estimate is, the less it will diverge in terms of
+orientation and hence position with respect to the sensor's actual pose once
+inputted to the position correction system. This divergence is captured by the
+Cumulative Absolute Error per Ray (CAER) metric:
+\begin{align}
+  \text{CAER}_k = & \sum\limits_{n=0}^{N_s-1} \Bigg| \mathcal{S}_R[n] - \mathcal{S}_V[n]\Big|_{(\hat{x}_k, \hat{y}_k, \hat{\theta}_k)} \Bigg|
+\end{align}
+where $k$ = $0,\dots,2^\nu$$-$$1$. The CAER metric encodes at the same time a degree
+of alignment of position and orientation between its two input
+scans.\footnote{By contrast, dropping the absolute value operator would provide
+only for a position alignment metric.} By rehearsing the position correction of
+each pose estimate in $\hat{\bm{P}}_{OC}$ and capturing the CAER for each of
+its displaced pose estimates in $\hat{\bm{P}}_{RPC}$, it is possible to
+establish a pose error rank between pose estimates in $\hat{\bm{P}}_{OC}$ and
+simultaneously retain only one pose estimate for the next iteration of the
+One-step Pose Correction method.\footnote{Alternatively, correcting the
+position of $2^\nu$ pose estimates and feeding them back to the One-step Pose
+Correction method would incur exponential costs in time of execution.} The pose
+estimate $\hat{\bm{p}}_C \in \hat{\bm{P}}_{OC}$ that, when translated once,
+records the minimum CAER among all similarly-treated pose estimates in
+$\hat{\bm{P}}_{OC}$ is inputted to the Position Correction method proper. The
+number of translation iterations $I$ it undergoes is an increasing function in
+the degree of map sampling $\nu$.\footnote{The rationale of chaining the number
+of translational iterations to the map sampling degree $\nu$ is the following.
+Since the orientation error is inversely proportional to $\nu$, at low map
+sampling rates, when the position estimate error is at its highest, if the
+number of translational iterations was high then the position estimate would be
+susceptible to divergence. Therefore the number of translational iterations is
+kept low at initial stages so that a balance between decreasing position error
+and position divergence is struck. At higher values of $\nu$, the orientation
+estimate error decreases, and then divergence is bounded and/or met at higher
+translational iteration values.  As the orientation estimate becomes ever more
+accurate, the Position Correction system is let to iterate more times so that
+further reduction of the position error be feasible.} The Position Correction
+system produces $\hat{\bm{p}}^\prime$, which is then fed back to the
+Orientation Correction system in the form of its new pose estimate
+$\hat{\bm{p}} \leftarrow \hat{\bm{p}}^\prime$. In practice, the pose set
+$\hat{\bm{P}}_{OC}$ is supplemented with one pose whose position is equal to
+$\hat{\bm{p}}$ and whose orientation is equal to the orientation of
+$\hat{\bm{p}}_C$ that produces the minimum CAER over time. This addition
+introduces a form of memory to the system, which assists it in avoiding
+divergence and which, therefore, benefits speed of execution.
