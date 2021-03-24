@@ -1,8 +1,9 @@
 Let the assumptions of Problem \ref{prob:the_problem} be standing. Assume that
 the two scans were captured from the same location but from different
 orientations. Denoting with $\mathcal{F}\{\mathcal{S}\}$ the Discrete Fourier
-Transform of signal $\mathcal{S}$, and with $\mathcal{F}^{-1}\{\mathcal{S}\}$
-its inverse, calculate $Q_{\mathcal{S}_0, \mathcal{S}_1}$:
+Transform of signal $\mathcal{S}$, with $\mathcal{F}^{-1}\{\mathcal{S}\}$
+its inverse, and with $\bm{c}^\ast$ the conjugate of complex $\bm{c}$, calculate
+$Q_{\mathcal{S}_0, \mathcal{S}_1}$:
 \begin{align}
   Q_{\mathcal{S}_0, \mathcal{S}_1} \triangleq \dfrac{\mathcal{F}\{\mathcal{S}_0\}^{\ast} \cdot \mathcal{F}\{\mathcal{S}_1\}}{|\mathcal{F}\{\mathcal{S}_0\}| \cdot |\mathcal{F}\{\mathcal{S}_1\}|}
 \end{align}
@@ -34,7 +35,7 @@ $\mod(|\delta\theta|, \gamma) = \lambda \in [0,\frac{\gamma}{2}]$. Therefore for
 a given number of emitted rays $N_s$ there remains an unresolved orientation
 error $|\delta\theta| \leq \gamma/2$. The contribution of this error to the
 scan-matching error is two-fold, as its existence is also propagated to the
-location correction method. In the following, a method for further reduction of
+location estimation method. In the following, a method for further reduction of
 the orientation error is presented.
 
 Let $\mathcal{S}_0$ be projected onto the 2D plane around an arbitrary but
@@ -42,7 +43,7 @@ fixed pose $\bm{p}_0(x_0, y_0, \theta_0)$, producing point-set $\bm{M}_R$, which
 will hereafter be referred to as the map. Then compute $2^\nu$ map-scans (def.
 \ref{def:definition_3}) $\mathcal{S}_0^k$, $k = 0,\dots,2^\nu-1$, starting from
 orientation $\theta_0$, at $\gamma / 2^\nu$ angular increments. Then the
-orientation correction process is carried out once between $\mathcal{S}_1$ and
+orientation estimation process is carried out once between $\mathcal{S}_1$ and
 map scan $\mathcal{S}_0^k$ taken from orientation $\theta_0^k = \theta_0 +
 k \cdot \gamma / 2^\nu$, for a total of $2^\nu$ times. An alignment metric
 between the $k$-th map scan $\mathcal{S}_0^k$ and scan $\mathcal{S}_1$ is
@@ -64,7 +65,7 @@ $\mathcal{S}_0^K$ scoring the highest PD$_k$: $\text{PD}_K =
 multiple of angle increments $\gamma$ by which $\mathcal{S}_V^K$
 should be rotated counter-clockwise in order to achieve PD$_K$:
 $\Xi = \arg\max\ q_{\mathcal{S}_0^K, \mathcal{S}_1}$.  Then the sensor's
-orientation error is
+orientation difference becomes
 $\Delta\theta = \Xi\gamma + K \cdot \gamma/2^\nu + \delta\theta^\prime$.
 ?? Consider CAER here ??
 
@@ -74,8 +75,8 @@ error $|\delta\theta^\prime| \in [0,\gamma / 2^{1+\nu}]$. In this case, however,
 $\bm{M}_R$ is an approximation of the environment's map in the locality of
 $\bm{p}_0$. Depending on the magnitude of the sensor's angle increment and
 the arbitrariness of the environment, this approximation may be viewed as
-induced local perturbations in the map of the environment. This hold true also
-in the general case where $\mathcal{S}_0$ and $\mathcal{S}_1$ are captured
-from different locations. Therefore the guarantee of $|\delta\theta^\prime|
-\leq \gamma / 2^{1+\nu}$ may not always hold for all combinations of
-environments and sensor angle increments.
+induced local perturbations in the map of the environment. This holds true
+in the general case as well, where $\mathcal{S}_0$ and $\mathcal{S}_1$ are
+captured from different locations. Therefore the guarantee of
+$|\delta\theta^\prime| \leq \gamma / 2^{1+\nu}$ may not always hold for all
+combinations of environments and sensor angle increments.

@@ -11,56 +11,38 @@
   \{\theta_n \in [-\frac{\lambda}{2}, +\frac{\lambda}{2}) : \theta_n =
   -\frac{\lambda}{2} + \lambda \frac{n}{N_s}$, $n = 0,1,\dots, N_s$$-$$1$$\}$.
   Angles $\theta_n$ are expressed relative to the sensor's heading, in the
-  sensor's frame of reference.
+  sensor's frame of reference. A LIDAR sensor's angle increment $\gamma$ is the
+  angular distance between two consecutive rays: $\gamma \triangleq
+  \dfrac{\lambda}{N_s}$.
 \end{definition}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{definition}
-  A LIDAR sensor's angle increment $\gamma$ is the angular distance between two
-  consecutive rays: $\gamma \triangleq \dfrac{\lambda}{N_s}$
-\end{definition}
+%\begin{definition}
+  %\label{def:definition_2}
+  %\textit{Scan-matching (or scan-to-scan matching) using a 2D LIDAR sensor} (adapted for use in
+  %two dimensions from \cite{plicp}).
+  %Let two range scans as defined by Definition \ref{def:definition_1},
+  %$\mathcal{S}_R$ and $\mathcal{S}_V$, be captured from a LIDAR
+  %sensor operating in the same environment at both capturing times. Let
+  %$\bm{p}_V(x_V,y_V,\theta_V)$ be the pose from
+  %which the sensor captured $\mathcal{S}_V$, expressed in some coordinate
+  %system (usually a past pose estimate of the sensor). The objective of
+  %scan-matching in two dimensions is to find the roto-translation
+  %$\bm{q} = (\bm{t}, \theta)$, $\bm{t} = (\Delta x, \Delta y)$ that minimises
+  %the distance of the endpoints of $\mathcal{S}_V$ roto-translated by
+  %$\bm{q}$ to their projection on $\mathcal{S}_R$. Denoting the
+  %endpoints of $\mathcal{S}_V$ by $\{\bm{p}_V^i\}$, in formula:
+  %\begin{align}
+    %\underset{\bm{q}}{\min} \sum\limits_i \Big\| \bm{p}_V^i \oplus \bm{q} - \prod \{ \mathcal{S}_R, \bm{p}_V^i \oplus \bm{q} \}\Big\|^2
+    %\label{eq:s2sm_def}
+  %\end{align}
+  %The symbol ``$\oplus$" denotes the roto-translation operator
+  %$\bm{p}_V^i \oplus (\bm{t}, \theta) \triangleq \bm{R}(\theta) \bm{p}^i_V + \bm{t}$,
+  %where $\bm{R}(\theta)$ is the 2D rotation matrix for argument angle $\theta$,
+  %and $\prod\{\mathcal{S}_R, \bm{p}_V^i \oplus \bm{q} \}$ denotes
+  %the Euclidean projector on $\mathcal{S}_R$.
+%\end{definition}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{definition}
-  \label{def:definition_2}
-  \textit{Scan-matching (or scan-to-scan matching) using a 2D LIDAR sensor} (adapted for use in
-  two dimensions from \cite{plicp}).
-  Let two range scans as defined by Definition \ref{def:definition_1},
-  $\mathcal{S}_R$ and $\mathcal{S}_V$, be captured from a LIDAR
-  sensor operating in the same environment at both capturing times. Let
-  $\bm{p}_V(x_V,y_V,\theta_V)$ be the pose from
-  which the sensor captured $\mathcal{S}_V$, expressed in some coordinate
-  system (usually a past pose estimate of the sensor). The objective of
-  scan-matching in two dimensions is to find the roto-translation
-  $\bm{q} = (\bm{t}, \theta)$, $\bm{t} = (\Delta x, \Delta y)$ that minimises
-  the distance of the endpoints of $\mathcal{S}_V$ roto-translated by
-  $\bm{q}$ to their projection on $\mathcal{S}_R$. Denoting the
-  endpoints of $\mathcal{S}_V$ by $\{\bm{p}_V^i\}$, in formula:
-  \begin{align}
-    \underset{\bm{q}}{\min} \sum\limits_i \Big\| \bm{p}_V^i \oplus \bm{q} - \prod \{ \mathcal{S}_R, \bm{p}_V^i \oplus \bm{q} \}\Big\|^2
-    \label{eq:s2sm_def}
-  \end{align}
-  The symbol ``$\oplus$" denotes the roto-translation operator
-  $\bm{p}_V^i \oplus (\bm{t}, \theta) \triangleq \bm{R}(\theta) \bm{p}^i_V + \bm{t}$,
-  where $\bm{R}(\theta)$ is the 2D rotation matrix for argument angle $\theta$,
-  and $\prod\{\mathcal{S}_R, \bm{p}_V^i \oplus \bm{q} \}$ denotes
-  the Euclidean projector on $\mathcal{S}_R$.
-\end{definition}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{remark}
-  Scan-matching is employed in robotics as a means to odometry,
-  primarily in non-wheeled robots where no encoders can be utilised, or as a
-  useful ameliorator of the ever-drifting encoder-ed odometry: scans captured at
-  consecutive time instances, inputted to a scan-matching algorithm, convey an
-  estimate as to the pose of the scan sensor at the second capture time
-  relative to that captured first. Scan-matching is being successfully employed
-  in the tasks of simultaneous localisation and mapping
-  \cite{am_odom_1}-\cite{am_odom_3}, local map construction
-  \cite{am_odom_4}-\cite{am_odom_6}, and in people-tracking systems
-  \cite{am_odom_7}.
-\end{remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{definition}
@@ -69,8 +51,8 @@
   A map-scan is a virtual scan that encapsulates the same pieces of information
   as a scan derived from a physical sensor. Only their underlying operating
   principle is different due to the fact the map-scan refers to distances to
-  obstacles within the map ---hence its virtuality. A map-scan is captured from
-  a virtual sensor and derived by means of locating intersections of rays
-  emanating from the estimate of the sensor's pose and boundaries demarcating
-  obstacles in the map.
+  obstacles within a point-set, usually referred to as the map, rather than
+  within an real environment. A map-scan is derived by means of locating
+  intersections of rays emanating from the estimate of the sensor's pose and
+  the boundaries of the map.
 \end{definition}

@@ -16,42 +16,43 @@
 \gdef\HyperFirstAtBeginDocument#1{#1}
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
-\citation{lidar}
-\citation{plicp}
 \citation{am_odom_1}
 \citation{am_odom_3}
 \citation{am_odom_4}
 \citation{am_odom_6}
 \citation{am_odom_7}
+\citation{lidar}
 \@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{section.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {II}Problem Formulation}{1}{section.2}}
 \newlabel{section:the_problem}{{II}{1}{Problem Formulation}{section.2}{}}
 \newlabel{prob:the_problem}{{I}{1}{}{problem.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  FSM iteratively invokes the One-step Pose Estimation method. Given a pose estimate of where scan $\mathcal  {S}_1$ was captured within $\bm  {M}$, the method attempts to register $\mathcal  {S}_1$ to $\bm  {M}$ by estimating first its relative orientation and then its location with respect to the input pose estimate\relax }}{1}{figure.caption.1}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:fsm_inner}{{1}{1}{\small FSM iteratively invokes the One-step Pose Estimation method. Given a pose estimate of where scan $\mathcal {S}_1$ was captured within $\bm {M}$, the method attempts to register $\mathcal {S}_1$ to $\bm {M}$ by estimating first its relative orientation and then its location with respect to the input pose estimate\relax }{figure.caption.1}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {III}Definitions}{1}{section.3}}
 \newlabel{section:definitions}{{III}{1}{Definitions}{section.3}{}}
 \newlabel{def:definition_1}{{I}{1}{}{definition.1}{}}
-\newlabel{def:definition_2}{{III}{1}{}{definition.3}{}}
-\newlabel{eq:s2sm_def}{{1}{1}{}{equation.3.1}{}}
-\newlabel{def:definition_3}{{IV}{1}{}{definition.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {IV}Current Solutions}{1}{section.4}}
-\newlabel{section:sota}{{IV}{1}{Current Solutions}{section.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {V}The Proposed Method}{1}{section.5}}
-\newlabel{section:the_proposed_method}{{V}{1}{The Proposed Method}{section.5}{}}
+\newlabel{def:definition_3}{{II}{1}{}{definition.2}{}}
 \citation{fmt2d}
 \citation{olson}
-\@writefile{toc}{\contentsline {subsection}{\numberline {V-A}Orientation Correction}{2}{subsection.5.1}}
-\newlabel{subsec:method_orientation_correction}{{V-A}{2}{Orientation Correction}{subsection.5.1}{}}
-\newlabel{eq:Q0}{{3}{2}{Orientation Correction}{equation.5.3}{}}
-\newlabel{eq:pd}{{5}{2}{Orientation Correction}{equation.5.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {V-B}Location Correction}{2}{subsection.5.2}}
-\newlabel{subsec:method_location_correction}{{V-B}{2}{Location Correction}{subsection.5.2}{}}
-\newlabel{prop:theorem_without_disturbance}{{I}{2}{}{theorem.1}{}}
-\newlabel{eq:difference_equation_without_disturbance}{{6}{3}{}{equation.5.6}{}}
-\newlabel{eq:control_vector_without_disturbance}{{7}{3}{}{equation.5.7}{}}
-\newlabel{eq:X1}{{8}{3}{}{equation.5.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Prior Work}{2}{section.4}}
+\newlabel{section:sota}{{IV}{2}{Prior Work}{section.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Approach}{2}{section.5}}
+\newlabel{section:the_proposed_method}{{V}{2}{Approach}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {V-A}Estimation of Relative Orientation}{2}{subsection.5.1}}
+\newlabel{subsec:method_orientation_correction}{{V-A}{2}{Estimation of Relative Orientation}{subsection.5.1}{}}
+\newlabel{eq:Q0}{{2}{2}{Estimation of Relative Orientation}{equation.5.2}{}}
+\newlabel{eq:pd}{{4}{2}{Estimation of Relative Orientation}{equation.5.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {V-B}Estimation of Relative Location}{2}{subsection.5.2}}
+\newlabel{subsec:method_location_correction}{{V-B}{2}{Estimation of Relative Location}{subsection.5.2}{}}
+\newlabel{prop:theorem_without_disturbance}{{I}{3}{}{theorem.1}{}}
+\newlabel{eq:difference_equation_without_disturbance}{{5}{3}{}{equation.5.5}{}}
+\newlabel{eq:control_vector_without_disturbance}{{6}{3}{}{equation.5.6}{}}
+\newlabel{eq:X1}{{7}{3}{}{equation.5.7}{}}
 \newlabel{prop:theorem_with_disturbance}{{II}{3}{}{theorem.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {V-C}Pose correction}{3}{subsection.5.3}}
-\newlabel{subsec:method_pose_correction}{{V-C}{3}{Pose correction}{subsection.5.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {V-C}Joint Estimation of Relative Orientation and Location}{3}{subsection.5.3}}
+\newlabel{subsec:method_pose_correction}{{V-C}{3}{Joint Estimation of Relative Orientation and Location}{subsection.5.3}{}}
+\citation{dataset_link}
 \citation{idc}
 \citation{mbicp}
 \citation{plicp}
@@ -59,11 +60,16 @@
 \citation{velodyne_datasheet}
 \citation{a2m8_datasheet}
 \citation{x4_datasheet}
-\citation{gpm}
 \citation{plicp}
-\@writefile{toc}{\contentsline {section}{\numberline {VI}Experimental Procedure}{4}{section.6}}
-\newlabel{section:experimental}{{VI}{4}{Experimental Procedure}{section.6}{}}
-\citation{gangpeng}
+\citation{csm_implementation}
+\citation{ndt_implementation}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Results}{4}{section.6}}
+\newlabel{section:results}{{VI}{4}{Results}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {VI-A}Experimental Design}{4}{subsection.6.1}}
+\newlabel{section:experimental}{{VI-A}{4}{Experimental Design}{subsection.6.1}{}}
+\newlabel{eq:rototranslation_error}{{9}{4}{Experimental Design}{equation.6.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {VI-B}Performance}{4}{subsection.6.2}}
+\newlabel{section:performance}{{VI-B}{4}{Performance}{subsection.6.2}{}}
 \bibcite{bible}{1}
 \bibcite{ICP}{2}
 \bibcite{mbicp}{3}
@@ -73,6 +79,11 @@
 \bibcite{ICP_var_3}{7}
 \bibcite{ICP_var_4}{8}
 \bibcite{ICP_var_5}{9}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  Distribution of mean errors of CSM (red), NDT (blue), and FSM (our approach) across a range of maximal positional and orientational displacements, for progressively larger sensor measurement noise levels. The variability of FSM's rigid body transformation error is consistent across all configurations. The error is independent of the initial displacement of scans for a given level of sensor noise\relax }}{5}{figure.caption.2}}
+\newlabel{fig:errors_sm}{{2}{5}{\small Distribution of mean errors of CSM (red), NDT (blue), and FSM (our approach) across a range of maximal positional and orientational displacements, for progressively larger sensor measurement noise levels. The variability of FSM's rigid body transformation error is consistent across all configurations. The error is independent of the initial displacement of scans for a given level of sensor noise\relax }{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusions}{5}{section.7}}
+\newlabel{section:finale}{{VII}{5}{Conclusions}{section.7}{}}
+\@writefile{toc}{\contentsline {section}{References}{5}{section*.3}}
 \bibcite{ndt1}{10}
 \bibcite{lidar}{11}
 \bibcite{am_odom_1}{12}
@@ -85,20 +96,15 @@
 \bibcite{leordeau}{19}
 \bibcite{pose_selection}{20}
 \bibcite{idc}{21}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  Pose errors of FSMSM, CSM, and NDT for maximal uniform position displacements $\delta _{xy} \in U_{xy}(-0.20, +0.20)$ m and maximal uniform orientation displacements $\delta _\theta \in U_\theta (-\pi / 4, + \pi /4)$ rad for $\sigma _{\bm  {M}} = 0.0$ m over $E = 100$ runs per noise level tested $\sigma _R$\relax }}{5}{figure.caption.1}}
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:errors_sm0}{{1}{5}{\small Pose errors of FSMSM, CSM, and NDT for maximal uniform position displacements $\delta _{xy} \in U_{xy}(-0.20, +0.20)$ m and maximal uniform orientation displacements $\delta _\theta \in U_\theta (-\pi / 4, + \pi /4)$ rad for $\sigma _{\bm {M}} = 0.0$ m over $E = 100$ runs per noise level tested $\sigma _R$\relax }{figure.caption.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VII}Discussion}{5}{section.7}}
-\newlabel{section:discussion}{{VII}{5}{Discussion}{section.7}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VIII}Conclusions}{5}{section.8}}
-\newlabel{section:finale}{{VIII}{5}{Conclusions}{section.8}{}}
-\@writefile{toc}{\contentsline {section}{References}{5}{section*.2}}
 \bibcite{gpm}{22}
 \bibcite{fmt2d}{23}
 \bibcite{olson}{24}
-\bibcite{velodyne_datasheet}{25}
-\bibcite{a2m8_datasheet}{26}
-\bibcite{g4_datasheet}{27}
-\bibcite{tg30_datasheet}{28}
-\bibcite{x4_datasheet}{29}
-\bibcite{icp_comp_trade}{30}
+\bibcite{dataset_link}{25}
+\bibcite{velodyne_datasheet}{26}
+\bibcite{a2m8_datasheet}{27}
+\bibcite{g4_datasheet}{28}
+\bibcite{tg30_datasheet}{29}
+\bibcite{x4_datasheet}{30}
+\bibcite{csm_implementation}{31}
+\bibcite{ndt_implementation}{32}
+\bibcite{icp_comp_trade}{33}

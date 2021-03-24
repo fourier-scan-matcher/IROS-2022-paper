@@ -1,0 +1,86 @@
+This section serves to test the efficacy and performance of the proposed
+method. The experimental procedure was conducted using a benchmark dataset $D$
+consisting of $|D| = 778$ laser scans obtained from a Sick range-scan sensor
+mounted on a robotic wheel-chair \cite{dataset_link}. For
+each scan $D^d$, $d = 1,\dots,778$, the dataset reports one range scan of $360$
+range measurements and the pose from which it was captured
+$\bm{r}^d(x,y,\theta)$.  The same dataset was used to evaluate the performance
+of IDC \cite{idc}, ICP, and MBICP in \cite{mbicp}, and that of PLICP and the
+joint method PLICP$\circ$GPM during scan-matching experiments. In \cite{plicp}
+the latter was found to be the best-performing among the five
+correspondence-finding scan-matching methods. Therefore, for purposes of
+comparison against correspondence-finding scan-matching methods, the
+experimental procedure is extended to PLICP$\circ$GPM. This method shall be
+denoted hereafter by the acronym CSM. In the same vein, for purposes of
+comparison against correspondenceless scan-matching methods, the same
+experimental procedure is extended to the Normal Distributions Transform (NDT)
+scan-matching method \cite{ndt1}.
+
+The experimental setup is the following. The rays of each dataset instance
+$D^d$ are first projected to the $x-y$ plane around $\bm{r}^d$. The dataset's
+scans are not panoramic, therefore the remaining space is filled with a
+semicircular arc that joins the scan's two extreme ends. Its radius is set to
+the minimum range between the two extreme rays of $D^d$. Similar fashions for
+closing-off the environment have been found equivalent with respect to the
+performance of the tested methods. The resulting point-set is regarded as the
+environment $\bm{W}^d$ in which the range sensor operates.  Then the pose
+$\bm{p}_0^d$ from which $\mathcal{S}_0^d$ is captured is generated randomly
+within the polygon formed by $\bm{W}^d$. The pose $\bm{p}_1^d$ from which the
+sensor captured $\mathcal{S}_1$ is then obtained by perturbing the components
+of $\bm{p}_0^d$ with quantities extracted from uniformly distributed error
+distributions $U_{xy}(-\overline{\delta}_{xy}, \overline{\delta}_{xy})$,
+$U_{\theta}(-\overline{\delta}_{\theta}, \overline{\delta}_{\theta})$;
+$\overline{\delta}_{xy}$, $\overline{\delta}_\theta$ $\in \mathbb{R}_{\geq 0}$.
+?? TODO say that censi et al did not test this but tested self-scan-matching ??
+
+
+Range scans $\mathcal{S}_0^d$ and $\mathcal{S}_1^d$ are then computed by
+locating the intersection points between $N_s$ rays emanating from $\bm{p}_0^d$
+and $\bm{p}_1^d$, respectively, and the polygon formed by $\bm{W}^d$ across an
+angular field of view $\lambda = 2\pi$. The inputs to CSM, NDT, and FSM are
+then set to $\mathcal{S}_0^d$ and $\mathcal{S}_1^d$. Their output is
+$\bm{p}_0^{\prime d}$, which is the pose estimate of $\bm{p}_1^d$ in the frame
+of reference of $\bm{M}^d$. The roto-translation
+$\hat{\bm{T}}^d = \bm{p}_0^{\prime d}-\bm{p}_0^d$ is the estimate of the motion
+of the range sensor $\bm{T}^d = \bm{p}_1^d - \bm{p}_0^d$. The criterion on
+which the evaluation of all experiments rests is the $2$-norm of the total pose
+displacement error
+\begin{align}
+  e &= (\Delta \bm{T}^\top \cdot \Delta \bm{T})^{1/2}
+  \label{eq:rototranslation_error}
+\end{align}
+where $\Delta \bm{T} = \bm{T} - \hat{\bm{T}}$;
+$\bm{T} = (\Delta x, \Delta y, \Delta \theta) = \bm{p}_1 - \bm{p}_0$, and
+$\hat{\bm{T}} = (\Delta \hat{x}, \Delta \hat{y}, \Delta \hat{\theta}) = \bm{p}_0^\prime - \bm{p}_0$,
+For every pose estimate $\bm{p}_0^{\prime d}$ outputted by
+each algorithm, $d = 1,2,\dots,|D|$, its offset from the actual pose
+$\bm{p}_1^d$ is recorded in the form of the $2$-norm total error. The pose
+errors of one experiment are then averaged. The pose error distributions
+reported below are those of mean errors across $E$ experiments of the same
+configuration.
+
+In order to test for the performance of the proposed method with use of real
+sensors, five levels of noise acting on the range measurements of the scans are
+tested. The range measurements are perturbed by zero-mean normally-distributed
+noise with standard deviation $\sigma_R \in \{0.0, 0.01, 0.03, 0.05, 0.10\}$ m.
+The non-zero values of tested standard deviations were calculated from
+commercially available panoramic LIDAR scanners by identifying the magnitude of
+their reported maximum range errors and dividing it by a factor of three. The
+rationale is that $99.73\%$ of errors are located within $3\sigma$ around the
+actual range between a ray and an obstacle, assuming errors are distributed
+normally. The minimum standard deviation $\sigma_R = 0.01$ m is reported for
+VELODYNE sensors \cite{velodyne_datasheet}; the rest are reported for
+price-appealing but disturbance-laden sensors, e.g. the RPLIDAR A2M8, or the
+YDLIDAR G4, TG30, and X4 scanners \cite{a2m8_datasheet}-\cite{x4_datasheet}. The
+size of the input scans was set to $N_s=360$ rays. The minimum and maximum map
+oversampling rates of FSM were set to $(\mu_{\min},\mu_{\max}) =
+(2^{\nu_{\min}},2^{\nu_{\max}}) = (2^0,2^3)$. The number of iterations of the
+translational component at each map sampling degree $\nu$ was set at $I =
+2\nu$. The orientation convergence threshold was set to $\varepsilon_{\delta p}
+= 10$e-$5$. Maximal displacements $\overline{\delta}_{xy}$ and
+$\overline{\delta}_\theta$ were chosen as such by prior art tests \cite{plicp}.
+For each experiment FSM, CSM, and NDT ran for $E = 100$ times across all
+instances of $D$. All experiments and algorithms were run serially, in C++, on
+a single thread, on a machine with a CPU frequency of $4.0$ GHz. The
+implementations of CSM and NDT were taken from \cite{csm_implementation} and
+\cite{ndt_implementation}.

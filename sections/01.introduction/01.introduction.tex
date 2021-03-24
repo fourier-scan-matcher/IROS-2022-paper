@@ -1,2 +1,30 @@
+Scan-matching is employed in robotics as a means to odometry,
+primarily in non-wheeled robots where no encoders can be utilised, or as a
+useful ameliorator of the ever-drifting encoder-ed odometry: scans captured at
+consecutive time instances, inputted to a scan-matching algorithm, convey an
+estimate as to the pose of the scan sensor at the second capture time
+relative to that captured first. Scan-matching is being successfully employed
+in the tasks of simultaneous localisation and mapping
+\cite{am_odom_1}-\cite{am_odom_3}, local map construction
+\cite{am_odom_4}-\cite{am_odom_6}, and in people-tracking systems
+\cite{am_odom_7}.
 
-Contribution: invariant to large angular errors
+cannot stress enough: the contributions must be layed out and emphasised
+see. olsen 2009 for a pro
+
+Contribution: invariant to large angular errors, pseudoinvariant in time of execution, show how to decrease orientation error from fixed number of rays, fourier for both orientation and translation --> robustness
+
+
+
+
+
+
+\begin{figure}[]\centering
+  \input{./figures/inner_system.tikz}
+  \caption{\small FSM iteratively invokes the One-step Pose Estimation method.
+           Given a pose estimate of where scan $\mathcal{S}_1$ was captured
+           within $\bm{M}$, the method attempts to register $\mathcal{S}_1$ to
+           $\bm{M}$ by estimating first its relative orientation and then its
+           location with respect to the input pose estimate}
+  \label{fig:fsm_inner}
+\end{figure}

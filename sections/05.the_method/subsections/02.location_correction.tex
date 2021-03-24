@@ -3,20 +3,22 @@ that $\mathcal{S}_0$ and $\mathcal{S}_1$ were captured from different
 positions in the same environment but with the same orientation
 relative to a fixed reference frame. Let $\mathcal{S}_0$ be projected again onto
 the 2D plane around fixed pose $\bm{p}_0(x_0, y_0, \theta_0)$, producing
-point-set $\bm{M}_T$. Assuming that $\mathcal{S}_1$ was captured in a
-neighbourhood of $\mathcal{S}_0$, then $\bm{M}_T$ is a perturbed map of the
-environment with respect to sensor measurement $\mathcal{S}_1$. Aside from
+point-set $\bm{M}_L$. Assuming that $\mathcal{S}_1$ was captured in a
+neighbourhood of $\mathcal{S}_0$, then $\bm{M}_L$ is a perturbed local map of
+the environment with respect to sensor measurement $\mathcal{S}_1$. Aside from
 measurement noise, this perturbation manifests due to the finiteness of the
 sensor's angle increment and to the fact that different portions of the
 environment are perceptible and therefore measurable from different locations
-\cite{olson}. Under these assumptions the problem of (scan-)matching scan
-$\mathcal{S}_1$ to scan $\mathcal{S}_0$ may be transformed into a problem of
-scan--to-map--scan matching, where the aim is registering scan $\mathcal{S}_1$
-to map $\bm{M}_T$. Theorem \ref{prop:theorem_with_disturbance} guarantees
-that the estimate of the location error between the poses from which the two
-scans were captured is bounded in a neighbourhood of the true location error,
-if the location component of the arbitrary initial pose $\bm{p}_0$ is treated
-according to Theorem \ref{prop:theorem_without_disturbance}.
+\cite{olson}. The nature of these perturbations on map-scans captured within
+$\bm{M}_L$ is additive and finite. Under these assumptions the problem of
+(scan-)matching scan $\mathcal{S}_1$ to scan $\mathcal{S}_0$ may be transformed
+into a problem of scan--to-map--scan matching, where the aim is registering
+scan $\mathcal{S}_1$ to map $\bm{M}_L$. Theorem
+\ref{prop:theorem_with_disturbance} guarantees that the error of the location
+estimate between the poses from which the two scans were captured is
+bounded in a neighbourhood of the origin, if the location component of the
+arbitrary initial pose $\bm{p}_0$ is treated according to Theorem
+\ref{prop:theorem_without_disturbance}.
 
 
 \begin{theorem}
@@ -70,7 +72,7 @@ according to Theorem \ref{prop:theorem_without_disturbance}.
 \begin{theorem}
   \label{prop:theorem_with_disturbance} Let the assumptions of Theorem
   \ref{prop:theorem_without_disturbance} hold. Assume additionally that the
-  ranges of both real and virtual range scans $\mathcal{S}_R$ and
+  ranges of either or both real and virtual range scans $\mathcal{S}_R$ and
   $\mathcal{S}_V$ are affected by additive, bounded disturbances. Then
   $\hat{\bm{l}}[k]$ is uniformly bounded for $k \geq k_0$ and uniformly
   ultimately bounded in a neighbourhood of $\bm{l}$. Its size depends on the

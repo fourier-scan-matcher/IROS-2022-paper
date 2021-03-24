@@ -1,5 +1,5 @@
 The problem is iteratively decomposed into two disjunctive sub-problems. The
-first is estimating the relative angle between $\mathcal{S}_1$ and
+first is estimating the relative orientation of $\mathcal{S}_1$ with respect to
 $\mathcal{S}_0$ under the assumption that both are captured from the same
 location. The second is estimating the relative displacement of $\mathcal{S}_1$
 with respect to $\mathcal{S}_0$ under the assumption that both are captured
@@ -7,21 +7,21 @@ from poses of the same orientation. Solving the first sub-problem is followed
 by the solution to the second sub-problem. This process is iterated until
 termination conditions are met.
 
-The orientation and location correction submethods are presented in subsections
+The orientation and location estimation submethods are presented in subsections
 \ref{subsec:method_orientation_correction} and
-\ref{subsec:method_location_correction}. Subsection
+\ref{subsec:method_location_correction} respectively. Subsection
 \ref{subsec:method_pose_correction} presents the method of how these two
 are woven together into the system that solves Problem \ref{prob:the_problem}
 that is proposed in this work.
 
-\subsection{Orientation Correction}
+\subsection{Estimation of Relative Orientation}
   \label{subsec:method_orientation_correction}
   \input{./sections/05.the_method/subsections/01.orientation_correction.tex}
 
-\subsection{Location Correction}
+\subsection{Estimation of Relative Location}
   \label{subsec:method_location_correction}
   \input{./sections/05.the_method/subsections/02.location_correction.tex}
 
-\subsection{Pose correction}
+\subsection{Joint Estimation of Relative Orientation and Location}
   \label{subsec:method_pose_correction}
   \input{./sections/05.the_method/subsections/03.pose_correction.tex}

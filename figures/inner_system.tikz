@@ -2,6 +2,8 @@
 
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
 
+\scalebox{0.8}
+{
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
 %uncomment if require: \path (0,542); %set diagram left start at 0, and has height of 542
 
@@ -52,41 +54,41 @@
 \draw [shift={(187.5,329.4)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
 %Shape: Rectangle [id:dp8185193791005427]
 \draw  [dash pattern={on 0.84pt off 2.51pt}] (105,75) -- (424,75) -- (424,350) -- (105,350) -- cycle ;
-\draw (360,65) node  {One-step Pose Correction};
+\draw (350,65) node  {One-step Pose Estimation};
 
 % Text Node
 \draw    (184,114) -- (339,114) -- (339,139) -- (184,139) -- cycle  ;
-\draw (189,120) node [anchor=north west][inner sep=0.75pt]   [align=left] {\ \ Orientation Correction};
+\draw (189,120) node [anchor=north west][inner sep=0.75pt]   [align=left] {\ \ Orientation Estimation };
 % Text Node
 \draw (119,47) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\nu$};
 % Text Node
-\draw (131,44) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\mathcal{S}_{R}$};
+\draw (131,44) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\mathcal{S}_1$};
 % Text Node
-\draw (258,40.57) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\hat{\bm{p}}$};
+\draw (258,40.57) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\bm{p}_0$};
 % Text Node
 \draw (150,44.57) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\bm{M}$};
 % Text Node
 \draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]  (200,174) -- (322,174) -- (322,215) -- (200,215) -- cycle  ;
-\draw (203,180) node [anchor=north west][inner sep=0.75pt]  [align=left] {\ \ \ \ \ \ Rehearsal \\ \ Position Correction};
+\draw (203,180) node [anchor=north west][inner sep=0.75pt]  [align=left] {\ \ \ \ \ \ Rehearsal \\ \ Location Estimation};
 % Text Node
 \draw    (191,253) -- (330,253) -- (330,279) -- (191,279) -- cycle  ;
-\draw (194,257) node [anchor=north west][inner sep=0.75pt]   [align=left] {\ \ \ $\bm{C} = \text{CAER}(\hat{\bm{P}}_{RPC})$};
+\draw (194,257) node [anchor=north west][inner sep=0.75pt]   [align=left] {\ \ \ $\bm{C} = \text{CAER}(\bm{P}_{RPC})$};
 % Text Node
 \draw (358,187) node [anchor=north west][inner sep=0.75pt]   [align=left] {$I = 1$};
 % Text Node
 \draw    (192,317) -- (327,317) -- (327,342) -- (192,342) -- cycle  ;
-\draw (196,323) node [anchor=north west][inner sep=0.75pt]   [align=left] {\ \ Position Correction};
+\draw (196,323) node [anchor=north west][inner sep=0.75pt]   [align=left] {\ \ Location Estimation};
 % Text Node
-\draw (253,372.67) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\hat{\bm{p}}^{\prime }$};
+\draw (253,372.67) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\bm{p}_0^\prime$};
 % Text Node
-\draw (271,145.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\hat{\bm{P}}_{OC} = \text{OC}(\hat{\bm{p}}, \nu)$};
+\draw (271,145.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\bm{P}_{OC} = \text{OC}(\bm{p}_0, \nu)$};
 % Text Node
 \draw (363,323) node [anchor=north west][inner sep=0.75pt]   [align=left] {$I = f( \nu )$};
 % Text Node
-\draw (271,223.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\hat{\bm{P}}_{RPC} = \text{RPC}(\hat{\bm{P}}_{OC})$};
+\draw (271,223.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\bm{P}_{RPC} = \text{RPC}(\bm{P}_{OC})$};
 % Text Node
-\draw (188,284.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\hat{\bm{p}}_{C} \in \hat{\bm{P}}_{OC} : \text{CAER}(\text{RPC}(\hat{\bm{p}}_C)) = \min\{\bm{C}\}$};
+\draw (188,284.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\bm{p}_{C} \in \bm{P}_{OC} : \text{CAER}(\text{RPC}(\bm{p}_C)) = \min\{\bm{C}\}$};
 
 
 \end{tikzpicture}
-
+}
