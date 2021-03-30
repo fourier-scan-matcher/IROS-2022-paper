@@ -1,9 +1,9 @@
-Let the assumptions of Problem \ref{prob:the_problem} be standing. Assume now
+Let the assumptions of Problem \ref{prob:the_problem} hold. Assume now
 that $\mathcal{S}_0$ and $\mathcal{S}_1$ were captured from different
 positions in the same environment but with the same orientation
-relative to a fixed reference frame. Let $\mathcal{S}_0$ be projected again onto
-the 2D plane around fixed pose $\bm{p}_0(x_0, y_0, \theta_0)$, producing
-point-set $\bm{M}_L$. Assuming that $\mathcal{S}_1$ was captured in a
+relative to a fixed reference frame. Let $\mathcal{S}_0$ be projected onto
+the $x-y$ plane around pose $\bm{s}(0,0,0)$,
+producing point-set $\bm{M}_L$. Assuming that $\mathcal{S}_1$ was captured in a
 neighbourhood of $\mathcal{S}_0$, then $\bm{M}_L$ is a perturbed local map of
 the environment with respect to sensor measurement $\mathcal{S}_1$. Aside from
 measurement noise, this perturbation manifests due to the finiteness of the
@@ -12,18 +12,20 @@ environment are perceptible and therefore measurable from different locations
 \cite{olson}. The nature of these perturbations on map-scans captured within
 $\bm{M}_L$ is additive and finite. Under these assumptions the problem of
 (scan-)matching scan $\mathcal{S}_1$ to scan $\mathcal{S}_0$ may be transformed
-into a problem of scan--to-map--scan matching, where the aim is registering
-scan $\mathcal{S}_1$ to map $\bm{M}_L$. Theorem
+into a problem of scan--to--map-scan matching, where the aim is registering
+scan $\mathcal{S}_1$ to map $\bm{M}_L$: i.e. estimating the pose $\bm{p}_1$
+from where $\mathcal{S}_1$ was captured within $\bm{M}_L$. Theorem
 \ref{prop:theorem_with_disturbance} guarantees that the error of the location
-estimate between the poses from which the two scans were captured is
-bounded in a neighbourhood of the origin, if the location component of the
-arbitrary initial pose $\bm{p}_0$ is treated according to Theorem
-\ref{prop:theorem_without_disturbance}.
+estimate between the poses from which the two scans were captured is bounded in
+a neighbourhood of the origin, if the location component of the pose estimate
+of $\bm{p}_1$ is treated according to Theorem
+\ref{prop:theorem_without_disturbance}, when its initial value is set to
+$\hat{\bm{p}}_1 = \bm{s}$.
 
 
 \begin{theorem}
   \label{prop:theorem_without_disturbance}
-  Let a 2D range scan $\mathcal{S}_R$ be captured from a physical panoramic
+  Let a panoramic 2D range scan $\mathcal{S}_R$ be captured from a physical
   range sensor from unknown pose $\bm{p} = (\bm{l},\theta)$, $\bm{l} = (x,y)$.
   Let $\bm{M}$ be the map of the world in which the scan was captured. Let a
   pose estimate $\hat{\bm{p}} = (\hat{\bm{l}}, \hat{\theta})$ reside in the
@@ -79,3 +81,8 @@ arbitrary initial pose $\bm{p}_0$ is treated according to Theorem
   suprema of the disturbance corrupting the range measurements of the two
   scans.
 \end{theorem}
+
+Let $\hat{\bm{p}}_1^\prime$ denote the resulting pose estimate of $\bm{p}_1$
+in $\bm{M}_L$. Then $\hat{\bm{T}} = \hat{\bm{p}}_1^\prime - \bm{s}$ is the
+estimate of the 3D rigid transformation of the sensor as it moved from the pose
+where it captured $\mathcal{S}_0$ to that where it captured $\mathcal{S}_1$.

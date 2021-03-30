@@ -6,44 +6,44 @@ sensor orientation but from different locations. In the general case, however,
 no equality stands. The following analysis describes how these two methods are
 combined in tandem in order to solve Problem \ref{prob:the_problem}.
 
-Let the assumptions of Problem \ref{prob:the_problem} hold. Then denote the
-point-set that is the result of the projection of range scan $\mathcal{S}_0$ to
-the $x-y$ plane around an arbitrary but fixed pose $\bm{p}_0$ by $\bm{M}$. Then
-the objective is to estimate the pose $\bm{p}_1$ from where $\mathcal{S}_1$ was
-captured relative to $\bm{p}_0$ by way of registering $\mathcal{S}_1$ to map
-$\bm{M}$. In the following, pose $\bm{p}_0$ is treated as the pose estimate of
-$\bm{p}_1$.
+Let the assumptions of Problem \ref{prob:the_problem} hold. Then denote by
+$\bm{M}$ the point-set that is the result of the projection of range scan
+$\mathcal{S}_0$ to the $x-y$ plane around $\bm{s}(0,0,0)$. Then the objective
+is to estimate the pose $\bm{p}_1$ from where $\mathcal{S}_1$ was captured
+relative to $\bm{s}$ by way of registering $\mathcal{S}_1$ to map $\bm{M}$.
 
 
-Given an input pose estimate $\bm{p}_0(x_0, y_0, \theta_0)$, range scan
-$\mathcal{S}_1$, the map $\bm{M}$, and a sampling degree $\nu$, the One-step
-Pose Estimation system (fig. \ref{fig:fsm_inner}) first calculates $2^\nu$ pose
-estimates of $\bm{p}_1$: $\bm{P}_{OC} = \{(x_0, y_0, \theta_0^k)\}$,
-$k = 0,\dots,2^\nu$$-$$1$, according to the orientation estimation method
-described in section \ref{subsec:method_orientation_correction}.
-
-If the location of $\bm{p}_0$ coincided with the location of $\bm{p}_1$, the
-Percent Discrimination metric (eq. (\ref{eq:pd})) would suffice in serving as an
-accurate determinant of the orientation of $\bm{p}_1$.  In practice, however,
+Given an input pose estimate $\hat{\bm{p}}_1(\hat{x}_1, \hat{y}_1,
+\hat{\theta}_1)$, range scan $\mathcal{S}_1$, the map $\bm{M}$, and a sampling
+degree $\nu$, the One-step Pose Estimation system (fig. \ref{fig:fsm_inner})
+first calculates $2^\nu$ pose estimates of $\bm{p}_1$: $\bm{P}_{OC} =
+\{(\hat{x}_1, \hat{y}_1, \hat{\theta}_1^k)\}$, $k = 0,\dots,2^\nu$$-$$1$,
+according to the orientation estimation method described in section
+\ref{subsec:method_orientation_correction}. The initial pose estimate of
+$\bm{p}_1$ is $\hat{\bm{p}}_1 = \bm{s}$.
+If scans $\mathcal{S}_0$ and
+$\mathcal{S}_1$ were captured from the location, then the Percent
+Discrimination metric (eq. (\ref{eq:pd})) would suffice in serving as an
+accurate determinant of the orientation of $\bm{p}_1$. In practice, however,
 the ranking provided by the Percent Discrimination metric is confounded by the
 incoincidence of the two locations. In order to mitigate this effect, each pose
-estimate in $\bm{P}_{OC}$ is given over to the Position Estimation
-system, where the position of each pose estimate is displaced once ($I$=$1$),
-according to the method described in section
-\ref{subsec:method_location_correction}. This operation produces the pose set
-$\bm{P}_{RPC} = \{(x_0^k, y_0^k, \theta_0^k)\}$, $|\bm{P}_{RPC}| = 2^\nu$. The
-purpose of this operation is for it to provide an advance view of the next step
-of location estimation: the less rotationally misaligned a pose estimate of
-$\bm{p}_1$ is, the less it will diverge in terms of orientation and hence
-position with respect to $\bm{p}_1$ once inputted to the position estimation
-system. This divergence is captured by the Cumulative Absolute Error per Ray
-(CAER) metric:
-\begin{align} \text{CAER}_k =
-  & \sum\limits_{n=0}^{N_s-1} \Bigg| \mathcal{S}_1[n] -
-  \mathcal{S}_V[n]\Big|_{(\hat{x}_k, \hat{y}_k, \hat{\theta}_k)} \Bigg|
+estimate in $\bm{P}_{OC}$ is given over to the Position Estimation system,
+where the position of each pose estimate is displaced once ($I=1$), according
+to the method described in section \ref{subsec:method_location_correction}.
+This operation produces the pose set
+$\bm{P}_{RPC} = \{(\hat{x}_1^k, \hat{y}_1^k, \hat{\theta}_1^k)\}$,
+$|\bm{P}_{RPC}| = 2^\nu$. The purpose of this operation is for it to provide an
+advance view of the next step of location estimation: the less rotationally
+misaligned a pose estimate of $\bm{p}_1$ is, the less it will diverge in terms
+of orientation and hence position with respect to $\bm{p}_1$ once inputted to
+the position estimation system. This divergence is captured by the Cumulative
+Absolute Error per Ray (CAER) metric:
+\begin{align}
+  \text{CAER}_k = & \sum\limits_{n=0}^{N_s-1} \Bigg| \mathcal{S}_1[n] - \mathcal{S}_V^k[n]\Big|_{(\hat{x}_1^k, \hat{y}_1^k, \hat{\theta}_1^k)} \Bigg|
+  \label{eq:caer}
 \end{align}
-where $\mathcal{S}_V$ is the map-scan captured from $(\hat{x}_k, \hat{y}_k,
-\hat{\theta}_k)$, $k$ = $0,\dots,2^\nu$$-$$1$, within $\bm{M}$. The CAER metric
+where $\mathcal{S}_V^k$ is the map-scan captured from
+$(\hat{x}_1^k, \hat{y}_1^k, \hat{\theta}_1^k)$, $k$ = $0,\dots,2^\nu$$-$$1$, within $\bm{M}$. The CAER metric
 encodes at the same time a degree of alignment of position and orientation
 between its two input scans. By rehearsing the position estimation of each pose
 estimate in $\bm{P}_{OC}$ and capturing the CAER for each of its displaced pose
@@ -69,32 +69,46 @@ is an increasing function in the degree of map sampling $\nu$.
 %translational iteration values.  As the orientation estimate becomes ever more
 %accurate, the Position Estimation system is let to iterate more times so that
 %further reduction of the position error be feasible.}
-The Position Estimation system produces $\bm{p}_0^\prime$, which is then fed
-back to the Orientation Estimation system in the form of a new pose estimate
-of $\bm{p}_1$: $\bm{p}_0 \leftarrow \bm{p}_0^\prime$. In practice, the pose set
-$\bm{P}_{OC}$ is supplemented with one pose whose location component is equal
-to $\bm{p}_0$ and whose orientation is equal to the orientation of $\bm{p}_C$
-that produces the minimum CAER over time. This addition introduces a form of
-memory to the system, which assists it in avoiding divergence and which,
-therefore, benefits speed of execution.
+The Position Estimation system produces $\hat{\bm{p}}_1^\prime$, which is then
+fed back to the Orientation Estimation system in the form of a new pose
+estimate of $\bm{p}_1$: $\hat{\bm{p}}_1 \leftarrow \hat{\bm{p}}_1^\prime$. In
+practice, the pose set $\bm{P}_{OC}$ is supplemented with one pose whose
+location component is equal to $\hat{\bm{p}}_1$ and whose orientation is equal
+to the orientation of $\bm{p}_C$ that produces the minimum CAER over time. This
+addition introduces a form of memory to the system, which assists it in
+avoiding divergence and which, therefore, benefits speed of execution.
 
+\begin{figure}[]\centering
+  \input{./figures/caer.tex}
+  \vspace{1cm}
+  \caption{\small A profile of the CAER metric (eq. (\ref{eq:caer})) from
+           $10^6$ pairs of sample scans depending on the distance
+           $(\Delta x^2 + \Delta y^2)^{1/2}$ and relative orientation
+           $\Delta \theta$ of the poses from where the two scans were captured.
+           Pose estimates closer to the true pose in terms of orientation
+           (a) exhibit lower CAER values than those further away from it and (b)
+           produce lower location errors once inputted to the Location
+           Estimation system}
+  \label{fig:caer}
+\end{figure}
 
-Given pose $\bm{p}_0$, range scan $\mathcal{S}_1$, and the map $\bm{M}$, the
-pose estimation method proposed iteratively invokes the One-step Pose
+Given pose $\hat{\bm{p}}_1$, range scan $\mathcal{S}_1$, and the map $\bm{M}$,
+the pose estimation method proposed iteratively invokes the One-step Pose
 Estimation process until a set of termination conditions is met. Denoting the
 former by FSM (Fourier Scan Matching), FSM starts off with an initial degree of
-sampling the map $\nu$ = $\nu_{\min}$. The input pose estimate  $\bm{p}_0$ is
-processed by the One-step Pose Estimation process, and its output
-$\bm{p}_0^\prime$ is examined with regard to Recovery and Convergence
-conditions. If the resulting pose estimate falls outside of the map $\bm{M}$
-then a new pose estimate is generated from the initially supplied pose
-estimate, and the process is reset.  If no significant pose estimate correction
-is observed $\|\bm{p}_0^\prime-\bm{p}_0\|_2 < \varepsilon_{\delta p}$, then the
-degree of map sampling $\nu$ is increased.  Its increase serves as a means of
-reducing the orientation and hence the position estimate error further.
-Otherwise, the One-step Pose Estimation process is iterated until a maximum
-degree of map sampling is reached $\nu$ = $\nu_{\max}$, at which point FSM
-terminates. Its output is $\bm{p}_0^\prime$, which is the pose estimate of
-$\bm{p}_1$ in the frame of reference of $\bm{M}$. The roto-translation
-$\hat{\bm{T}} = \bm{p}_0^\prime - \bm{p}_0$ is the estimate of the sensor's
-true motion $\bm{T}$.
+sampling the map $\nu$ = $\nu_{\min}$. The input pose estimate
+$\hat{\bm{p}}_1$ is processed by the One-step Pose Estimation process, and its
+output $\hat{\bm{p}}_1^\prime$ is examined with regard to Recovery and
+Convergence conditions. If the resulting pose estimate falls outside of the map
+$\bm{M}$ then a new pose estimate is generated from the initially supplied pose
+estimate $\bm{s}$, and the process is reset.  If no significant pose estimate
+correction is observed $\|\hat{\bm{p}}_1^\prime-\hat{\bm{p}}_1\|_2 <
+\varepsilon_{\delta p}$, then the degree of map sampling $\nu$ is increased.
+Its increase serves as a means of reducing the orientation and hence the
+position estimate error further.  Otherwise, the One-step Pose Estimation
+process is iterated until a maximum degree of map sampling is reached $\nu$ =
+$\nu_{\max}$, at which point FSM terminates. Its output is
+$\hat{\bm{p}}_1^\prime$, which is the pose estimate of $\bm{p}_1$ in the frame
+of reference of $\bm{M}$. The roto-translation $\hat{\bm{T}} =
+\hat{\bm{p}}_1^\prime - \bm{s}$ is the estimate of the sensor's true motion
+$\bm{T}$.

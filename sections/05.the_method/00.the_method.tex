@@ -1,11 +1,11 @@
-The problem is iteratively decomposed into two disjunctive sub-problems. The
-first is estimating the relative orientation of $\mathcal{S}_1$ with respect to
-$\mathcal{S}_0$ under the assumption that both are captured from the same
-location. The second is estimating the relative displacement of $\mathcal{S}_1$
-with respect to $\mathcal{S}_0$ under the assumption that both are captured
-from poses of the same orientation. Solving the first sub-problem is followed
-by the solution to the second sub-problem. This process is iterated until
-termination conditions are met.
+The panoramic 2D scan-matching problem is iteratively decomposed into two
+disjunctive sub-problems. The first is estimating the relative orientation of
+$\mathcal{S}_1$ with respect to $\mathcal{S}_0$ under the assumption that both
+are captured from the same location. The second is estimating the relative
+displacement of $\mathcal{S}_1$ with respect to $\mathcal{S}_0$ under the
+assumption that both are captured from poses of the same orientation. Solving
+the first sub-problem is followed by the solution to the second sub-problem.
+This process is iterated until termination conditions are met.
 
 The orientation and location estimation submethods are presented in subsections
 \ref{subsec:method_orientation_correction} and

@@ -1,5 +1,4 @@
-This section serves to test the efficacy and performance of the proposed
-method. The experimental procedure was conducted using a benchmark dataset $D$
+The experimental procedure was conducted using a benchmark dataset $D$
 consisting of $|D| = 778$ laser scans obtained from a Sick range-scan sensor
 mounted on a robotic wheel-chair \cite{dataset_link}. For
 each scan $D^d$, $d = 1,\dots,778$, the dataset reports one range scan of $360$
@@ -19,8 +18,7 @@ scan-matching method \cite{ndt1}.
 The experimental setup is the following. The rays of each dataset instance
 $D^d$ are first projected to the $x-y$ plane around $\bm{r}^d$. The dataset's
 scans are not panoramic, therefore the remaining space is filled with a
-semicircular arc that joins the scan's two extreme ends. Its radius is set to
-the minimum range between the two extreme rays of $D^d$. Similar fashions for
+semicircular arc that joins the scan's two extreme ends. Similar fashions for
 closing-off the environment have been found equivalent with respect to the
 performance of the tested methods. The resulting point-set is regarded as the
 environment $\bm{W}^d$ in which the range sensor operates.  Then the pose
@@ -39,20 +37,17 @@ locating the intersection points between $N_s$ rays emanating from $\bm{p}_0^d$
 and $\bm{p}_1^d$, respectively, and the polygon formed by $\bm{W}^d$ across an
 angular field of view $\lambda = 2\pi$. The inputs to CSM, NDT, and FSM are
 then set to $\mathcal{S}_0^d$ and $\mathcal{S}_1^d$. Their output is
-$\bm{p}_0^{\prime d}$, which is the pose estimate of $\bm{p}_1^d$ in the frame
-of reference of $\bm{M}^d$. The roto-translation
-$\hat{\bm{T}}^d = \bm{p}_0^{\prime d}-\bm{p}_0^d$ is the estimate of the motion
-of the range sensor $\bm{T}^d = \bm{p}_1^d - \bm{p}_0^d$. The criterion on
+$\bm{p}_1^{\prime d}$. The roto-translation
+$\hat{\bm{T}}^d = \bm{p}_1^{\prime d}$ is the estimate of the motion
+$\bm{T}^d = \bm{p}_1^d - \bm{p}_0^d$ of the range sensor. The criterion on
 which the evaluation of all experiments rests is the $2$-norm of the total pose
 displacement error
 \begin{align}
-  e &= (\Delta \bm{T}^\top \cdot \Delta \bm{T})^{1/2}
+  e^d &= \| \bm{T}^d - \hat{\bm{T}}^d \|_2
   \label{eq:rototranslation_error}
 \end{align}
-where $\Delta \bm{T} = \bm{T} - \hat{\bm{T}}$;
-$\bm{T} = (\Delta x, \Delta y, \Delta \theta) = \bm{p}_1 - \bm{p}_0$, and
-$\hat{\bm{T}} = (\Delta \hat{x}, \Delta \hat{y}, \Delta \hat{\theta}) = \bm{p}_0^\prime - \bm{p}_0$,
-For every pose estimate $\bm{p}_0^{\prime d}$ outputted by
+
+For every pose estimate $\bm{p}_1^{\prime d}$ outputted by
 each algorithm, $d = 1,2,\dots,|D|$, its offset from the actual pose
 $\bm{p}_1^d$ is recorded in the form of the $2$-norm total error. The pose
 errors of one experiment are then averaged. The pose error distributions
@@ -80,7 +75,9 @@ translational component at each map sampling degree $\nu$ was set at $I =
 = 10$e-$5$. Maximal displacements $\overline{\delta}_{xy}$ and
 $\overline{\delta}_\theta$ were chosen as such by prior art tests \cite{plicp}.
 For each experiment FSM, CSM, and NDT ran for $E = 100$ times across all
-instances of $D$. All experiments and algorithms were run serially, in C++, on
+instances of $D$. Therefore each method underwent a total of
+$100 \times 778 \times 6 \times 5 \sim O(10^6)$ experiments.
+All experiments and algorithms were run serially, in C++, on
 a single thread, on a machine with a CPU frequency of $4.0$ GHz. The
 implementations of CSM and NDT were taken from \cite{csm_implementation} and
 \cite{ndt_implementation}.

@@ -2,13 +2,14 @@ Let the assumptions of Problem \ref{prob:the_problem} be standing. Assume that
 the two scans were captured from the same location but from different
 orientations. Denoting with $\mathcal{F}\{\mathcal{S}\}$ the Discrete Fourier
 Transform of signal $\mathcal{S}$, with $\mathcal{F}^{-1}\{\mathcal{S}\}$
-its inverse, and with $\bm{c}^\ast$ the conjugate of complex $\bm{c}$, calculate
+its inverse, with $\bm{c}^\ast$ the conjugate of complex $\bm{c}$, and with
+$|\bm{c}|$ its magnitude, calculate
 $Q_{\mathcal{S}_0, \mathcal{S}_1}$:
 \begin{align}
   Q_{\mathcal{S}_0, \mathcal{S}_1} \triangleq \dfrac{\mathcal{F}\{\mathcal{S}_0\}^{\ast} \cdot \mathcal{F}\{\mathcal{S}_1\}}{|\mathcal{F}\{\mathcal{S}_0\}| \cdot |\mathcal{F}\{\mathcal{S}_1\}|}
 \end{align}
 on the basis that if space is sampled sufficiently densely, for
-$k,\xi \in [0, N_s-1]$, $k,\xi \in \mathbb{Z}$:
+$k,\xi \in \mathbb{Z}$: $k,\xi \in [0, N_s-1]$,
 \begin{align}
   \mathcal{S}_0[k] &\simeq \mathcal{S}_1[(k - \xi) \mod N_s] \Leftrightarrow \nonumber \\
   \mathcal{F}\{\mathcal{S}_0\}(u) &\simeq e^{-j 2\pi \xi u / N_s} \cdot \mathcal{F}\{\mathcal{S}_1\}(u) \nonumber
@@ -38,16 +39,16 @@ scan-matching error is two-fold, as its existence is also propagated to the
 location estimation method. In the following, a method for further reduction of
 the orientation error is presented.
 
-Let $\mathcal{S}_0$ be projected onto the 2D plane around an arbitrary but
-fixed pose $\bm{p}_0(x_0, y_0, \theta_0)$, producing point-set $\bm{M}_R$, which
-will hereafter be referred to as the map. Then compute $2^\nu$ map-scans (def.
-\ref{def:definition_3}) $\mathcal{S}_0^k$, $k = 0,\dots,2^\nu-1$, starting from
-orientation $\theta_0$, at $\gamma / 2^\nu$ angular increments. Then the
-orientation estimation process is carried out once between $\mathcal{S}_1$ and
-map scan $\mathcal{S}_0^k$ taken from orientation $\theta_0^k = \theta_0 +
-k \cdot \gamma / 2^\nu$, for a total of $2^\nu$ times. An alignment metric
-between the $k$-th map scan $\mathcal{S}_0^k$ and scan $\mathcal{S}_1$ is
-computed according to
+Let $\mathcal{S}_0$ be projected onto the $x-y$ plane around an arbitrary but
+fixed pose $\bm{s}(x_s, y_s, \theta_s)$, producing point-set $\bm{M}_R$.
+$\bm{M}_R$ will hereafter be referred to as the map. Then compute $2^\nu$
+map-scans (def. \ref{def:definition_3}) $\mathcal{S}_0^k$,
+$k = 0,\dots,2^\nu-1$, starting from orientation $\theta_s$, at $\gamma / 2^\nu$
+angular increments. Then the orientation estimation process is carried out once
+between $\mathcal{S}_1$ and map scan $\mathcal{S}_0^k$ taken from orientation
+$\theta_0^k = \theta_s + k \cdot \gamma / 2^\nu$, for a total of $2^\nu$ times.
+An alignment metric between the $k$-th map scan $\mathcal{S}_0^k$ and scan
+$\mathcal{S}_1$ is computed according to
 \begin{align}
   \text{PD}_k = \dfrac{2 \max q_{\mathcal{S}_0^k,\mathcal{S}_1}}{\max q_{\mathcal{S}_0^k,\mathcal{S}_0^k} + \max q_{\mathcal{S}_1,\mathcal{S}_1}}
   \label{eq:pd}
