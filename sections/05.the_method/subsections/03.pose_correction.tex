@@ -13,6 +13,17 @@ is to estimate the pose $\bm{p}_1$ from where $\mathcal{S}_1$ was captured
 relative to $\bm{s}$ by way of registering $\mathcal{S}_1$ to map $\bm{M}$.
 
 
+\begin{figure}[]\centering
+  \input{./figures/inner_system.tikz}
+  \caption{\small FSM iteratively invokes the One-step Pose Estimation method.
+           Given a pose estimate of where scan $\mathcal{S}_1$ was captured
+           within $\bm{M}$, the method attempts to register $\mathcal{S}_1$ to
+           $\bm{M}$ by estimating first its relative orientation and then its
+           location with respect to the input pose estimate}
+  \label{fig:fsm_inner}
+\end{figure}
+
+
 Given an input pose estimate $\hat{\bm{p}}_1(\hat{x}_1, \hat{y}_1,
 \hat{\theta}_1)$, range scan $\mathcal{S}_1$, the map $\bm{M}$, and a sampling
 degree $\nu$, the One-step Pose Estimation system (fig. \ref{fig:fsm_inner})
@@ -78,11 +89,11 @@ to the orientation of $\bm{p}_C$ that produces the minimum CAER over time. This
 addition introduces a form of memory to the system, which assists it in
 avoiding divergence and which, therefore, benefits speed of execution.
 
-\begin{figure}[]\centering
+\begin{figure}[]\hspace{1cm}
   \input{./figures/caer.tex}
   \vspace{1cm}
   \caption{\small A profile of the CAER metric (eq. (\ref{eq:caer})) from
-           $10^6$ pairs of sample scans depending on the distance
+           $10^6$ pairs of sample scans, depending on the distance
            $(\Delta x^2 + \Delta y^2)^{1/2}$ and relative orientation
            $\Delta \theta$ of the poses from where the two scans were captured.
            Pose estimates closer to the true pose in terms of orientation

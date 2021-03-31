@@ -69,10 +69,10 @@
 \draw (150,44.57) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\bm{M}$};
 % Text Node
 \draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]  (200,174) -- (322,174) -- (322,215) -- (200,215) -- cycle  ;
-\draw (203,180) node [anchor=north west][inner sep=0.75pt]  [align=left] {\ \ \ \ \ \ Rehearsal \\ \ Location Estimation};
+\draw (200,180) node [anchor=north west][inner sep=0.75pt]  [align=left] {\ \ \ \ \ \ Rehearsal \\ \ Location Estimation};
 % Text Node
 \draw    (191,253) -- (330,253) -- (330,279) -- (191,279) -- cycle  ;
-\draw (194,257) node [anchor=north west][inner sep=0.75pt]   [align=left] {\ \ \ $\bm{C} = \text{CAER}(\bm{P}_{RPC})$};
+\draw (191,260) node [anchor=north west][inner sep=0.75pt]   [align=left] {\ \ \ $\bm{C} = \text{CAER}(\bm{P}_{RPC})$};
 % Text Node
 \draw (358,187) node [anchor=north west][inner sep=0.75pt]   [align=left] {$I = 1$};
 % Text Node
@@ -81,13 +81,13 @@
 % Text Node
 \draw (253,372.67) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\hat{\bm{p}}_1^\prime$};
 % Text Node
-\draw (271,145.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\bm{P}_{OC} = \text{OC}(\hat{\bm{p}}_1, \nu)$};
+\draw (271,147.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\bm{P}_{OC} = \text{OC}(\hat{\bm{p}}_1, \nu)$};
 % Text Node
 \draw (363,323) node [anchor=north west][inner sep=0.75pt]   [align=left] {$I = f( \nu )$};
 % Text Node
-\draw (271,223.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\bm{P}_{RPC} = \text{RPC}(\bm{P}_{OC})$};
+\draw (271,225.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\bm{P}_{RPC} = \text{RPC}(\bm{P}_{OC})$};
 % Text Node
-\draw (188,284.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\bm{p}_{C} \in \bm{P}_{OC} : \text{CAER}(\text{RPC}(\bm{p}_C)) = \min\{\bm{C}\}$};
+\draw (188,288.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\bm{p}_{C} \in \bm{P}_{OC} : \text{CAER}(\text{RPC}(\bm{p}_C)) = \min\{\bm{C}\}$};
 
 
 \end{tikzpicture}

@@ -1,40 +1,70 @@
-Scan-matching is employed in robotics as a means to odometry,
-primarily in non-wheeled robots where no encoders can be utilised, or as a
-useful ameliorator of the ever-drifting encoder-ed odometry: scans captured at
-consecutive time instances, inputted to a scan-matching algorithm, convey an
-estimate as to the pose of the scan sensor at the second capture time
-relative to that captured first. Scan-matching is being successfully employed
-in the tasks of simultaneous localisation and mapping
-\cite{am_odom_1}-\cite{am_odom_3}, local map construction
-\cite{am_odom_4}-\cite{am_odom_6}, and in people-tracking systems
-\cite{am_odom_7}.
+Consider a robot capable of motion, equipped with a Light Detection and Ranging
+sensor (LIDAR), capturing a measurement $\mathcal{S}_0$ at time $t_0$ from pose
+$\bm{p}_0$ in some reference frame. The robot then moves to pose $\bm{p}_1$ at
+time $t_1$ at which time it captures measurement $\mathcal{S}_1$. Provided
+overlap between the two scans, estimating the rigid-body transformation
+$\bm{T}$ that projects the endpoints of $\mathcal{S}_1$ to those of
+$\mathcal{S}_0$ with the least error is known as scan-matching. The solution to
+the scan-matching problem is central to methods of Localisation, Navigation
+\cite{am_odom_4}-\cite{am_odom_6}, and Simultaneous Localisation and Mapping
+(SLAM) \cite{am_odom_1}-\cite{am_odom_3}, as $\bm{T}$ is the rigid-body
+transformation $\bm{p}_1 - \bm{p}_0$: i.e. the solution to scan-matching
+provides localisation information at time $t_1$, relative to $\bm{p}_0$. For
+this reason, along with the high measurement accuracy of LIDAR measurements,
+scan-matching is also used as a means to improving, providing, or substituting
+odometric measurements (where available), as the latter are prone to unbounded
+and unpredictable tire and wheel slippage.
 
-cannot stress enough: the contributions must be layed out and emphasised
-see. olsen 2009 for a pro
+LIDAR sensors with a field of view of $360^\circ$, i.e. panoramic sensors, were
+for years constrained to high price ranges, and most provided 3D measurements.
+Therefore research on scan-matching with 2D LIDAR sensors mostly focused on
+non-panoramic sensors, with scan matching methods being used without distinction
+with regard to field of view. In recent years, however, price-appealing
+2D LIDAR sensors have emerged, but at the cost of increased measurement
+uncertainty. The introduction of these sensors warrants targetted research
+into scan-matching with the use of panoramic LIDAR sensors, due to (a) the
+afforded periodicity of the range signal, and (b) the need of
+addressing the high levels of measurement noise with regard to the
+transformation errors of current scan-matching algorithms.
 
-Contribution: invariant to large angular errors, pseudoinvariant in time of execution, show how to decrease orientation error from fixed number of rays, fourier for both orientation and translation --> robustness,
-not many panoramic 2d scan matchers out there (are there any?): recent years have seen intro of
-cheap panoramic sensors. we exploit properties of fourier for ...
+This paper introduces a method specifically targeting the matching of 2D
+panoramic range scans, whose error is invariant to angular and
+locational displacement for a given level of measurement noise.
+The central contributions of the paper are:
 
-fewer parameters
-
-
-% Maybe motivate panoramic: new sensors, much noise; robustness? or just in the
-% introduction/contribution
-
+\begin{itemize}
+  \item The use of the Discrete Fourier transform, its properties, and its
+        afforded robustness in both orientation and location estimation
+        components of the proposed method
+  \item The extrication from the need of a prior
+  \item The implementation of a method for reducing the orientation error to
+        lower than the sensor's angle increment
+  \item The parameter set needed by the proposed method is intuitive and smaller
+        than those of established methods
+  \item The thorough evaluation of the proposed method against two established
+        scan-matching algorithms in common use
+\end{itemize}
 
 \begin{figure}[]\centering
+  \vspace{-1.7cm}
   \input{./figures/odom_test_5_vs_6.tex}
-  \caption{\small}
-  \label{fig:}
+  \vspace{-2.3cm}
+  \caption{\small Scan-matching as ``laser odometry": the robot moves from the
+           lower left portion of the environment to the upper right, capturing
+           2D range scans along its trajectory (black). The red (CSM), blue
+           (NDT), and green (our method) routes show the estimated path of the
+           robot derived from each method. Left figure: frequent LIDAR
+           measurements.  Right figure: a downsampled version of the original
+           trajectory. The proposed method's error is invariant to angular and
+           locational displacement}
+  \label{fig:laser_odometry}
 \end{figure}
 
-\begin{figure}[]\centering
-  \input{./figures/inner_system.tikz}
-  \caption{\small FSM iteratively invokes the One-step Pose Estimation method.
-           Given a pose estimate of where scan $\mathcal{S}_1$ was captured
-           within $\bm{M}$, the method attempts to register $\mathcal{S}_1$ to
-           $\bm{M}$ by estimating first its relative orientation and then its
-           location with respect to the input pose estimate}
-  \label{fig:fsm_inner}
-\end{figure}
+The rest of the paper is structured as follows. Section
+\ref{section:definitions} defines necessary notions.  The problem of matching
+panoramic 2D range scans is formulated in section \ref{section:the_problem},
+and a brief review of methods matching 2D range scans is given in section
+\ref{section:sota}. Section \ref{section:the_proposed_method} provides an
+analysis of the proposed method. The experimental setup and results of the
+proposed method against two methods in common use are illustrated in section
+\ref{section:results}. Section \ref{section:finale} offers a recapitulation.

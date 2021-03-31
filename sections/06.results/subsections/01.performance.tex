@@ -3,7 +3,9 @@ Figure \ref{fig:errors_sm} shows the distribution of roto-translation errors
 NDT (blue), and the proposed method of FSM (green).
 
 \begin{figure}[]\centering
+  \vspace{-1.5cm}
   \input{./figures/experiments/errors_CSM_NDT_implm6_short.tex}
+  \vspace{-1.5cm}
   \caption{\small Distribution of mean errors of CSM (red), NDT (blue), and
            FSM (our approach) across a range of maximal positional and
            orientational displacements, for progressively larger sensor
@@ -26,11 +28,12 @@ or lower than CSM across the entirety of the spectrum of tested noise levels.
 Compared to the equally correspondenceless method of NDT, FSM exhibits greater
 accuracy across all tested configurations. The magnitude and variability of
 FSM's errors for a given level of sensor noise is independent of the
-displacement of the two input scans. The juxtaposition of the three methods'
-pose errors at high levels of sensor noise highlight the robustness afforded to
-FSM by the Discrete Fourier transform and its properties. In terms of execution
-time, CSM ranged from $4.8$ to $20.5$ ms, NDT from $8.1$ to $19.9$ ms, and FSM
-from $13.2$ to $16.7$ ms. Therefore FSM's exhibits the least variability to
-sensor noise and locational and orientational displacement in terms of runtime.
-The measurement frequency of modern LIDAR sensors ranges from $12$-$20$ Hz;
-therefore FSM runs in real time in modern processors.
+displacement of the two input scans (fig. \ref{fig:laser_odometry}). The
+juxtaposition of the three methods' pose errors at high levels of sensor noise
+highlight the robustness afforded to FSM by the Discrete Fourier transform and
+its properties. In terms of execution time, CSM ranged from $4.8$ to $20.5$ ms,
+NDT from $8.1$ to $19.9$ ms, and FSM from $13.2$ to $16.7$ ms. Therefore FSM's
+exhibits the least variability to sensor noise and locational and orientational
+displacement in terms of runtime.  The measurement frequency of modern LIDAR
+sensors ranges from $12$-$20$ Hz; therefore FSM runs in real time in modern
+processors.
