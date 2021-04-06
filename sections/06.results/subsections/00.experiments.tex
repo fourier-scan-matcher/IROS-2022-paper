@@ -4,9 +4,9 @@ mounted on a robotic wheel-chair \cite{dataset_link}. For
 each scan $D^d$, $d = 1,\dots,778$, the dataset reports one range scan of $360$
 range measurements and the pose from which it was captured
 $\bm{r}^d(x,y,\theta)$.  The same dataset was used to evaluate the performance
-of IDC \cite{idc}, ICP, and MBICP in \cite{mbicp}, and that of PLICP and the
-joint method PLICP$\circ$GPM during scan-matching experiments. In \cite{plicp}
-the latter was found to be the best-performing among the five
+of IDC \cite{LuMilios}, ICP, and MBICP in \cite{mbicp}, and that of PLICP and
+the joint method PLICP$\circ$GPM during scan-matching experiments. In
+\cite{plicp} the latter was found to be the best-performing among the five
 correspondence-finding scan-matching methods. Therefore, for purposes of
 comparison against correspondence-finding scan-matching methods, the
 experimental procedure is extended to PLICP$\circ$GPM. This method shall be
@@ -80,4 +80,4 @@ $100 \times 778 \times 6 \times 5 \sim O(10^6)$ experiments.
 All experiments and algorithms were run serially, in C++, on
 a single thread, on a machine with a CPU frequency of $4.0$ GHz. The
 implementations of CSM and NDT were taken from \cite{csm_implementation} and
-\cite{ndt_implementation}.
+\cite{ndt_implementation} respectively.

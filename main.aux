@@ -16,16 +16,37 @@
 \gdef\HyperFirstAtBeginDocument#1{#1}
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
-\citation{am_odom_4}
-\citation{am_odom_6}
-\citation{am_odom_1}
-\citation{am_odom_3}
-\citation{lidar}
+\citation{lidar_localisation_1}
+\citation{lidar_localisation_2}
+\citation{lidar_navigation_1}
+\citation{lidar_navigation_4}
+\citation{lidar_slam_1}
+\citation{lidar_slam_5}
+\citation{olson}
+\citation{lidar_odom_3}
 \@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{section.1}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  Scan-matching as ``laser odometry": the robot moves from the lower left portion of the environment to the upper right, capturing 2D range scans along its trajectory (black). The red (CSM), blue (NDT), and green (our method) routes show the estimated path of the robot derived from each method. Left figure: frequent LIDAR measurements. Right figure: a downsampled version of the original trajectory. The proposed method's error is invariant to angular and locational displacement\relax }}{1}{figure.caption.1}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:laser_odometry}{{1}{1}{\small Scan-matching as ``laser odometry": the robot moves from the lower left portion of the environment to the upper right, capturing 2D range scans along its trajectory (black). The red (CSM), blue (NDT), and green (our method) routes show the estimated path of the robot derived from each method. Left figure: frequent LIDAR measurements. Right figure: a downsampled version of the original trajectory. The proposed method's error is invariant to angular and locational displacement\relax }{figure.caption.1}{}}
-\citation{fmt2d}
+\citation{lidar}
+\citation{LuMilios}
+\citation{ICP}
+\citation{weighted}
+\citation{plicp}
+\citation{ICP_var_1}
+\citation{Marchel}
+\citation{plicp}
+\citation{icp_comp_trade}
+\citation{CLS}
+\citation{Haytham}
+\citation{Wen}
+\citation{Jiayuan}
+\citation{Jiaxin}
+\citation{olson}
+\citation{olson_2015}
+\citation{Konecny}
+\citation{HSM}
+\citation{PB_PSM}
 \@writefile{toc}{\contentsline {section}{\numberline {II}Definitions}{2}{section.2}}
 \newlabel{section:definitions}{{II}{2}{Definitions}{section.2}{}}
 \newlabel{def:definition_1}{{I}{2}{}{definition.1}{}}
@@ -40,8 +61,9 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {V-A}Estimation of Relative Orientation}{2}{subsection.5.1}}
 \newlabel{subsec:method_orientation_correction}{{V-A}{2}{Estimation of Relative Orientation}{subsection.5.1}{}}
 \newlabel{eq:Q0}{{2}{2}{Estimation of Relative Orientation}{equation.5.2}{}}
-\newlabel{eq:pd}{{4}{2}{Estimation of Relative Orientation}{equation.5.4}{}}
+\citation{fmt2d}
 \citation{olson}
+\newlabel{eq:pd}{{4}{3}{Estimation of Relative Orientation}{equation.5.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {V-B}Estimation of Relative Location}{3}{subsection.5.2}}
 \newlabel{subsec:method_location_correction}{{V-B}{3}{Estimation of Relative Location}{subsection.5.2}{}}
 \newlabel{prop:theorem_without_disturbance}{{I}{3}{}{theorem.1}{}}
@@ -49,66 +71,89 @@
 \newlabel{eq:control_vector_without_disturbance}{{6}{3}{}{equation.5.6}{}}
 \newlabel{eq:X1}{{7}{3}{}{equation.5.7}{}}
 \newlabel{prop:theorem_with_disturbance}{{II}{3}{}{theorem.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {V-C}Joint Estimation of Relative Orientation and Location}{3}{subsection.5.3}}
-\newlabel{subsec:method_pose_correction}{{V-C}{3}{Joint Estimation of Relative Orientation and Location}{subsection.5.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  FSM iteratively invokes the One-step Pose Estimation method. Given a pose estimate of where scan $\mathcal  {S}_1$ was captured within $\bm  {M}$, the method attempts to register $\mathcal  {S}_1$ to $\bm  {M}$ by estimating first its relative orientation and then its location with respect to the input pose estimate\relax }}{4}{figure.caption.2}}
+\newlabel{fig:fsm_inner}{{2}{4}{\small FSM iteratively invokes the One-step Pose Estimation method. Given a pose estimate of where scan $\mathcal {S}_1$ was captured within $\bm {M}$, the method attempts to register $\mathcal {S}_1$ to $\bm {M}$ by estimating first its relative orientation and then its location with respect to the input pose estimate\relax }{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {V-C}Joint Estimation of Relative Orientation and Location}{4}{subsection.5.3}}
+\newlabel{subsec:method_pose_correction}{{V-C}{4}{Joint Estimation of Relative Orientation and Location}{subsection.5.3}{}}
+\newlabel{eq:caer}{{8}{4}{Joint Estimation of Relative Orientation and Location}{equation.5.8}{}}
 \citation{dataset_link}
-\citation{idc}
+\citation{LuMilios}
 \citation{mbicp}
 \citation{plicp}
 \citation{ndt1}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  FSM iteratively invokes the One-step Pose Estimation method. Given a pose estimate of where scan $\mathcal  {S}_1$ was captured within $\bm  {M}$, the method attempts to register $\mathcal  {S}_1$ to $\bm  {M}$ by estimating first its relative orientation and then its location with respect to the input pose estimate\relax }}{4}{figure.caption.2}}
-\newlabel{fig:fsm_inner}{{2}{4}{\small FSM iteratively invokes the One-step Pose Estimation method. Given a pose estimate of where scan $\mathcal {S}_1$ was captured within $\bm {M}$, the method attempts to register $\mathcal {S}_1$ to $\bm {M}$ by estimating first its relative orientation and then its location with respect to the input pose estimate\relax }{figure.caption.2}{}}
-\newlabel{eq:caer}{{8}{4}{Joint Estimation of Relative Orientation and Location}{equation.5.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  A profile of the CAER metric (eq. (\ref  {eq:caer})) from $10^6$ pairs of sample scans, depending on the distance $(\Delta x^2 + \Delta y^2)^{1/2}$ and relative orientation $\Delta \theta $ of the poses from where the two scans were captured. Pose estimates closer to the true pose in terms of orientation (a) exhibit lower CAER values than those further away from it and (b) produce lower location errors once inputted to the Location Estimation system\relax }}{4}{figure.caption.3}}
-\newlabel{fig:caer}{{3}{4}{\small A profile of the CAER metric (eq. (\ref {eq:caer})) from $10^6$ pairs of sample scans, depending on the distance $(\Delta x^2 + \Delta y^2)^{1/2}$ and relative orientation $\Delta \theta $ of the poses from where the two scans were captured. Pose estimates closer to the true pose in terms of orientation (a) exhibit lower CAER values than those further away from it and (b) produce lower location errors once inputted to the Location Estimation system\relax }{figure.caption.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VI}Results}{4}{section.6}}
-\newlabel{section:results}{{VI}{4}{Results}{section.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {VI-A}Experimental Design}{4}{subsection.6.1}}
-\newlabel{section:experimental}{{VI-A}{4}{Experimental Design}{subsection.6.1}{}}
 \citation{velodyne_datasheet}
 \citation{a2m8_datasheet}
 \citation{x4_datasheet}
 \citation{plicp}
 \citation{csm_implementation}
 \citation{ndt_implementation}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  A profile of the CAER metric (eq. (\ref  {eq:caer})) from $10^6$ pairs of sample scans, depending on the distance $(\Delta x^2 + \Delta y^2)^{1/2}$ and relative orientation $\Delta \theta $ of the poses from where the two scans were captured. Pose estimates closer to the true pose in terms of orientation (a) exhibit lower CAER values than those further away from it and (b) produce lower location errors once inputted to the Location Estimation system\relax }}{5}{figure.caption.3}}
+\newlabel{fig:caer}{{3}{5}{\small A profile of the CAER metric (eq. (\ref {eq:caer})) from $10^6$ pairs of sample scans, depending on the distance $(\Delta x^2 + \Delta y^2)^{1/2}$ and relative orientation $\Delta \theta $ of the poses from where the two scans were captured. Pose estimates closer to the true pose in terms of orientation (a) exhibit lower CAER values than those further away from it and (b) produce lower location errors once inputted to the Location Estimation system\relax }{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Results}{5}{section.6}}
+\newlabel{section:results}{{VI}{5}{Results}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {VI-A}Experimental Design}{5}{subsection.6.1}}
+\newlabel{section:experimental}{{VI-A}{5}{Experimental Design}{subsection.6.1}{}}
 \newlabel{eq:rototranslation_error}{{9}{5}{Experimental Design}{equation.6.9}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {VI-B}Performance}{5}{subsection.6.2}}
 \newlabel{section:performance}{{VI-B}{5}{Performance}{subsection.6.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusions}{5}{section.7}}
-\newlabel{section:finale}{{VII}{5}{Conclusions}{section.7}{}}
-\bibcite{bible}{1}
-\bibcite{ICP}{2}
-\bibcite{mbicp}{3}
-\bibcite{plicp}{4}
-\bibcite{ICP_var_1}{5}
-\bibcite{ICP_var_2}{6}
-\bibcite{ICP_var_3}{7}
-\bibcite{ICP_var_4}{8}
-\bibcite{ICP_var_5}{9}
-\bibcite{ndt1}{10}
-\bibcite{lidar}{11}
-\bibcite{am_odom_1}{12}
-\bibcite{am_odom_2}{13}
-\bibcite{am_odom_3}{14}
-\bibcite{am_odom_4}{15}
-\bibcite{am_odom_5}{16}
-\bibcite{am_odom_6}{17}
+\bibcite{lidar_localisation_1}{1}
+\bibcite{lidar_localisation_2}{2}
+\bibcite{lidar_navigation_1}{3}
+\bibcite{lidar_navigation_2}{4}
+\bibcite{lidar_navigation_3}{5}
+\bibcite{lidar_navigation_4}{6}
+\bibcite{lidar_slam_1}{7}
+\bibcite{lidar_slam_2}{8}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  Distribution of mean errors of CSM (red), NDT (blue), and FSM (our approach) across a range of maximal positional and orientational displacements, for progressively larger sensor measurement noise levels. The variability of FSM's rigid body transformation error is consistent across all configurations. Its error is independent of the initial displacement of scans for a given level of sensor noise\relax }}{6}{figure.caption.4}}
 \newlabel{fig:errors_sm}{{4}{6}{\small Distribution of mean errors of CSM (red), NDT (blue), and FSM (our approach) across a range of maximal positional and orientational displacements, for progressively larger sensor measurement noise levels. The variability of FSM's rigid body transformation error is consistent across all configurations. Its error is independent of the initial displacement of scans for a given level of sensor noise\relax }{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusions}{6}{section.7}}
+\newlabel{section:finale}{{VII}{6}{Conclusions}{section.7}{}}
 \@writefile{toc}{\contentsline {section}{References}{6}{section*.5}}
-\bibcite{am_odom_7}{18}
-\bibcite{leordeau}{19}
-\bibcite{pose_selection}{20}
-\bibcite{idc}{21}
-\bibcite{gpm}{22}
-\bibcite{fmt2d}{23}
-\bibcite{olson}{24}
-\bibcite{dataset_link}{25}
-\bibcite{velodyne_datasheet}{26}
-\bibcite{a2m8_datasheet}{27}
-\bibcite{g4_datasheet}{28}
-\bibcite{tg30_datasheet}{29}
-\bibcite{x4_datasheet}{30}
-\bibcite{csm_implementation}{31}
-\bibcite{ndt_implementation}{32}
-\bibcite{icp_comp_trade}{33}
+\bibcite{lidar_slam_3}{9}
+\bibcite{lidar_slam_4}{10}
+\bibcite{lidar_slam_5}{11}
+\bibcite{olson}{12}
+\bibcite{lidar_odom_1}{13}
+\bibcite{lidar_odom_2}{14}
+\bibcite{lidar_odom_3}{15}
+\bibcite{lidar}{16}
+\bibcite{LuMilios}{17}
+\bibcite{ICP}{18}
+\bibcite{weighted}{19}
+\bibcite{trimmedICP}{20}
+\bibcite{mbicp}{21}
+\bibcite{Martinez}{22}
+\bibcite{plicp}{23}
+\bibcite{ICP_var_1}{24}
+\bibcite{ICP_var_2}{25}
+\bibcite{ICP_var_3}{26}
+\bibcite{ICP_var_4}{27}
+\bibcite{ICP_var_5}{28}
+\bibcite{Marchel}{29}
+\bibcite{icp_comp_trade}{30}
+\bibcite{CLS}{31}
+\bibcite{Haytham}{32}
+\bibcite{Wen}{33}
+\bibcite{Jiayuan}{34}
+\bibcite{Jiaxin}{35}
+\bibcite{olson_2015}{36}
+\bibcite{cross_corr}{37}
+\bibcite{Konecny}{38}
+\bibcite{HSM}{39}
+\bibcite{pIC}{40}
+\bibcite{gpm}{41}
+\bibcite{ndt1}{42}
+\bibcite{polar_sm}{43}
+\bibcite{PB_PSM}{44}
+\bibcite{Heng}{45}
+\bibcite{Jiang}{46}
+\bibcite{pose_selection}{47}
+\bibcite{fmt2d}{48}
+\bibcite{dataset_link}{49}
+\bibcite{velodyne_datasheet}{50}
+\bibcite{a2m8_datasheet}{51}
+\bibcite{g4_datasheet}{52}
+\bibcite{tg30_datasheet}{53}
+\bibcite{x4_datasheet}{54}
+\bibcite{csm_implementation}{55}
+\bibcite{ndt_implementation}{56}

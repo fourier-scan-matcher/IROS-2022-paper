@@ -9,7 +9,7 @@ combined in tandem in order to solve Problem \ref{prob:the_problem}.
 Let the assumptions of Problem \ref{prob:the_problem} hold. Then denote by
 $\bm{M}$ the point-set that is the result of the projection of range scan
 $\mathcal{S}_0$ to the $x-y$ plane around $\bm{s}(0,0,0)$. Then the objective
-is to estimate the pose $\bm{p}_1$ from where $\mathcal{S}_1$ was captured
+is estimating the pose $\bm{p}_1$ from where $\mathcal{S}_1$ was captured
 relative to $\bm{s}$ by way of registering $\mathcal{S}_1$ to map $\bm{M}$.
 
 
@@ -64,7 +64,7 @@ estimate for the next iteration of the One-step Pose Estimation
 method.\footnote{Alternatively, correcting the position of $2^\nu$ pose
 estimates and feeding them back to the One-step Pose Estimation method would
 incur exponential costs in time of execution.} The pose estimate $\bm{p}_C \in
-\bm{P}_{OC}$ that, when translated once, records the minimum CAER among all
+\bm{P}_{OC}$ which, when translated once, records the minimum CAER among all
 similarly-treated pose estimates in $\bm{P}_{OC}$ is inputted to the Position
 Estimation method proper. The number of translation iterations $I$ it undergoes
 is an increasing function in the degree of map sampling $\nu$.

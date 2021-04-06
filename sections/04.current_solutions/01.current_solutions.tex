@@ -1,0 +1,23 @@
+Scan-matching with the use of a 2D LIDAR sensor began with IDC \cite{LuMilios},
+an algorithm incorporating elements of the Iterative Closest Point (ICP)
+algorithm \cite{ICP}. The latter and its variants, e.g.
+\cite{weighted}-\cite{plicp}, have become the de facto scan-matching algorithms
+in 2D and 3D settings, and research using ICP is still ongoing
+\cite{ICP_var_1}-\cite{Marchel}. In particular, PL-ICP \cite{plicp} has been
+widely adopted due to its increased accuracy among ICP variants, and the
+availability of its source code. ICP and its variants, however, exhibit varying
+performance \cite{icp_comp_trade}, limited by the noise level in the input
+scans, the choice of prior, and the configuration of the parameters
+governing their response. For these reasons, as well as for reasons of
+robustness, the method of establishing correspondences shifted from
+point-to-point or point-to-line to feature-to-feature. Commonly appearing
+features for recognition are line segments \cite{CLS}\cite{Haytham}\cite{Wen},
+SIFT features \cite{Jiayuan}, or features extracted through the use of deep
+learning techniques \cite{Jiaxin}. In parallel, and for reasons of
+indepencency from chance features or tailoring methods to specific
+circumstances, research sprung around methods that extract or exploit
+mathematical properties from range scans, or that view the problem of
+scan-matching as an optimisation problem. Examples include correlation-based
+methods \cite{olson},\cite{olson_2015}-\cite{Konecny}, feature distribution
+matching \cite{HSM}, or matching by cost function minimisation \cite{PB_PSM}.
+

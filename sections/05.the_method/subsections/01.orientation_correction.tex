@@ -19,7 +19,7 @@ and therefore since $2\pi \dfrac{\xi}{N_s} = \xi \dfrac{2\pi}{N_s} = \xi \gamma$
 \begin{align}
   Q_{\mathcal{S}_0, \mathcal{S}_1}(u) &= \dfrac{\mathcal{F}\{\mathcal{S}_0\}^{\ast} \cdot \mathcal{F}\{\mathcal{S}_1\}}{|\mathcal{F}\{\mathcal{S}_0\}| \cdot |\mathcal{F}\{\mathcal{S}_1\}|}  \nonumber \\
   &\simeq \dfrac{e^{-j \xi \gamma  u} \cdot \mathcal{F}\{\mathcal{S}_1\}^\ast \cdot \mathcal{F}\{\mathcal{S}_1\}}{|e^{-j \xi \gamma u} \cdot \mathcal{F}\{\mathcal{S}_1\}^\ast | \cdot | \mathcal{F}\{\mathcal{S}_1\}|} \nonumber \\
-  &= e^{-j \xi \gamma u} \cdot \dfrac{\mathcal{F}\{\mathcal{S}_1\}^\ast \cdot \mathcal{F}\{\mathcal{S}_1\}}{|\mathcal{F}\{\mathcal{S}_1\} | \cdot | \mathcal{F}\{\mathcal{S}_1\}|} \nonumber \\
+  %&= e^{-j \xi \gamma u} \cdot \dfrac{\mathcal{F}\{\mathcal{S}_1\}^\ast \cdot \mathcal{F}\{\mathcal{S}_1\}}{|\mathcal{F}\{\mathcal{S}_1\} | \cdot | \mathcal{F}\{\mathcal{S}_1\}|} \nonumber \\
   &= e^{-j \xi \gamma u}
   \label{eq:Q0}
 \end{align}
@@ -36,8 +36,8 @@ $\mod(|\delta\theta|, \gamma) = \lambda \in [0,\frac{\gamma}{2}]$. Therefore for
 a given number of emitted rays $N_s$ there remains an unresolved orientation
 error $|\delta\theta| \leq \gamma/2$. The contribution of this error to the
 scan-matching error is two-fold, as its existence is also propagated to the
-location estimation method. In the following, a method for further reduction of
-the orientation error is presented.
+location estimation method. A method for further reduction of
+the orientation error is presented in the following.
 
 Let $\mathcal{S}_0$ be projected onto the $x-y$ plane around an arbitrary but
 fixed pose $\bm{s}(x_s, y_s, \theta_s)$, producing point-set $\bm{M}_R$.
@@ -80,4 +80,4 @@ induced local perturbations in the map of the environment. This holds true
 in the general case as well, where $\mathcal{S}_0$ and $\mathcal{S}_1$ are
 captured from different locations. Therefore the guarantee of
 $|\delta\theta^\prime| \leq \gamma / 2^{1+\nu}$ may not always hold for all
-combinations of environments and sensor angle increments.
+combinations of environments and sensor angle increments. ?? this better ??

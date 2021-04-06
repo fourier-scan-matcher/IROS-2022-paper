@@ -5,15 +5,17 @@ time $t_1$ at which time it captures measurement $\mathcal{S}_1$. Provided
 overlap between the two scans, estimating the rigid-body transformation
 $\bm{T}$ that projects the endpoints of $\mathcal{S}_1$ to those of
 $\mathcal{S}_0$ with the least error is known as scan-matching. The solution to
-the scan-matching problem is central to methods of Localisation, Navigation
-\cite{am_odom_4}-\cite{am_odom_6}, and Simultaneous Localisation and Mapping
-(SLAM) \cite{am_odom_1}-\cite{am_odom_3}, as $\bm{T}$ is the rigid-body
-transformation $\bm{p}_1 - \bm{p}_0$: i.e. the solution to scan-matching
-provides localisation information at time $t_1$, relative to $\bm{p}_0$. For
-this reason, along with the high measurement accuracy of LIDAR measurements,
-scan-matching is also used as a means to improving, providing, or substituting
-odometric measurements (where available), as the latter are prone to unbounded
-and unpredictable tire and wheel slippage.
+the scan-matching problem is central to methods of Localisation
+\cite{lidar_localisation_1}\cite{lidar_localisation_2}, Navigation
+\cite{lidar_navigation_1}-\cite{lidar_navigation_4}, and Simultaneous
+Localisation and Mapping (SLAM) \cite{lidar_slam_1}-\cite{lidar_slam_5}, as
+$\bm{T}$ is the rigid-body transformation $\bm{p}_1$$-$$\bm{p}_0$: i.e. the
+solution to scan-matching provides localisation information at time $t_1$,
+relative to $\bm{p}_0$. For this reason, along with the high measurement
+accuracy of LIDAR measurements, scan-matching is also used as a means to
+improving, providing, or substituting odometric measurements (where available),
+as the latter are prone to unbounded and unpredictable tire and wheel
+slippage \cite{olson}-\cite{lidar_odom_3}.
 
 LIDAR sensors with a field of view of $360^\circ$, i.e. panoramic sensors, were
 for years constrained to high price ranges, and most provided 3D measurements.
@@ -32,17 +34,22 @@ panoramic range scans, whose error is invariant to angular and
 locational displacement for a given level of measurement noise.
 The central contributions of the paper are:
 
+?? maybe say scan matching with only one sensor due to resource overload ??
+?? maybe say that this is the first to target panoramic ??
+
 \begin{itemize}
-  \item The use of the Discrete Fourier transform, its properties, and its
-        afforded robustness in both orientation and location estimation
-        components of the proposed method
-  \item The extrication from the need of a prior
+  %\item The use of the Discrete Fourier transform, its properties, and its
+        %afforded robustness in both orientation and location estimation
+        %components of the proposed method
+  \item The extrication from the need of a prior transformation estimate
   \item The implementation of a method for reducing the orientation error to
-        lower than the sensor's angle increment
-  \item The parameter set needed by the proposed method is intuitive and smaller
-        than those of established methods
+        lower than the sensor's angle increment compared to relevant prior work
+  \item The parameter set needed by the proposed method is intuitive, smaller
+        than those of established methods, and trades accuracy for execution
+        time
   \item The thorough evaluation of the proposed method against two established
-        scan-matching algorithms in common use
+        scan-matching algorithms in common use, using measurement noise levels
+        from common, commercially available sensors
 \end{itemize}
 
 \begin{figure}[]\centering

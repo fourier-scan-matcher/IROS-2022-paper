@@ -400,8 +400,6 @@ INPUT ./figures/odom_test_5_vs_6.eps
 INPUT ./figures/odom_test_5_vs_6-eps-converted-to.pdf
 INPUT ./figures/odom_test_5_vs_6-eps-converted-to.pdf
 INPUT ./figures/odom_test_5_vs_6-eps-converted-to.pdf
-INPUT sections/03.definitions/01.definitions.tex
-INPUT sections/03.definitions/01.definitions.tex
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
@@ -420,6 +418,8 @@ INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/courier/pcrr7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT sections/03.definitions/01.definitions.tex
+INPUT sections/03.definitions/01.definitions.tex
 INPUT sections/02.problem_formulation/01.problem_formulation.tex
 INPUT sections/02.problem_formulation/01.problem_formulation.tex
 INPUT sections/04.current_solutions/01.current_solutions.tex
@@ -449,14 +449,14 @@ INPUT ./figures/caer.eps
 INPUT ./figures/caer-eps-converted-to.pdf
 INPUT ./figures/caer-eps-converted-to.pdf
 INPUT ./figures/caer-eps-converted-to.pdf
-INPUT sections/06.results/00.results.tex
-INPUT sections/06.results/00.results.tex
-INPUT sections/06.results/subsections/00.experiments.tex
-INPUT sections/06.results/subsections/00.experiments.tex
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT sections/06.results/00.results.tex
+INPUT sections/06.results/00.results.tex
+INPUT sections/06.results/subsections/00.experiments.tex
+INPUT sections/06.results/subsections/00.experiments.tex
 INPUT sections/06.results/subsections/01.performance.tex
 INPUT sections/06.results/subsections/01.performance.tex
 INPUT ./figures/experiments/errors_CSM_NDT_implm6_short.tex
