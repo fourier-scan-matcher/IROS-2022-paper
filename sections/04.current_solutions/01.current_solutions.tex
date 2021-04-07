@@ -19,5 +19,24 @@ circumstances, research sprung around methods that extract or exploit
 mathematical properties from range scans, or that view the problem of
 scan-matching as an optimisation problem. Examples include correlation-based
 methods \cite{olson},\cite{olson_2015}-\cite{Konecny}, feature distribution
-matching \cite{HSM}, or matching by cost function minimisation \cite{PB_PSM}.
+matching \cite{HSM}, matching by cost function minimisation \cite{PB_PSM}, and
+probabilistic methods \cite{pIC}\cite{gpm}. Among the latter, the Normal
+Distributions Transform (NDT) \cite{ndt1} has gained popularity due to its
+explicit modeling of measurement and pose uncertainties and its extensibility
+to three dimensions \cite{ndt2}-\cite{ndt6}.
 
+The method introduced in this paper is most akin to those of \cite{Heng} and
+\cite{Jiang}. They use POMF \cite{fmt2d} in both rotation and translation
+components; the latter in two dimensions and the former in one dimension. In
+the latter, the requirements for a real-time solution and adequate accuracy
+could not be fulfilled simultaneously, and therefore a rough prior was used
+as input to ICP in order to overcome the problem. In the former, the orientation
+error is limited by the range sensor's immutable angle increment, but no
+mitigation technique is employed. Secondly, the translation component operates
+in discrete space, thereby being susceptible to discretisation errors and
+larger execution times as resolution increases. By contrast, the method
+introduced in this paper addresses all the above issues by (a) fulfilling the
+real-timeness constraint, (b) extricating the orientation error from the
+sensor's angle increment, and (c) employing a continuous-space translation
+method. In closing, a more detailed review of scan-matching methods may be
+found in \cite{pose_selection}.

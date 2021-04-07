@@ -47,8 +47,8 @@ $|\bm{P}_{RPC}| = 2^\nu$. The purpose of this operation is for it to provide an
 advance view of the next step of location estimation: the less rotationally
 misaligned a pose estimate of $\bm{p}_1$ is, the less it will diverge in terms
 of orientation and hence position with respect to $\bm{p}_1$ once inputted to
-the position estimation system. This divergence is captured by the Cumulative
-Absolute Error per Ray (CAER) metric:
+the position estimation system (remark \ref{remark:loc_prop_or}). This
+divergence is captured by the Cumulative Absolute Error per Ray (CAER) metric:
 \begin{align}
   \text{CAER}_k = & \sum\limits_{n=0}^{N_s-1} \Bigg| \mathcal{S}_1[n] - \mathcal{S}_V^k[n]\Big|_{(\hat{x}_1^k, \hat{y}_1^k, \hat{\theta}_1^k)} \Bigg|
   \label{eq:caer}

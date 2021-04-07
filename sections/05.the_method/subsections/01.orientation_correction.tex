@@ -68,7 +68,6 @@ should be rotated counter-clockwise in order to achieve PD$_K$:
 $\Xi = \arg\max\ q_{\mathcal{S}_0^K, \mathcal{S}_1}$.  Then the sensor's
 orientation difference becomes
 $\Delta\theta = \Xi\gamma + K \cdot \gamma/2^\nu + \delta\theta^\prime$.
-?? Consider CAER here ??
 
 If map-scans $\mathcal{S}_V^k$ were computed by raycasting the map of the
 environment instead of $\bm{M}_R$ then the residual and unresolved orientation
@@ -78,6 +77,6 @@ $\bm{p}_0$. Depending on the magnitude of the sensor's angle increment and
 the arbitrariness of the environment, this approximation may be viewed as
 induced local perturbations in the map of the environment. This holds true
 in the general case as well, where $\mathcal{S}_0$ and $\mathcal{S}_1$ are
-captured from different locations. Therefore the guarantee of
-$|\delta\theta^\prime| \leq \gamma / 2^{1+\nu}$ may not always hold for all
-combinations of environments and sensor angle increments. ?? this better ??
+captured from different locations. Therefore attaining
+$|\delta\theta^\prime| \leq \gamma / 2^{1+\nu}$ may not always be possible
+for all combinations of environments and sensor angle increments.

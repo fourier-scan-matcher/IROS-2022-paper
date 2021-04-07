@@ -47,6 +47,15 @@
 \citation{Konecny}
 \citation{HSM}
 \citation{PB_PSM}
+\citation{pIC}
+\citation{gpm}
+\citation{ndt1}
+\citation{ndt2}
+\citation{ndt6}
+\citation{Heng}
+\citation{Jiang}
+\citation{fmt2d}
+\citation{pose_selection}
 \@writefile{toc}{\contentsline {section}{\numberline {II}Definitions}{2}{section.2}}
 \newlabel{section:definitions}{{II}{2}{Definitions}{section.2}{}}
 \newlabel{def:definition_1}{{I}{2}{}{definition.1}{}}
@@ -60,21 +69,22 @@
 \newlabel{section:the_proposed_method}{{V}{2}{Approach}{section.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {V-A}Estimation of Relative Orientation}{2}{subsection.5.1}}
 \newlabel{subsec:method_orientation_correction}{{V-A}{2}{Estimation of Relative Orientation}{subsection.5.1}{}}
-\newlabel{eq:Q0}{{2}{2}{Estimation of Relative Orientation}{equation.5.2}{}}
 \citation{fmt2d}
 \citation{olson}
+\newlabel{eq:Q0}{{2}{3}{Estimation of Relative Orientation}{equation.5.2}{}}
 \newlabel{eq:pd}{{4}{3}{Estimation of Relative Orientation}{equation.5.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {V-B}Estimation of Relative Location}{3}{subsection.5.2}}
 \newlabel{subsec:method_location_correction}{{V-B}{3}{Estimation of Relative Location}{subsection.5.2}{}}
 \newlabel{prop:theorem_without_disturbance}{{I}{3}{}{theorem.1}{}}
 \newlabel{eq:difference_equation_without_disturbance}{{5}{3}{}{equation.5.5}{}}
 \newlabel{eq:control_vector_without_disturbance}{{6}{3}{}{equation.5.6}{}}
-\newlabel{eq:X1}{{7}{3}{}{equation.5.7}{}}
-\newlabel{prop:theorem_with_disturbance}{{II}{3}{}{theorem.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  FSM iteratively invokes the One-step Pose Estimation method. Given a pose estimate of where scan $\mathcal  {S}_1$ was captured within $\bm  {M}$, the method attempts to register $\mathcal  {S}_1$ to $\bm  {M}$ by estimating first its relative orientation and then its location with respect to the input pose estimate\relax }}{4}{figure.caption.2}}
-\newlabel{fig:fsm_inner}{{2}{4}{\small FSM iteratively invokes the One-step Pose Estimation method. Given a pose estimate of where scan $\mathcal {S}_1$ was captured within $\bm {M}$, the method attempts to register $\mathcal {S}_1$ to $\bm {M}$ by estimating first its relative orientation and then its location with respect to the input pose estimate\relax }{figure.caption.2}{}}
+\newlabel{eq:X1}{{7}{4}{}{equation.5.7}{}}
+\newlabel{prop:theorem_with_disturbance}{{II}{4}{}{theorem.2}{}}
+\newlabel{remark:loc_prop_or}{{I}{4}{}{remark.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {V-C}Joint Estimation of Relative Orientation and Location}{4}{subsection.5.3}}
 \newlabel{subsec:method_pose_correction}{{V-C}{4}{Joint Estimation of Relative Orientation and Location}{subsection.5.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  FSM iteratively invokes the One-step Pose Estimation method. Given a pose estimate of where scan $\mathcal  {S}_1$ was captured within $\bm  {M}$, the method attempts to register $\mathcal  {S}_1$ to $\bm  {M}$ by estimating first its relative orientation and then its location with respect to the input pose estimate\relax }}{4}{figure.caption.2}}
+\newlabel{fig:fsm_inner}{{2}{4}{\small FSM iteratively invokes the One-step Pose Estimation method. Given a pose estimate of where scan $\mathcal {S}_1$ was captured within $\bm {M}$, the method attempts to register $\mathcal {S}_1$ to $\bm {M}$ by estimating first its relative orientation and then its location with respect to the input pose estimate\relax }{figure.caption.2}{}}
 \newlabel{eq:caer}{{8}{4}{Joint Estimation of Relative Orientation and Location}{equation.5.8}{}}
 \citation{dataset_link}
 \citation{LuMilios}
@@ -94,8 +104,12 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {VI-A}Experimental Design}{5}{subsection.6.1}}
 \newlabel{section:experimental}{{VI-A}{5}{Experimental Design}{subsection.6.1}{}}
 \newlabel{eq:rototranslation_error}{{9}{5}{Experimental Design}{equation.6.9}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {VI-B}Performance}{5}{subsection.6.2}}
-\newlabel{section:performance}{{VI-B}{5}{Performance}{subsection.6.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {VI-B}Performance}{6}{subsection.6.2}}
+\newlabel{section:performance}{{VI-B}{6}{Performance}{subsection.6.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusions}{6}{section.7}}
+\newlabel{section:finale}{{VII}{6}{Conclusions}{section.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  Distribution of mean errors of CSM (red), NDT (blue), and FSM (our approach) across a range of maximal positional and orientational displacements, for progressively larger sensor measurement noise levels. The variability of FSM's rigid body transformation error is consistent across all configurations. Its error is independent of the initial displacement of scans for a given level of sensor noise\relax }}{6}{figure.caption.4}}
+\newlabel{fig:errors_sm}{{4}{6}{\small Distribution of mean errors of CSM (red), NDT (blue), and FSM (our approach) across a range of maximal positional and orientational displacements, for progressively larger sensor measurement noise levels. The variability of FSM's rigid body transformation error is consistent across all configurations. Its error is independent of the initial displacement of scans for a given level of sensor noise\relax }{figure.caption.4}{}}
 \bibcite{lidar_localisation_1}{1}
 \bibcite{lidar_localisation_2}{2}
 \bibcite{lidar_navigation_1}{3}
@@ -104,11 +118,6 @@
 \bibcite{lidar_navigation_4}{6}
 \bibcite{lidar_slam_1}{7}
 \bibcite{lidar_slam_2}{8}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  Distribution of mean errors of CSM (red), NDT (blue), and FSM (our approach) across a range of maximal positional and orientational displacements, for progressively larger sensor measurement noise levels. The variability of FSM's rigid body transformation error is consistent across all configurations. Its error is independent of the initial displacement of scans for a given level of sensor noise\relax }}{6}{figure.caption.4}}
-\newlabel{fig:errors_sm}{{4}{6}{\small Distribution of mean errors of CSM (red), NDT (blue), and FSM (our approach) across a range of maximal positional and orientational displacements, for progressively larger sensor measurement noise levels. The variability of FSM's rigid body transformation error is consistent across all configurations. Its error is independent of the initial displacement of scans for a given level of sensor noise\relax }{figure.caption.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusions}{6}{section.7}}
-\newlabel{section:finale}{{VII}{6}{Conclusions}{section.7}{}}
-\@writefile{toc}{\contentsline {section}{References}{6}{section*.5}}
 \bibcite{lidar_slam_3}{9}
 \bibcite{lidar_slam_4}{10}
 \bibcite{lidar_slam_5}{11}
@@ -139,21 +148,27 @@
 \bibcite{olson_2015}{36}
 \bibcite{cross_corr}{37}
 \bibcite{Konecny}{38}
+\@writefile{toc}{\contentsline {section}{References}{7}{section*.5}}
 \bibcite{HSM}{39}
-\bibcite{pIC}{40}
-\bibcite{gpm}{41}
-\bibcite{ndt1}{42}
-\bibcite{polar_sm}{43}
-\bibcite{PB_PSM}{44}
-\bibcite{Heng}{45}
-\bibcite{Jiang}{46}
-\bibcite{pose_selection}{47}
-\bibcite{fmt2d}{48}
-\bibcite{dataset_link}{49}
-\bibcite{velodyne_datasheet}{50}
-\bibcite{a2m8_datasheet}{51}
-\bibcite{g4_datasheet}{52}
-\bibcite{tg30_datasheet}{53}
-\bibcite{x4_datasheet}{54}
-\bibcite{csm_implementation}{55}
-\bibcite{ndt_implementation}{56}
+\bibcite{polar_sm}{40}
+\bibcite{PB_PSM}{41}
+\bibcite{pIC}{42}
+\bibcite{gpm}{43}
+\bibcite{ndt1}{44}
+\bibcite{ndt2}{45}
+\bibcite{ndt3}{46}
+\bibcite{ndt4}{47}
+\bibcite{ndt5}{48}
+\bibcite{ndt6}{49}
+\bibcite{Heng}{50}
+\bibcite{Jiang}{51}
+\bibcite{pose_selection}{52}
+\bibcite{fmt2d}{53}
+\bibcite{dataset_link}{54}
+\bibcite{velodyne_datasheet}{55}
+\bibcite{a2m8_datasheet}{56}
+\bibcite{g4_datasheet}{57}
+\bibcite{tg30_datasheet}{58}
+\bibcite{x4_datasheet}{59}
+\bibcite{csm_implementation}{60}
+\bibcite{ndt_implementation}{61}
