@@ -11,7 +11,7 @@ scans, the choice of prior, and the configuration of the parameters
 governing their response. For these reasons, as well as for reasons of
 robustness, the method of establishing correspondences shifted from
 point-to-point or point-to-line to feature-to-feature. Commonly appearing
-features for recognition are line segments \cite{CLS}\cite{Haytham}\cite{Wen},
+features for recognition are line segments \cite{CLS}-\cite{Wen},
 SIFT features \cite{Jiayuan}, or features extracted through the use of deep
 learning techniques \cite{Jiaxin}. In parallel, and for reasons of
 indepencency from chance features or tailoring methods to specific
@@ -29,14 +29,14 @@ The method introduced in this paper is most akin to those of \cite{Heng} and
 \cite{Jiang}. They use POMF \cite{fmt2d} in both rotation and translation
 components; the latter in two dimensions and the former in one dimension. In
 the latter, the requirements for a real-time solution and adequate accuracy
-could not be fulfilled simultaneously, and therefore a rough prior was used
-as input to ICP in order to overcome the problem. In the former, the orientation
-error is limited by the range sensor's immutable angle increment, but no
-mitigation technique is employed. Secondly, the translation component operates
-in discrete space, thereby being susceptible to discretisation errors and
-larger execution times as resolution increases. By contrast, the method
+could not be fulfilled simultaneously. Therefore a rough output was used as an
+input prior to ICP in order to overcome the problem. In the former, the
+orientation error is limited by the range sensor's immutable angle increment,
+but no mitigation technique is employed. Secondly, the translation component
+operates in discrete space, thereby being susceptible to discretisation errors
+and larger execution times as resolution increases. By contrast, the method
 introduced in this paper addresses all the above issues by (a) fulfilling the
-real-timeness constraint, (b) extricating the orientation error from the
-sensor's angle increment, and (c) employing a continuous-space translation
+real-timeness constraint, (b) aiming at extricating the orientation error from
+the sensor's angle increment, and (c) employing a continuous-space translation
 method. In closing, a more detailed review of scan-matching methods may be
 found in \cite{pose_selection}.

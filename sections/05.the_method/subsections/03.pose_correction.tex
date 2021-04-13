@@ -32,16 +32,15 @@ first calculates $2^\nu$ pose estimates of $\bm{p}_1$: $\bm{P}_{OC} =
 according to the orientation estimation method described in section
 \ref{subsec:method_orientation_correction}. The initial pose estimate of
 $\bm{p}_1$ is $\hat{\bm{p}}_1 = \bm{s}$.
-If scans $\mathcal{S}_0$ and
-$\mathcal{S}_1$ were captured from the location, then the Percent
-Discrimination metric (eq. (\ref{eq:pd})) would suffice in serving as an
-accurate determinant of the orientation of $\bm{p}_1$. In practice, however,
-the ranking provided by the Percent Discrimination metric is confounded by the
-incoincidence of the two locations. In order to mitigate this effect, each pose
-estimate in $\bm{P}_{OC}$ is given over to the Position Estimation system,
-where the position of each pose estimate is displaced once ($I=1$), according
-to the method described in section \ref{subsec:method_location_correction}.
-This operation produces the pose set
+If scans $\mathcal{S}_0$ and $\mathcal{S}_1$ were captured from the same
+location, then the Percent Discrimination metric (eq. (\ref{eq:pd})) would
+suffice in serving as an accurate determinant of the orientation of $\bm{p}_1$.
+In practice, however, the ranking provided by the Percent Discrimination metric
+is confounded by the incoincidence of the two locations. In order to mitigate
+this effect, each pose estimate in $\bm{P}_{OC}$ is given over to the Position
+Estimation system, where the position of each pose estimate is displaced once
+($I=1$), according to the method described in section
+\ref{subsec:method_location_correction}.  This operation produces the pose set
 $\bm{P}_{RPC} = \{(\hat{x}_1^k, \hat{y}_1^k, \hat{\theta}_1^k)\}$,
 $|\bm{P}_{RPC}| = 2^\nu$. The purpose of this operation is for it to provide an
 advance view of the next step of location estimation: the less rotationally
@@ -54,7 +53,8 @@ divergence is captured by the Cumulative Absolute Error per Ray (CAER) metric:
   \label{eq:caer}
 \end{align}
 where $\mathcal{S}_V^k$ is the map-scan captured from
-$(\hat{x}_1^k, \hat{y}_1^k, \hat{\theta}_1^k)$, $k$ = $0,\dots,2^\nu$$-$$1$, within $\bm{M}$. The CAER metric
+$(\hat{x}_1^k, \hat{y}_1^k, \hat{\theta}_1^k)$, $k$ = $0,\dots,2^\nu$$-$$1$,
+within $\bm{M}$. The CAER metric (fig. \ref{fig:caer})
 encodes at the same time a degree of alignment of position and orientation
 between its two input scans. By rehearsing the position estimation of each pose
 estimate in $\bm{P}_{OC}$ and capturing the CAER for each of its displaced pose
@@ -120,6 +120,6 @@ position estimate error further.  Otherwise, the One-step Pose Estimation
 process is iterated until a maximum degree of map sampling is reached $\nu$ =
 $\nu_{\max}$, at which point FSM terminates. Its output is
 $\hat{\bm{p}}_1^\prime$, which is the pose estimate of $\bm{p}_1$ in the frame
-of reference of $\bm{M}$. The roto-translation $\hat{\bm{T}} =
-\hat{\bm{p}}_1^\prime - \bm{s}$ is the estimate of the sensor's true motion
-$\bm{T}$.
+of reference of $\bm{M}$. The roto-translation
+$\hat{\bm{T}} = \hat{\bm{p}}_1^\prime - \bm{s} = \hat{\bm{p}}_1^\prime$ is the
+estimate of the sensor's true motion $\bm{T}$.

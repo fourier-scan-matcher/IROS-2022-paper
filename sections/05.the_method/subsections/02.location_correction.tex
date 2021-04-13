@@ -40,7 +40,7 @@ $\hat{\bm{p}}_1 = \bm{s}$.
     \label{eq:difference_equation_without_disturbance}
   \end{align}
   where $\hat{\bm{l}}[0] = \hat{\bm{l}} = [\hat{x}, \hat{y}]^{\top}$,
-  i.e. the supplied initial location estimate, where
+  i.e. the supplied initial location estimate,
   \begin{align}
     \bm{u}[k] = \dfrac{1}{N_s}
     \begin{bmatrix}
@@ -53,9 +53,7 @@ $\hat{\bm{p}}_1 = \bm{s}$.
     \end{bmatrix}
     \label{eq:control_vector_without_disturbance}
   \end{align}
-  is the two-dimensional vector hereafter referred to as the
-  \textit{control vector}, with
-  $X_{1,r}(\cdot)$ and $X_{1,i}(\cdot)$ being, respectively, the real and
+  where $X_{1,r}(\cdot)$ and $X_{1,i}(\cdot)$ are, respectively, the real and
   imaginary parts of the complex quantity $X_1$:
   \begin{align}
     X_1\big(\mathcal{S}_R, \mathcal{S}_V|_{\bm{\hat{p}}[k]}\big) =
@@ -90,6 +88,7 @@ $\hat{\bm{p}}_1 = \bm{s}$.
 \end{remark}
 
 Let $\hat{\bm{p}}_1^\prime$ denote the resulting pose estimate of $\bm{p}_1$
-in $\bm{M}_L$. Then $\hat{\bm{T}} = \hat{\bm{p}}_1^\prime - \bm{s}$ is the
+in $\bm{M}_L$. Then
+$\hat{\bm{T}} = \hat{\bm{p}}_1^\prime - \bm{s} = \hat{\bm{p}}_1^\prime$ is the
 estimate of the 3D rigid transformation of the sensor as it moved from the pose
 where it captured $\mathcal{S}_0$ to that where it captured $\mathcal{S}_1$.
