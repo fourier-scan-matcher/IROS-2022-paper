@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1618331478 "main.tex" "main.pdf" "main" 1618331479
+["pdflatex"] 1621336614 "main.tex" "main.pdf" "main" 1621336616
   "/etc/texmf/web2c/texmf.cnf" 1552154870 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
@@ -265,11 +265,11 @@
   "figures/odom_test_5_vs_6.eps" 1616858110 38153 c585f3d1e5c46f33df6555e975dbc27f ""
   "figures/odom_test_5_vs_6.tex" 1616858276 4933 849eb64617c0a789eb4bae21080e0906 ""
   "ieeeconf.cls" 1461425939 202167 7b37f8353df61c9733ed46143eff807a ""
-  "main.aux" 1618331479 10315 1424326408a195aa7f02f28dd43c159a ""
-  "main.out" 1618331479 766 4a2f92fc47a627c50434534d42bd65d0 ""
+  "main.aux" 1621336616 10315 1424326408a195aa7f02f28dd43c159a ""
+  "main.out" 1621336616 766 4a2f92fc47a627c50434534d42bd65d0 ""
   "main.tex" 1617790157 3000 1ddf7b02ef484035f21938515fe276c5 ""
   "sections/00.abstract/abstract.tex" 1617098869 569 fcf0efa5d7baad07a7851a0015f46d46 ""
-  "sections/01.introduction/01.introduction.tex" 1618324049 4433 a29d8b2414f1860e050a70fd2d6688ce ""
+  "sections/01.introduction/01.introduction.tex" 1621336609 4441 37e87767d57d00c3ecc6dd0870a4e50d ""
   "sections/02.problem_formulation/01.problem_formulation.tex" 1617199045 901 908a779aa83c96144b3df861038acc41 ""
   "sections/03.definitions/01.definitions.tex" 1617127558 3285 32fe66f03954341da5dc9a55189b8082 ""
   "sections/04.current_solutions/01.current_solutions.tex" 1618325692 2966 1d246ca4a0807b3500ff9303546bb54d ""
@@ -285,6 +285,6 @@
   "sections/pre_document.tex" 1616148165 2471 b176569b3c5b14e5a0d633722285e36e ""
   (generated)
   "main.pdf"
-  "main.out"
   "main.aux"
   "main.log"
+  "main.out"
