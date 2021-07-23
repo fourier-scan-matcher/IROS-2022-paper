@@ -23,20 +23,20 @@ Therefore research on scan-matching with 2D LIDAR sensors mostly focused on
 non-panoramic sensors, with scan matching methods being used without distinction
 with regard to field of view. In recent years, however, price-appealing
 2D LIDAR sensors have emerged, but at the cost of increased measurement
-uncertainty. The introduction of these sensors warrants targetted research
+uncertainty. The introduction of these sensors warrants targeted research
 into scan-matching with the use of panoramic LIDAR sensors, due to (a) the
 afforded periodicity of the range signal, and (b) the need of
 addressing the high levels of measurement noise with regard to the
 transformation errors of current scan-matching algorithms.
 
-This paper introduces a method specifically targeting the matching of 2D
-panoramic range scans, whose error is invariant to angular and
-locational displacement for a given level of measurement noise.
-The central contributions of the paper are:
+This paper introduces a real-time method specifically targeting the matching of
+2D panoramic range scans, whose error is invariant to angular and locational
+displacement for a given level of measurement noise.  The central contributions
+of the paper are:
 
 \begin{itemize}
   \item To the best of the author's knowledge, the first method explicitly
-        addressing the matching of panoramic 2D scans
+        addressing the matching of panoramic 2D range scans
   \item The extrication from the need of a prior transformation estimate
   \item The introduction of a method that aims at reducing the orientation
         error to lower than the sensor's angle increment compared to relevant
@@ -70,5 +70,6 @@ panoramic 2D range scans is formulated in section \ref{section:the_problem},
 and a brief review of methods matching 2D range scans is given in section
 \ref{section:sota}. Section \ref{section:the_proposed_method} provides an
 analysis of the proposed method. The experimental setup and results of the
-proposed method against two methods in common use are illustrated in section
-\ref{section:results}. Section \ref{section:finale} offers a recapitulation.
+proposed method against two state-of-the-art methods in common use are
+illustrated in section \ref{section:results}. Section \ref{section:finale}
+offers a recapitulation.

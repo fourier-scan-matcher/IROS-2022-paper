@@ -11,10 +11,10 @@ scans, the choice of prior, and the configuration of the parameters
 governing their response. For these reasons, as well as for reasons of
 robustness, the method of establishing correspondences shifted from
 point-to-point or point-to-line to feature-to-feature. Commonly appearing
-features for recognition are line segments \cite{CLS}-\cite{Wen},
-SIFT features \cite{Jiayuan}, or features extracted through the use of deep
-learning techniques \cite{Jiaxin}. In parallel, and for reasons of
-indepencency from chance features or tailoring methods to specific
+features for recognition are line segments \cite{CLS}-\cite{Wen}, corners
+\cite{wang}, SIFT features \cite{Jiayuan}, or features extracted through the
+use of deep learning techniques \cite{Jiaxin}\cite{li}. In parallel, and for
+reasons of independency from chance features or tailoring methods to specific
 circumstances, research sprung around methods that extract or exploit
 mathematical properties from range scans, or that view the problem of
 scan-matching as an optimisation problem. Examples include correlation-based
@@ -23,7 +23,7 @@ matching \cite{HSM}, matching by cost function minimisation \cite{PB_PSM}, and
 probabilistic methods \cite{pIC}\cite{gpm}. Among the latter, the Normal
 Distributions Transform (NDT) \cite{ndt1} has gained popularity due to its
 explicit modeling of measurement and pose uncertainties and its extensibility
-to three dimensions \cite{ndt2}-\cite{ndt6}.
+to three dimensions \cite{ndt2}-\cite{ndt7}.
 
 The method introduced in this paper is most akin to those of \cite{Heng} and
 \cite{Jiang}. They use POMF \cite{fmt2d} in both rotation and translation

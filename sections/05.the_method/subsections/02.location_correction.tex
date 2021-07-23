@@ -15,10 +15,10 @@ $\bm{M}_L$ is additive and finite. Under these assumptions the problem of
 into a problem of scan--to--map-scan matching, where the aim is registering
 scan $\mathcal{S}_1$ to map $\bm{M}_L$: i.e. estimating the pose $\bm{p}_1$
 from where $\mathcal{S}_1$ was captured within $\bm{M}_L$. Theorem
-\ref{prop:theorem_with_disturbance} guarantees that the error of the location
-estimate between the poses from which the two scans were captured is bounded in
-a neighbourhood of the origin, if the location component of the pose estimate
-of $\bm{p}_1$ is treated according to Theorem
+\ref{prop:theorem_with_disturbance} \cite{icte} guarantees that the error of
+the location estimate between the poses from which the two scans were captured
+is bounded in a neighbourhood of the origin, if the location component of the
+pose estimate of $\bm{p}_1$ is treated according to Theorem
 \ref{prop:theorem_without_disturbance}, when its initial value is set to
 $\hat{\bm{p}}_1 = \bm{s}$.
 
@@ -57,8 +57,8 @@ $\hat{\bm{p}}_1 = \bm{s}$.
   imaginary parts of the complex quantity $X_1$:
   \begin{align}
     X_1\big(\mathcal{S}_R, \mathcal{S}_V|_{\bm{\hat{p}}[k]}\big) =
-      &X_{1,r}\big(\mathcal{S}_R, \mathcal{S}_V|_{\bm{\hat{p}}[k]}\big) \nonumber \\
-      + i \cdot &X_{1,i}\big(\mathcal{S}_R, \mathcal{S}_V|_{\bm{\hat{p}}[k]}\big) \nonumber \\
+      &X_{1,r}\big(\mathcal{S}_R, \mathcal{S}_V|_{\bm{\hat{p}}[k]}\big)
+      + i X_{1,i}\big(\mathcal{S}_R, \mathcal{S}_V|_{\bm{\hat{p}}[k]}\big) \nonumber \\
       = &\sum\limits_{n=0}^{N_s-1}(\mathcal{S}_R[n] - \mathcal{S}_V[n]|_{\bm{\hat{p}}[k]}) \cdot e^{-i \frac{2 \pi n}{N_s}} \label{eq:X1}
   \end{align}
   where $\mathcal{S}_R[n]$ and $\mathcal{S}_V[n]|_{\bm{\hat{p}}[k]}$ are,
