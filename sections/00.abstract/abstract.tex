@@ -1,9 +1,20 @@
-A real-time method for matching 2D range scans extracted from a LIDAR sensor
-whose field of view is $2\pi$ is proposed. The method leverages properties of
-the Fourier transform which arise due to the periodicity of the range signal.
-The solution to scan-matching is given by transforming the problem into a
-scan--to--map-scan matching problem. Matching is performed in a
-correspondenceless manner. The proposed method outperforms established
-scan-matching methods in terms of pose accuracy and robustness in tests on
-public domain data and over sensor noise levels of commercially available range
-sensors. The source code is available for download.
+%A real-time method for matching 2D range scans extracted from a LIDAR sensor
+%whose field of view is $2\pi$ is proposed. The method leverages properties of
+%the Fourier transform which arise due to the periodicity of the range signal.
+%The solution to scan-matching is given by transforming the problem into a
+%scan--to--map-scan matching problem. Matching is performed in a
+%correspondenceless manner. The proposed method outperforms established
+%scan-matching methods in terms of pose accuracy and robustness in tests on
+%public domain data and over sensor noise levels of commercially available range
+%sensors. The source code is available for download.
+In recent years cheap but noisy 2D range sensors with a field of view of $2\pi$
+have been introduced to the public. Scan-matching with these has been
+insufficiently researched, while being a challenge due to these sensors'
+increased measurement uncertainty. This paper proposes a real-time method for
+matching scans extracted from panoramic 2D LIDAR sensors. The method leverages
+properties of the Fourier transform which arise due to the periodicity of the
+range signal.  Matching is performed in a correspondenceless manner. The
+proposed method outperforms established scan-matching methods in terms of pose
+accuracy and robustness in tests on public domain data and over sensor noise
+levels of commercially available range sensors. The source code is available
+for download.
