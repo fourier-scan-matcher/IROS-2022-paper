@@ -1,3 +1,8 @@
+\definecolor{aa}{RGB}{227,26,28}
+\definecolor{ab}{RGB}{56,125,184}
+\definecolor{ac}{RGB}{77,176,74}
+\definecolor{ak}{RGB}{0,0,0}
+
 % GNUPLOT: LaTeX picture with Postscript
 \begingroup
   \makeatletter
@@ -103,6 +108,13 @@
       \put(1945,1280){\makebox(0,0){\strut{}$4.0$}}%
       \colorrgb{0.00,0.00,0.00}%
       \put(2370,1280){\makebox(0,0){\strut{}$6.0$}}%
+
+      \put(1120,4104){\makebox(0,0){\strut{}{\color{ak}{\rule[0.6mm]{0.5cm}{0.5mm}}} \footnotesize sensor trajectory}}
+      \put(2470,4104){\makebox(0,0){\strut{}{\color{aa}{\rule[0.6mm]{0.5cm}{0.5mm}}} \footnotesize CSM}}
+      \put(3370,4104){\makebox(0,0){\strut{}{\color{ab}{\rule[0.6mm]{0.5cm}{0.5mm}}} \footnotesize NDT}}
+      \put(4240,4104){\makebox(0,0){\strut{}{\color{ac}{\rule[0.6mm]{0.5cm}{0.5mm}}} \footnotesize FSM}}
+      \put(1500,1004){\makebox(0,0){\strut{} \footnotesize Frequent measurements}}
+      \put(3600,1004){\makebox(0,0){\strut{} \footnotesize Infrequent measurements}}
     }%
     \gplgaddtomacro\gplfronttext{%
     }%

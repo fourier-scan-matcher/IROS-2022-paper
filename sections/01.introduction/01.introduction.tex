@@ -15,7 +15,7 @@ relative to $\bm{p}_0$. For this reason, along with the high measurement
 accuracy of LIDAR sensors, scan-matching is also used as a means to
 improving, providing, or substituting odometric measurements (where available),
 as the latter are prone to unbounded and unpredictable tire and wheel
-slippage \cite{olson}-\cite{lidar_odom_3}.
+slippage (fig. \ref{fig:laser_odometry}) \cite{olson}-\cite{lidar_odom_3}.
 
 LIDAR sensors with a field of view of $360^\circ$, i.e. panoramic sensors, were
 for years constrained to high price ranges, and most provided 3D measurements.
@@ -50,26 +50,23 @@ of the paper are:
 \end{itemize}
 
 \begin{figure}[]\centering
-  \vspace{-1.7cm}
+  \vspace{-1.3cm}
   \input{./figures/odom_test_5_vs_6.tex}
-  \vspace{-2.3cm}
+  \vspace{-2cm}
   \caption{\small Scan-matching as ``laser odometry": the robot moves from the
            lower left portion of the environment to the upper right, capturing
-           2D range scans along its trajectory (black). The red (CSM), blue
-           (NDT), and green (our method) routes show the estimated path of the
-           robot derived from each method. Left figure: frequent LIDAR
-           measurements.  Right figure: a downsampled version of the original
-           trajectory. The proposed method's error is invariant to angular and
-           locational displacement}
+           2D range scans along its trajectory. The coloured routes show the
+           estimated path of the robot derived from each method. The proposed
+           method's error is invariant to angular and locational displacement}
   \label{fig:laser_odometry}
 \end{figure}
 
-The rest of the paper is structured as follows. Section
-\ref{section:definitions} defines necessary notions.  The problem of matching
-panoramic 2D range scans is formulated in section \ref{section:the_problem},
-and a brief review of methods matching 2D range scans is given in section
+The rest of the paper is structured as follows. In section
+\ref{section:definitions_and_problem_formulation} necessary notions are defined,
+and the problem of matching panoramic 2D range scans is formulated. A brief
+review of methods matching 2D range scans is given in section
 \ref{section:sota}. Section \ref{section:the_proposed_method} provides an
-analysis of the proposed method. The experimental setup and results of the
+analysis of the proposed method.  The experimental setup and results of the
 proposed method against two state-of-the-art methods in common use are
 illustrated in section \ref{section:results}. Section \ref{section:finale}
 offers a recapitulation.

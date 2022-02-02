@@ -1,0 +1,38 @@
+Figure \ref{fig:error_distributions} shows the distribution of rotation and
+translation errors across all experiments for all tested algorithms.
+
+\begin{figure*}\hspace{-0.25cm}
+    \subfloat{\input{./figures/experiments/orientation_errors.tex}}
+    \qquad \hspace{-1.5cm}
+    \subfloat{\input{./figures/experiments/position_errors.tex}}
+    \vspace{-2.5cm}
+    \caption{\small Distribution of orientation and position errors across a
+             range of maximal positional and orientational displacements, for
+             progressively larger sensor measurement noise levels. FSM's errors
+             are largely independent of the initial displacement of scans for a
+             given level of sensor noise}%
+    \label{fig:error_distributions}%
+\end{figure*}
+
+At small location and orientation displacements between the two input scans
+($\overline{\delta}_{xy} \leq $ 0.05 m,
+$\overline{\delta}_\theta \leq 2^\circ$), CSM outperforms NDT and FSM for low
+levels of sensor noise ($\sigma_R \leq 0.01$ m). However, as noise increases,
+FSM starts exhibiting greater robustness and accuracy than CSM. At greater
+location and orientation displacements
+($\overline{\delta}_{xy} > 0.05$ m, $\overline{\delta}_\theta > 2^\circ$), FSM
+is able to maintain errors equal to or lower than CSM across the entirety of
+the spectrum of tested noise levels. Compared to NDT, FSM exhibits greater
+accuracy across all tested configurations. The magnitude and variability of
+FSM's errors for a given level of sensor noise is independent of the
+displacement of the two input scans (fig. \ref{fig:laser_odometry}). The
+juxtaposition of the three methods' pose errors at high levels of sensor noise
+highlight the robustness afforded to FSM by the Discrete Fourier transform and
+its properties. With regard to FSM's orientation errors, $71.0\%$-$79.6\%$ of
+all final orientation errors resulted under $\gamma / 2^{\nu_{\max}+1} =
+0.0011$ rad when $\sigma_R = 0.0$ m. In terms of execution time, CSM ranged
+from $4.8$ to $20.5$ ms, NDT from $8.1$ to $19.9$ ms, and FSM from $13.2$ to
+$16.7$ ms. Therefore FSM's exhibits the least variability to sensor noise and
+locational and orientational displacement in terms of runtime.  The measurement
+frequency of modern LIDAR sensors ranges from $12$-$20$ Hz; therefore FSM runs
+in real time in modern processors.

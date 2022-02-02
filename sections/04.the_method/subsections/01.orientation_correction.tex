@@ -9,27 +9,17 @@ $Q_{\mathcal{S}_0, \mathcal{S}_1}$:
   Q_{\mathcal{S}_0, \mathcal{S}_1} \triangleq \dfrac{\mathcal{F}\{\mathcal{S}_0\}^{\ast} \cdot \mathcal{F}\{\mathcal{S}_1\}}{|\mathcal{F}\{\mathcal{S}_0\}| \cdot |\mathcal{F}\{\mathcal{S}_1\}|}
 \end{align}
 on the basis that if space is sampled sufficiently densely, for
-$k,\xi \in \mathbb{Z}$: $k,\xi \in [0, N_s-1]$,
+$k,\xi \in \mathbb{Z}$: $k,\xi \in [0, N_s-1]$:
 \begin{align}
   \mathcal{S}_0[k] &\simeq \mathcal{S}_1[(k - \xi) \mod N_s] \Leftrightarrow \nonumber \\
   \mathcal{F}\{\mathcal{S}_0\}(u) &\simeq e^{-j 2\pi \xi u / N_s} \cdot \mathcal{F}\{\mathcal{S}_1\}(u) \nonumber
 \end{align}
-and, therefore, since $2\pi \dfrac{\xi}{N_s} = \xi \dfrac{2\pi}{N_s} = \xi \gamma$:
+and, therefore, since $2\pi \dfrac{\xi}{N_s} = \xi \gamma$: $Q_{\mathcal{S}_0, \mathcal{S}_1}(u)  \simeq e^{-j \xi \gamma u}$.
 
-\begin{align}
-  Q_{\mathcal{S}_0, \mathcal{S}_1}(u) &= \dfrac{\mathcal{F}\{\mathcal{S}_0\}^{\ast} \cdot \mathcal{F}\{\mathcal{S}_1\}}{|\mathcal{F}\{\mathcal{S}_0\}| \cdot |\mathcal{F}\{\mathcal{S}_1\}|}  \nonumber \\
-  &\simeq \dfrac{e^{-j \xi \gamma  u} \cdot \mathcal{F}\{\mathcal{S}_1\}^\ast \cdot \mathcal{F}\{\mathcal{S}_1\}}{|e^{-j \xi \gamma u} \cdot \mathcal{F}\{\mathcal{S}_1\}^\ast | \cdot | \mathcal{F}\{\mathcal{S}_1\}|} \nonumber \\
-  %&= e^{-j \xi \gamma u} \cdot \dfrac{\mathcal{F}\{\mathcal{S}_1\}^\ast \cdot \mathcal{F}\{\mathcal{S}_1\}}{|\mathcal{F}\{\mathcal{S}_1\} | \cdot | \mathcal{F}\{\mathcal{S}_1\}|} \nonumber \\
-  &= e^{-j \xi \gamma u}
-  \label{eq:Q0}
-\end{align}
 The inverse of $Q_{\mathcal{S}_0, \mathcal{S}_1}$ is a Kronecker
 $\delta$-function
 $q_{\mathcal{S}_0, \mathcal{S}_1} = \mathcal{F}^{-1}\{Q_{\mathcal{S}_0, \mathcal{S}_1}\}$
-centered at $\xi$:
-\begin{align}
-  \xi = \operatorname*{arg\,max}\limits_u \ q_{\mathcal{S}_0, \mathcal{S}_1}(u)
-\end{align}
+centered at $\xi = \operatorname*{arg\,max}\limits_u \ q_{\mathcal{S}_0, \mathcal{S}_1}(u)$.
 If the difference in orientation between the two scans is $\Delta\theta$, then
 $\Delta\theta = \xi\gamma + \delta\theta$, where
 $\mod(|\delta\theta|, \gamma) = \lambda \in [0,\frac{\gamma}{2}]$. Therefore for

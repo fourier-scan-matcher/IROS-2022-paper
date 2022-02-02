@@ -25,9 +25,9 @@
 \citation{olson}
 \citation{lidar_odom_3}
 \@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{section.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  Scan-matching as ``laser odometry": the robot moves from the lower left portion of the environment to the upper right, capturing 2D range scans along its trajectory (black). The red (CSM), blue (NDT), and green (our method) routes show the estimated path of the robot derived from each method. Left figure: frequent LIDAR measurements. Right figure: a downsampled version of the original trajectory. The proposed method's error is invariant to angular and locational displacement\relax }}{1}{figure.caption.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  Scan-matching as ``laser odometry": the robot moves from the lower left portion of the environment to the upper right, capturing 2D range scans along its trajectory. The coloured routes show the estimated path of the robot derived from each method. The proposed method's error is invariant to angular and locational displacement\relax }}{1}{figure.caption.1}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:laser_odometry}{{1}{1}{\small Scan-matching as ``laser odometry": the robot moves from the lower left portion of the environment to the upper right, capturing 2D range scans along its trajectory (black). The red (CSM), blue (NDT), and green (our method) routes show the estimated path of the robot derived from each method. Left figure: frequent LIDAR measurements. Right figure: a downsampled version of the original trajectory. The proposed method's error is invariant to angular and locational displacement\relax }{figure.caption.1}{}}
+\newlabel{fig:laser_odometry}{{1}{1}{\small Scan-matching as ``laser odometry": the robot moves from the lower left portion of the environment to the upper right, capturing 2D range scans along its trajectory. The coloured routes show the estimated path of the robot derived from each method. The proposed method's error is invariant to angular and locational displacement\relax }{figure.caption.1}{}}
 \citation{lidar}
 \citation{LuMilios}
 \citation{ICP}
@@ -57,41 +57,35 @@
 \citation{Jiang}
 \citation{fmt2d}
 \citation{pose_selection}
-\@writefile{toc}{\contentsline {section}{\numberline {II}Definitions}{2}{section.2}}
-\newlabel{section:definitions}{{II}{2}{Definitions}{section.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {II}Definitions and Problem Formulation}{2}{section.2}}
+\newlabel{section:definitions_and_problem_formulation}{{II}{2}{Definitions and Problem Formulation}{section.2}{}}
 \newlabel{def:definition_1}{{I}{2}{}{definition.1}{}}
 \newlabel{def:definition_3}{{II}{2}{}{definition.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {III}Problem Formulation}{2}{section.3}}
-\newlabel{section:the_problem}{{III}{2}{Problem Formulation}{section.3}{}}
 \newlabel{prob:the_problem}{{I}{2}{}{problem.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {IV}Prior Work}{2}{section.4}}
-\newlabel{section:sota}{{IV}{2}{Prior Work}{section.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {V}Approach}{2}{section.5}}
-\newlabel{section:the_proposed_method}{{V}{2}{Approach}{section.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {V-A}Estimation of Relative Orientation}{2}{subsection.5.1}}
-\newlabel{subsec:method_orientation_correction}{{V-A}{2}{Estimation of Relative Orientation}{subsection.5.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Prior Work}{2}{section.3}}
+\newlabel{section:sota}{{III}{2}{Prior Work}{section.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Approach}{2}{section.4}}
+\newlabel{section:the_proposed_method}{{IV}{2}{Approach}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {IV-A}Estimation of Relative Orientation}{2}{subsection.4.1}}
+\newlabel{subsec:method_orientation_correction}{{IV-A}{2}{Estimation of Relative Orientation}{subsection.4.1}{}}
 \citation{fmt2d}
 \citation{olson}
 \citation{icte}
-\newlabel{eq:Q0}{{2}{3}{Estimation of Relative Orientation}{equation.5.2}{}}
-\newlabel{eq:pd}{{4}{3}{Estimation of Relative Orientation}{equation.5.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {V-B}Estimation of Relative Location}{3}{subsection.5.2}}
-\newlabel{subsec:method_location_correction}{{V-B}{3}{Estimation of Relative Location}{subsection.5.2}{}}
+\newlabel{eq:pd}{{2}{3}{Estimation of Relative Orientation}{equation.4.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {IV-B}Estimation of Relative Location}{3}{subsection.4.2}}
+\newlabel{subsec:method_location_correction}{{IV-B}{3}{Estimation of Relative Location}{subsection.4.2}{}}
 \newlabel{prop:theorem_without_disturbance}{{I}{3}{}{theorem.1}{}}
-\newlabel{eq:difference_equation_without_disturbance}{{5}{3}{}{equation.5.5}{}}
-\newlabel{eq:control_vector_without_disturbance}{{6}{3}{}{equation.5.6}{}}
-\newlabel{eq:X1}{{7}{4}{}{equation.5.7}{}}
-\newlabel{prop:theorem_with_disturbance}{{II}{4}{}{theorem.2}{}}
-\newlabel{remark:loc_prop_or}{{I}{4}{}{remark.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {V-C}Joint Estimation of Relative Orientation and Location}{4}{subsection.5.3}}
-\newlabel{subsec:method_pose_correction}{{V-C}{4}{Joint Estimation of Relative Orientation and Location}{subsection.5.3}{}}
+\newlabel{eq:difference_equation_without_disturbance}{{3}{3}{}{equation.4.3}{}}
+\newlabel{eq:control_vector_without_disturbance}{{4}{3}{}{equation.4.4}{}}
+\newlabel{eq:X1}{{5}{3}{}{equation.4.5}{}}
+\newlabel{prop:theorem_with_disturbance}{{II}{3}{}{theorem.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  FSM iteratively invokes the One-step Pose Estimation method. Given a pose estimate of where scan $\mathcal  {S}_1$ was captured within $\bm  {M}$, the method attempts to register $\mathcal  {S}_1$ to $\bm  {M}$ by estimating first its relative orientation and then its location with respect to the input pose estimate\relax }}{4}{figure.caption.2}}
 \newlabel{fig:fsm_inner}{{2}{4}{\small FSM iteratively invokes the One-step Pose Estimation method. Given a pose estimate of where scan $\mathcal {S}_1$ was captured within $\bm {M}$, the method attempts to register $\mathcal {S}_1$ to $\bm {M}$ by estimating first its relative orientation and then its location with respect to the input pose estimate\relax }{figure.caption.2}{}}
-\newlabel{eq:caer}{{8}{4}{Joint Estimation of Relative Orientation and Location}{equation.5.8}{}}
+\newlabel{remark:loc_prop_or}{{I}{4}{}{remark.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {IV-C}Joint Estimation of Relative Orientation and Location}{4}{subsection.4.3}}
+\newlabel{subsec:method_pose_correction}{{IV-C}{4}{Joint Estimation of Relative Orientation and Location}{subsection.4.3}{}}
+\newlabel{eq:caer}{{6}{4}{Joint Estimation of Relative Orientation and Location}{equation.4.6}{}}
 \citation{dataset_link}
-\citation{LuMilios}
-\citation{mbicp}
-\citation{plicp}
 \citation{ndt1}
 \citation{sota_leg_1}
 \citation{sota_leg_5}
@@ -103,17 +97,16 @@
 \citation{ndt_implementation}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  A profile of the CAER metric (eq. (\ref  {eq:caer})) from $10^6$ pairs of sample scans, depending on the distance $(\Delta x^2 + \Delta y^2)^{1/2}$ and relative orientation $\Delta \theta $ of the poses from where the two scans were captured. Pose estimates closer to the true pose in terms of orientation (a) exhibit lower CAER values than those further away from it and (b) produce lower location errors once inputted to the Location Estimation system\relax }}{5}{figure.caption.3}}
 \newlabel{fig:caer}{{3}{5}{\small A profile of the CAER metric (eq. (\ref {eq:caer})) from $10^6$ pairs of sample scans, depending on the distance $(\Delta x^2 + \Delta y^2)^{1/2}$ and relative orientation $\Delta \theta $ of the poses from where the two scans were captured. Pose estimates closer to the true pose in terms of orientation (a) exhibit lower CAER values than those further away from it and (b) produce lower location errors once inputted to the Location Estimation system\relax }{figure.caption.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VI}Results}{5}{section.6}}
-\newlabel{section:results}{{VI}{5}{Results}{section.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {VI-A}Experimental Design}{5}{subsection.6.1}}
-\newlabel{section:experimental}{{VI-A}{5}{Experimental Design}{subsection.6.1}{}}
-\newlabel{eq:rototranslation_error}{{9}{5}{Experimental Design}{equation.6.9}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {VI-B}Performance}{6}{subsection.6.2}}
-\newlabel{section:performance}{{VI-B}{6}{Performance}{subsection.6.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusions}{6}{section.7}}
-\newlabel{section:finale}{{VII}{6}{Conclusions}{section.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  Distribution of mean errors of CSM (red), NDT (blue), and FSM (our approach) across a range of maximal positional and orientational displacements, for progressively larger sensor measurement noise levels. The variability of FSM's rigid body transformation error is consistent across all configurations. Its error is independent of the initial displacement of scans for a given level of sensor noise\relax }}{6}{figure.caption.4}}
-\newlabel{fig:errors_sm}{{4}{6}{\small Distribution of mean errors of CSM (red), NDT (blue), and FSM (our approach) across a range of maximal positional and orientational displacements, for progressively larger sensor measurement noise levels. The variability of FSM's rigid body transformation error is consistent across all configurations. Its error is independent of the initial displacement of scans for a given level of sensor noise\relax }{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Results}{5}{section.5}}
+\newlabel{section:results}{{V}{5}{Results}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {V-A}Experimental Design}{5}{subsection.5.1}}
+\newlabel{section:experimental}{{V-A}{5}{Experimental Design}{subsection.5.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {V-B}Performance}{5}{subsection.5.2}}
+\newlabel{section:performance}{{V-B}{5}{Performance}{subsection.5.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  Distribution of orientation and position errors across a range of maximal positional and orientational displacements, for progressively larger sensor measurement noise levels. FSM's errors are largely independent of the initial displacement of scans for a given level of sensor noise\relax }}{6}{figure.caption.4}}
+\newlabel{fig:error_distributions}{{4}{6}{\small Distribution of orientation and position errors across a range of maximal positional and orientational displacements, for progressively larger sensor measurement noise levels. FSM's errors are largely independent of the initial displacement of scans for a given level of sensor noise\relax }{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusions}{6}{section.6}}
+\newlabel{section:finale}{{VI}{6}{Conclusions}{section.6}{}}
 \bibcite{lidar_localisation_1}{1}
 \bibcite{lidar_localisation_2}{2}
 \bibcite{lidar_navigation_1}{3}

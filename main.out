@@ -1,13 +1,12 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{Definitions}{}% 2
-\BOOKMARK [1][-]{section.3}{Problem Formulation}{}% 3
-\BOOKMARK [1][-]{section.4}{Prior Work}{}% 4
-\BOOKMARK [1][-]{section.5}{Approach}{}% 5
-\BOOKMARK [2][-]{subsection.5.1}{Estimation of Relative Orientation}{section.5}% 6
-\BOOKMARK [2][-]{subsection.5.2}{Estimation of Relative Location}{section.5}% 7
-\BOOKMARK [2][-]{subsection.5.3}{Joint Estimation of Relative Orientation and Location}{section.5}% 8
-\BOOKMARK [1][-]{section.6}{Results}{}% 9
-\BOOKMARK [2][-]{subsection.6.1}{Experimental Design}{section.6}% 10
-\BOOKMARK [2][-]{subsection.6.2}{Performance}{section.6}% 11
-\BOOKMARK [1][-]{section.7}{Conclusions}{}% 12
-\BOOKMARK [1][-]{section*.5}{References}{}% 13
+\BOOKMARK [1][-]{section.2}{Definitions and Problem Formulation}{}% 2
+\BOOKMARK [1][-]{section.3}{Prior Work}{}% 3
+\BOOKMARK [1][-]{section.4}{Approach}{}% 4
+\BOOKMARK [2][-]{subsection.4.1}{Estimation of Relative Orientation}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.2}{Estimation of Relative Location}{section.4}% 6
+\BOOKMARK [2][-]{subsection.4.3}{Joint Estimation of Relative Orientation and Location}{section.4}% 7
+\BOOKMARK [1][-]{section.5}{Results}{}% 8
+\BOOKMARK [2][-]{subsection.5.1}{Experimental Design}{section.5}% 9
+\BOOKMARK [2][-]{subsection.5.2}{Performance}{section.5}% 10
+\BOOKMARK [1][-]{section.6}{Conclusions}{}% 11
+\BOOKMARK [1][-]{section*.5}{References}{}% 12

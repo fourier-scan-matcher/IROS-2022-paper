@@ -16,34 +16,6 @@
 \end{definition}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{definition}
-  %\label{def:definition_2}
-  %\textit{Scan-matching (or scan-to-scan matching) using a 2D LIDAR sensor} (adapted for use in
-  %two dimensions from \cite{plicp}).
-  %Let two range scans as defined by Definition \ref{def:definition_1},
-  %$\mathcal{S}_R$ and $\mathcal{S}_V$, be captured from a LIDAR
-  %sensor operating in the same environment at both capturing times. Let
-  %$\bm{p}_V(x_V,y_V,\theta_V)$ be the pose from
-  %which the sensor captured $\mathcal{S}_V$, expressed in some coordinate
-  %system (usually a past pose estimate of the sensor). The objective of
-  %scan-matching in two dimensions is to find the roto-translation
-  %$\bm{q} = (\bm{t}, \theta)$, $\bm{t} = (\Delta x, \Delta y)$ that minimises
-  %the distance of the endpoints of $\mathcal{S}_V$ roto-translated by
-  %$\bm{q}$ to their projection on $\mathcal{S}_R$. Denoting the
-  %endpoints of $\mathcal{S}_V$ by $\{\bm{p}_V^i\}$, in formula:
-  %\begin{align}
-    %\underset{\bm{q}}{\min} \sum\limits_i \Big\| \bm{p}_V^i \oplus \bm{q} - \prod \{ \mathcal{S}_R, \bm{p}_V^i \oplus \bm{q} \}\Big\|^2
-    %\label{eq:s2sm_def}
-  %\end{align}
-  %The symbol ``$\oplus$" denotes the roto-translation operator
-  %$\bm{p}_V^i \oplus (\bm{t}, \theta) \triangleq \bm{R}(\theta) \bm{p}^i_V + \bm{t}$,
-  %where $\bm{R}(\theta)$ is the 2D rotation matrix for argument angle $\theta$,
-  %and $\prod\{\mathcal{S}_R, \bm{p}_V^i \oplus \bm{q} \}$ denotes
-  %the Euclidean projector on $\mathcal{S}_R$.
-%\end{definition}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{definition}
   \label{def:definition_3}
   \textit{Definition of a map-scan.}
@@ -55,3 +27,22 @@
   rays emanating from the estimate of the sensor's pose estimate and the
   boundaries of the map.
 \end{definition}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+  \label{prob:the_problem}
+  Let a mobile robot, capable of motion in the $x-y$ plane, be equipped with a
+  coplanarly mounted range scan sensor emitting $N_s$ rays. Let
+  also the following be available or standing:
+  \begin{itemize}
+    \item The angular range of the range sensor is $360^\circ$
+    \item A 2D range scan $\mathcal{S}_0$, captured at time $t_0$
+    \item A 2D range scan $\mathcal{S}_1$, captured at $t_1 > t_0$
+  \end{itemize}
+\end{problem}
+Then the objective is estimating the 3D rigid-body transformation
+$\bm{T} = (\Delta x, \Delta y, \Delta \theta)$ which, when applied to the
+endpoints of $\mathcal{S}_1$, aligns them to those of $\mathcal{S}_0$ with the
+least error. Equivalently, roto-translation $\bm{T}$ corresponds to the
+relative motion of the sensor from the pose where it captured $\mathcal{S}_0$
+to the pose from which it captured $\mathcal{S}_1$.
