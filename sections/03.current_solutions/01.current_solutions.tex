@@ -1,42 +1,36 @@
-Scan-matching with the use of a 2D LIDAR sensor began with IDC \cite{LuMilios},
+Scan-matching with the use of a 2D LIDAR sensor began with Iterative Dual
+Correspondences (IDC) \cite{LuMilios},
 an algorithm incorporating elements of the Iterative Closest Point (ICP)
 algorithm \cite{ICP}. The latter and its variants, e.g.
-\cite{weighted}-\cite{plicp}, have become the de facto scan-matching algorithms
-in 2D and 3D settings, and research using ICP is still ongoing
-\cite{ICP_var_1}-\cite{Marchel}. In particular, PL-ICP \cite{plicp} has been
+\cite{weighted}-\cite{fgicp}, have become the de facto scan-matching algorithms
+in 2D and 3D settings, with research using ICP being still ongoing
+\cite{ICP_var_1}-\cite{vgicp}. In particular, PL-ICP \cite{plicp} has been
 widely adopted due to its increased accuracy among ICP variants, and the
 availability of its source code. ICP and its variants, however, exhibit varying
 performance \cite{icp_comp_trade}, limited by the noise level in the input
 scans, the choice of prior, and the configuration of the parameters
-governing their response. For these reasons, as well as for reasons of
-robustness, the method of establishing correspondences shifted from
-point-to-point or point-to-line to feature-to-feature. Commonly appearing
-features for recognition are line segments \cite{CLS}-\cite{Wen}, corners
-\cite{wang}, SIFT features \cite{Jiayuan}, or features extracted through the
-use of deep learning techniques \cite{Jiaxin}\cite{li}. In parallel, and for
-reasons of independency from chance features or tailoring methods to specific
-circumstances, research sprung around methods that extract or exploit
-mathematical properties from range scans, or that view the problem of
-scan-matching as an optimisation problem. Examples include correlation-based
-methods \cite{olson},\cite{olson_2015}-\cite{Konecny}, feature distribution
-matching \cite{HSM}, matching by cost function minimisation \cite{PB_PSM}, and
-probabilistic methods \cite{pIC}\cite{gpm}. Among the latter, the Normal
-Distributions Transform (NDT) \cite{ndt1} has gained popularity due to its
-explicit modeling of measurement and pose uncertainties and its extensibility
-to three dimensions \cite{ndt2}-\cite{ndt7}.
+governing their response. The vast majority of all matching methods adopt ICP's
+approach of establishing correspondences between the two input scans, using
+various mechanisms, assumptions, and types of sources (e.g. features instead
+of points; a detailed review of scan-matching methods may be found in
+\cite{pose_selection}). The major problem with establishing correspondences is
+that the process becomes more inefficient and error-prone as measurement noise
+increases.
 
-The method introduced in this paper is most akin to those of \cite{Heng} and
-\cite{Jiang}. They use POMF \cite{fmt2d} in both rotation and translation
-components; the latter in two dimensions and the former in one dimension. In
-the latter, the requirements for a real-time solution and adequate accuracy
-could not be fulfilled simultaneously. Therefore a rough output was used as an
-input prior to ICP in order to overcome the problem. In the former, the
-orientation error is limited by the range sensor's immutable angle increment,
-but no mitigation technique is employed. Secondly, the translation component
-operates in discrete space, thereby being susceptible to discretisation errors
-and larger execution times as resolution increases. By contrast, the method
-introduced in this paper addresses all the above issues by (a) fulfilling the
-real-timeness constraint, (b) aiming at extricating the orientation error from
-the sensor's angle increment, and (c) employing a continuous-space translation
-method. A detailed review of scan-matching methods may be found in
-\cite{pose_selection}.
+By contrast, the method introduced in this paper does not operate by
+establishing correspondences. Its rotational component is most akin to those of
+\cite{Heng} and \cite{Jiang}. They use Phase-Only Matched Filtering (POMF)
+\cite{fmt2d} in both rotation and translation components; the former in one
+dimension and the latter in two dimensions. In the latter, the requirements for
+a real-time solution and adequate accuracy cannot be fulfilled simultaneously
+due to the inability to balance high grid resolution (and therefore high
+accuracy) with regular sensor updates. The former alleviates this limitation by
+operating in one dimension, but suffers from the same causes, namely,
+discretisation errors. Whereas the latter is dependent on the grid's
+resolution, the former is dependent on the sensor's immutable angle increment.
+In both methods, both the rotational and translational components are affected,
+but no mitigation technique is employed to decrease the errors of either their
+components. By contrast, the method introduced in this paper addresses all the
+above issues by (a) aiming to extricate the orientation error from the
+sensor's angle increment, (b) employing a continuous-space translation method,
+and (c) fulfilling the real-timeness constraint.

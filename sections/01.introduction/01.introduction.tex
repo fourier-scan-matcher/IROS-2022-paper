@@ -6,16 +6,16 @@ overlap between the two scans, estimating the rigid-body transformation
 $\bm{T}$ that projects the endpoints of $\mathcal{S}_1$ to those of
 $\mathcal{S}_0$ with the least error is known as scan-matching. The solution to
 the scan-matching problem is central to methods of Localisation
-\cite{lidar_localisation_1}\cite{lidar_localisation_2}, Navigation
-\cite{lidar_navigation_1}-\cite{lidar_navigation_4}, and Simultaneous
-Localisation and Mapping (SLAM) \cite{lidar_slam_1}-\cite{lidar_slam_5}, as
+\cite{lidar_localisation_1}, Navigation
+\cite{lidar_navigation_1}, and Simultaneous
+Localisation and Mapping (SLAM) \cite{lidar_slam_4}\cite{lidar_slam_5}, as
 $\bm{T}$ is the rigid-body transformation $\bm{p}_1$$-$$\bm{p}_0$: i.e. the
 solution to scan-matching provides localisation information at time $t_1$,
 relative to $\bm{p}_0$. For this reason, along with the high measurement
-accuracy of LIDAR sensors, scan-matching is also used as a means to
-improving, providing, or substituting odometric measurements (where available),
-as the latter are prone to unbounded and unpredictable tire and wheel
-slippage (fig. \ref{fig:laser_odometry}) \cite{olson}-\cite{lidar_odom_3}.
+accuracy of LIDAR sensors, scan-matching is also used as a means to improving,
+providing, or substituting odometric measurements (where available; fig.
+\ref{fig:laser_odometry}), as the latter are prone to unbounded and
+unpredictable tire and wheel slippage \cite{olson}\cite{lidar_odom_1}.
 
 LIDAR sensors with a field of view of $360^\circ$, i.e. panoramic sensors, were
 for years constrained to high price ranges, and most provided 3D measurements.
@@ -30,13 +30,14 @@ addressing the high levels of measurement noise with regard to the
 transformation errors of current scan-matching algorithms.
 
 This paper introduces a real-time method specifically targeting the matching of
-2D panoramic range scans. Its errors are invariant to angular and locational
-displacement for a given level of measurement noise.  The central contributions
-of the paper are:
+2D panoramic range scans. Its errors are largely invariant to angular and
+locational displacement for a given level of measurement noise. The central
+contributions of the paper are:
 
 \begin{itemize}
   \item To the best of the author's knowledge, the first method explicitly
-        addressing the matching of panoramic 2D range scans
+        addressing the matching of panoramic 2D range scans that operates
+        without establishing correspondences between input scans
   \item The extrication from the need of a prior transformation estimate
   \item The introduction of a method that aims at reducing the orientation
         error to lower than the sensor's angle increment compared to relevant
@@ -44,9 +45,10 @@ of the paper are:
   \item The parameter set needed by the proposed method is intuitive, smaller
         than those of established methods, and trades accuracy for execution
         time
-  \item The thorough evaluation of the proposed method against two established
-        scan-matching algorithms in common use, using measurement noise levels
-        from common, commercially available sensors
+  \item The thorough evaluation of the proposed method against five established
+        scan-matching algorithms in common use, with benchmark datasets,
+        using measurement noise levels from common-use, commercially available
+        sensors
 \end{itemize}
 
 \begin{figure}[]\centering
@@ -66,7 +68,6 @@ The rest of the paper is structured as follows. In section
 and the problem of matching panoramic 2D range scans is formulated. A brief
 review of methods matching 2D range scans is given in section
 \ref{section:sota}. Section \ref{section:the_proposed_method} provides an
-analysis of the proposed method.  The experimental setup and results of the
-proposed method against two state-of-the-art methods in common use are
+analysis of the proposed method. The experimental setup and are
 illustrated in section \ref{section:results}. Section \ref{section:finale}
-offers a recapitulation.
+concludes this paper.

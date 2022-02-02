@@ -1,12 +1,16 @@
-The experimental procedure was conducted using a collection $D$ of five
-benchmark datasets courtesy of the Department of Computer Science, University
-of Freiburg, comprising a total of $|D| = 45402$ scan measurements
-\cite{dataset_link}.  For purposes of comparison against state-of-the-art
-scan-matching methods, the experimental procedure is extended to
-PLICP$\circ$GPM. This method shall be denoted hereafter by the acronym CSM. In
-the same vein the experimental procedure is extended to the NDT scan-matching
-method \cite{ndt1}.  Both CSM and NDT belong to the established
-state-of-the-art methods of scan-matching \cite{sota_leg_1}-\cite{sota_leg_5}.
+The experimental procedure was conducted using a collection $D = \{D_k\}, k =
+1,\dots,5$ of five heterogeneous benchmark datasets, courtesy of the Department
+of Computer Science, University of Freiburg, comprising a total of $|D| =
+45402$ scan measurements \cite{dataset_link}.  For purposes of comparison
+against state-of-the-art scan-matching methods the experimental procedure is
+extended to the Normal Distributions Transform (NDT) scan-matching method
+\cite{ndt1}, FastGICP \cite{fgicp} and PLICP$\circ$GPM \cite{plicp}. The latter
+shall be denoted hereafter by the acronym CSM. GPM was used initially in order
+to overcome the angular realignment problems \cite{plicp} of PLICP. NDT,
+FastGICP, and CSM belong to the \textit{established} state-of-the-art methods
+of scan-matching \cite{vgicp}\cite{sota_leg_1}-\cite{sota_leg_5}. In addition,
+the experimental procedure is extended to FastVGICP \cite{vgicp} and NDT-PSO
+\cite{ndt_pso}.
 
 The experimental setup is the following. The rays of each dataset $D$ instance
 $D^d = 1,2,\dots,|D|$ are first projected to the $x-y$ plane around $\bm{r}^d$.
@@ -32,44 +36,33 @@ $\bm{p}_1^{\prime d}$. The roto-translation
 $\hat{\bm{T}}^d = \bm{p}_1^{\prime d}$ is the estimate of the motion
 $\bm{T}^d = \bm{p}_1^d - \bm{p}_0^d$ of the range sensor.
 
-%The criterion on
-%which the evaluation of all experiments rests is the $2$-norm of the total pose
-%displacement error
-%\begin{align}
-  %e^d &= \| \bm{T}^d - \hat{\bm{T}}^d \|_2
-  %\label{eq:rototranslation_error}
-%\end{align}
-
 For every pose estimate $\bm{p}_1^{\prime d}$ outputted by each algorithm, its
 offset from the actual pose $\bm{p}_1^d$ is recorded in the form of the
-orientation error and the $2$-norm position error. The orientation and position
-error distributions reported below are those across all $E \times D$
-experiments of the same configuration.
-
+orientation error and the $2$-norm position error.
 In order to test for the performance of the proposed method with use of real
 sensors, five levels of noise acting on the range measurements of the scans are
 tested. The range measurements are perturbed by zero-mean normally-distributed
 noise with standard deviation $\sigma_R \in \{0.01, 0.03, 0.05, 0.10, 0.20\}$ m.
-The non-zero values of tested standard deviations were calculated from
+The values of tested standard deviations were calculated from
 commercially available panoramic LIDAR scanners by identifying the magnitude of
 their reported maximum range errors and dividing it by a factor of three. The
 rationale is that $99.73\%$ of errors are located within $3\sigma$ around the
 actual range between a ray and an obstacle, assuming errors are distributed
-normally. The minimum standard deviation $\sigma_R = 0.01$ m is reported for
+normally. The minimum standard deviation is reported for
 VELODYNE sensors \cite{velodyne_datasheet}; the rest are reported for
-price-appealing but disturbance-laden sensors, e.g. the RPLIDAR A2M8, or the
-YDLIDAR G4, TG30, and X4 scanners \cite{a2m8_datasheet}-\cite{x4_datasheet}. The
-size of the input scans was set to $N_s=360$ rays. The minimum and maximum map
-oversampling rates of FSM were set to $(\mu_{\min},\mu_{\max}) =
-(2^{\nu_{\min}},2^{\nu_{\max}}) = (2^0,2^3)$. The number of iterations of the
-translational component at each map sampling degree $\nu$ was set at $I =
-5\nu$. The orientation convergence threshold was set to $\varepsilon_{\delta p}
-= 10$e-$5$. Maximal displacements $\overline{\delta}_{xy}$ and
+price-appealing but disturbance-laden RPLIDAR \cite{a2m8_datasheet} and YDLIDAR
+\cite{ydlidar_datasheets} sensors. The size of the input scans was set
+to $N_s=360$ rays. The minimum and maximum map oversampling rates of FSM were
+set to $(2^{\nu_{\min}},2^{\nu_{\max}}) = (2^0,2^3)$.  The number of iterations
+of the translational component at each map sampling degree $\nu$ was set at $I
+= 5\nu$. The orientation convergence threshold was set to $\varepsilon_{\delta
+p} = 10$e-$5$. Maximal displacements $\overline{\delta}_{xy}$ and
 $\overline{\delta}_\theta$ were chosen as such by prior art tests \cite{plicp}.
-For each experiment all algorithms ran for $E = 10$ times across all
-instances of $D$. Therefore each method underwent a total of
-$10 \times 45402 \times 6 \times 5 \sim O(10^8)$ experiments.
-All experiments and algorithms were run serially, in C++, on
-a single thread, on a machine with a CPU frequency of $4.0$ GHz. The
-implementations of CSM and NDT were taken from \cite{csm_implementation} and
-\cite{ndt_implementation} respectively.
+For each experiment all algorithms ran for $E = 10$ times across all instances
+of $D$. Therefore each method underwent a total of $10 \times 45402 \times 6
+\times 5 \sim O(10^8)$ experiments.  The orientation and position error
+distributions reported below are those across all $E \times D$ experiments of
+the same configuration.  All experiments and algorithms were run serially, in
+C++, on a single thread, on a machine with a CPU frequency of $4.0$ GHz. The
+implementations of CSM, NDT, FastGICP, FastVGICP, and NDT-PSO were taken from
+\cite{implementations}.

@@ -17,13 +17,11 @@
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \citation{lidar_localisation_1}
-\citation{lidar_localisation_2}
 \citation{lidar_navigation_1}
-\citation{lidar_navigation_4}
-\citation{lidar_slam_1}
+\citation{lidar_slam_4}
 \citation{lidar_slam_5}
 \citation{olson}
-\citation{lidar_odom_3}
+\citation{lidar_odom_1}
 \@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{section.1}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  Scan-matching as ``laser odometry": the robot moves from the lower left portion of the environment to the upper right, capturing 2D range scans along its trajectory. The coloured routes show the estimated path of the robot derived from each method. The proposed method's error is invariant to angular and locational displacement\relax }}{1}{figure.caption.1}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
@@ -32,31 +30,16 @@
 \citation{LuMilios}
 \citation{ICP}
 \citation{weighted}
-\citation{plicp}
+\citation{fgicp}
 \citation{ICP_var_1}
-\citation{Marchel}
+\citation{vgicp}
 \citation{plicp}
 \citation{icp_comp_trade}
-\citation{CLS}
-\citation{Wen}
-\citation{wang}
-\citation{Jiayuan}
-\citation{Jiaxin}
-\citation{li}
-\citation{olson}
-\citation{olson_2015}
-\citation{Konecny}
-\citation{HSM}
-\citation{PB_PSM}
-\citation{pIC}
-\citation{gpm}
-\citation{ndt1}
-\citation{ndt2}
-\citation{ndt7}
+\citation{pose_selection}
 \citation{Heng}
 \citation{Jiang}
 \citation{fmt2d}
-\citation{pose_selection}
+\citation{icte}
 \@writefile{toc}{\contentsline {section}{\numberline {II}Definitions and Problem Formulation}{2}{section.2}}
 \newlabel{section:definitions_and_problem_formulation}{{II}{2}{Definitions and Problem Formulation}{section.2}{}}
 \newlabel{def:definition_1}{{I}{2}{}{definition.1}{}}
@@ -66,115 +49,93 @@
 \newlabel{section:sota}{{III}{2}{Prior Work}{section.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {IV}Approach}{2}{section.4}}
 \newlabel{section:the_proposed_method}{{IV}{2}{Approach}{section.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {IV-A}Estimation of Relative Orientation}{2}{subsection.4.1}}
-\newlabel{subsec:method_orientation_correction}{{IV-A}{2}{Estimation of Relative Orientation}{subsection.4.1}{}}
 \citation{fmt2d}
 \citation{olson}
 \citation{icte}
+\@writefile{toc}{\contentsline {subsection}{\numberline {IV-A}Estimation of Relative Orientation}{3}{subsection.4.1}}
+\newlabel{subsec:method_orientation_correction}{{IV-A}{3}{Estimation of Relative Orientation}{subsection.4.1}{}}
 \newlabel{eq:pd}{{2}{3}{Estimation of Relative Orientation}{equation.4.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {IV-B}Estimation of Relative Location}{3}{subsection.4.2}}
 \newlabel{subsec:method_location_correction}{{IV-B}{3}{Estimation of Relative Location}{subsection.4.2}{}}
 \newlabel{prop:theorem_without_disturbance}{{I}{3}{}{theorem.1}{}}
-\newlabel{eq:difference_equation_without_disturbance}{{3}{3}{}{equation.4.3}{}}
-\newlabel{eq:control_vector_without_disturbance}{{4}{3}{}{equation.4.4}{}}
-\newlabel{eq:X1}{{5}{3}{}{equation.4.5}{}}
-\newlabel{prop:theorem_with_disturbance}{{II}{3}{}{theorem.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  FSM iteratively invokes the One-step Pose Estimation method. Given a pose estimate of where scan $\mathcal  {S}_1$ was captured within $\bm  {M}$, the method attempts to register $\mathcal  {S}_1$ to $\bm  {M}$ by estimating first its relative orientation and then its location with respect to the input pose estimate\relax }}{4}{figure.caption.2}}
-\newlabel{fig:fsm_inner}{{2}{4}{\small FSM iteratively invokes the One-step Pose Estimation method. Given a pose estimate of where scan $\mathcal {S}_1$ was captured within $\bm {M}$, the method attempts to register $\mathcal {S}_1$ to $\bm {M}$ by estimating first its relative orientation and then its location with respect to the input pose estimate\relax }{figure.caption.2}{}}
+\newlabel{eq:difference_equation_without_disturbance}{{3}{4}{}{equation.4.3}{}}
+\newlabel{eq:control_vector_without_disturbance}{{4}{4}{}{equation.4.4}{}}
+\newlabel{eq:X1}{{5}{4}{}{equation.4.5}{}}
+\newlabel{prop:theorem_with_disturbance}{{II}{4}{}{theorem.2}{}}
 \newlabel{remark:loc_prop_or}{{I}{4}{}{remark.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {IV-C}Joint Estimation of Relative Orientation and Location}{4}{subsection.4.3}}
 \newlabel{subsec:method_pose_correction}{{IV-C}{4}{Joint Estimation of Relative Orientation and Location}{subsection.4.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  FSM iteratively invokes the One-step Pose Estimation method. Given a pose estimate of where scan $\mathcal  {S}_1$ was captured within $\bm  {M}$, the method attempts to register $\mathcal  {S}_1$ to $\bm  {M}$ by estimating first its relative orientation and then its location with respect to the input pose estimate\relax }}{4}{figure.caption.2}}
+\newlabel{fig:fsm_inner}{{2}{4}{\small FSM iteratively invokes the One-step Pose Estimation method. Given a pose estimate of where scan $\mathcal {S}_1$ was captured within $\bm {M}$, the method attempts to register $\mathcal {S}_1$ to $\bm {M}$ by estimating first its relative orientation and then its location with respect to the input pose estimate\relax }{figure.caption.2}{}}
 \newlabel{eq:caer}{{6}{4}{Joint Estimation of Relative Orientation and Location}{equation.4.6}{}}
 \citation{dataset_link}
 \citation{ndt1}
+\citation{fgicp}
+\citation{plicp}
+\citation{plicp}
+\citation{vgicp}
 \citation{sota_leg_1}
 \citation{sota_leg_5}
+\citation{vgicp}
+\citation{ndt_pso}
 \citation{velodyne_datasheet}
 \citation{a2m8_datasheet}
-\citation{x4_datasheet}
+\citation{ydlidar_datasheets}
 \citation{plicp}
-\citation{csm_implementation}
-\citation{ndt_implementation}
+\citation{implementations}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  A profile of the CAER metric (eq. (\ref  {eq:caer})) from $10^6$ pairs of sample scans, depending on the distance $(\Delta x^2 + \Delta y^2)^{1/2}$ and relative orientation $\Delta \theta $ of the poses from where the two scans were captured. Pose estimates closer to the true pose in terms of orientation (a) exhibit lower CAER values than those further away from it and (b) produce lower location errors once inputted to the Location Estimation system\relax }}{5}{figure.caption.3}}
 \newlabel{fig:caer}{{3}{5}{\small A profile of the CAER metric (eq. (\ref {eq:caer})) from $10^6$ pairs of sample scans, depending on the distance $(\Delta x^2 + \Delta y^2)^{1/2}$ and relative orientation $\Delta \theta $ of the poses from where the two scans were captured. Pose estimates closer to the true pose in terms of orientation (a) exhibit lower CAER values than those further away from it and (b) produce lower location errors once inputted to the Location Estimation system\relax }{figure.caption.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {V}Results}{5}{section.5}}
 \newlabel{section:results}{{V}{5}{Results}{section.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {V-A}Experimental Design}{5}{subsection.5.1}}
 \newlabel{section:experimental}{{V-A}{5}{Experimental Design}{subsection.5.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {V-B}Performance}{5}{subsection.5.2}}
-\newlabel{section:performance}{{V-B}{5}{Performance}{subsection.5.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  Distribution of orientation and position errors across a range of maximal positional and orientational displacements, for progressively larger sensor measurement noise levels. FSM's errors are largely independent of the initial displacement of scans for a given level of sensor noise\relax }}{6}{figure.caption.4}}
-\newlabel{fig:error_distributions}{{4}{6}{\small Distribution of orientation and position errors across a range of maximal positional and orientational displacements, for progressively larger sensor measurement noise levels. FSM's errors are largely independent of the initial displacement of scans for a given level of sensor noise\relax }{figure.caption.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusions}{6}{section.6}}
-\newlabel{section:finale}{{VI}{6}{Conclusions}{section.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  Distribution of orientation and position errors across a range of maximal positional and orientational displacements, for progressively larger sensor measurement noise levels. Each boxplot represents $10$ iterations over $\approx 45$$\cdot $$10^3$ random scan pairs for each configuration. FSM's errors are largely independent of the initial displacement of scans for a given level of sensor noise\relax }}{6}{figure.caption.4}}
+\newlabel{fig:error_distributions}{{4}{6}{\small Distribution of orientation and position errors across a range of maximal positional and orientational displacements, for progressively larger sensor measurement noise levels. Each boxplot represents $10$ iterations over $\approx 45$$\cdot $$10^3$ random scan pairs for each configuration. FSM's errors are largely independent of the initial displacement of scans for a given level of sensor noise\relax }{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {V-B}Performance}{6}{subsection.5.2}}
+\newlabel{section:performance}{{V-B}{6}{Performance}{subsection.5.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces FSM's performance with respect to receding maximum range\relax }}{6}{figure.caption.5}}
+\newlabel{}{{5}{6}{FSM's performance with respect to receding maximum range\relax }{figure.caption.5}{}}
 \bibcite{lidar_localisation_1}{1}
-\bibcite{lidar_localisation_2}{2}
-\bibcite{lidar_navigation_1}{3}
-\bibcite{lidar_navigation_2}{4}
-\bibcite{lidar_navigation_3}{5}
-\bibcite{lidar_navigation_4}{6}
-\bibcite{lidar_slam_1}{7}
-\bibcite{lidar_slam_2}{8}
-\bibcite{lidar_slam_3}{9}
-\bibcite{lidar_slam_4}{10}
-\bibcite{lidar_slam_5}{11}
-\bibcite{olson}{12}
-\bibcite{lidar_odom_1}{13}
-\bibcite{lidar_odom_2}{14}
-\bibcite{lidar_odom_3}{15}
-\bibcite{lidar}{16}
-\bibcite{LuMilios}{17}
-\bibcite{ICP}{18}
-\bibcite{weighted}{19}
-\bibcite{trimmedICP}{20}
-\bibcite{mbicp}{21}
-\bibcite{Martinez}{22}
-\bibcite{plicp}{23}
-\bibcite{ICP_var_1}{24}
-\bibcite{ICP_var_2}{25}
-\bibcite{ICP_var_3}{26}
-\bibcite{ICP_var_4}{27}
-\bibcite{ICP_var_5}{28}
-\bibcite{Marchel}{29}
-\bibcite{icp_comp_trade}{30}
-\bibcite{CLS}{31}
-\bibcite{Haytham}{32}
-\bibcite{Wen}{33}
-\bibcite{Jiayuan}{34}
-\bibcite{wang}{35}
-\bibcite{Jiaxin}{36}
-\bibcite{li}{37}
-\bibcite{olson_2015}{38}
-\@writefile{toc}{\contentsline {section}{References}{7}{section*.5}}
-\bibcite{cross_corr}{39}
-\bibcite{Konecny}{40}
-\bibcite{HSM}{41}
-\bibcite{polar_sm}{42}
-\bibcite{PB_PSM}{43}
-\bibcite{pIC}{44}
-\bibcite{gpm}{45}
-\bibcite{ndt1}{46}
-\bibcite{ndt2}{47}
-\bibcite{ndt3}{48}
-\bibcite{ndt4}{49}
-\bibcite{ndt5}{50}
-\bibcite{ndt6}{51}
-\bibcite{ndt7}{52}
-\bibcite{Heng}{53}
-\bibcite{Jiang}{54}
-\bibcite{fmt2d}{55}
-\bibcite{pose_selection}{56}
-\bibcite{icte}{57}
-\bibcite{dataset_link}{58}
-\bibcite{sota_leg_1}{59}
-\bibcite{sota_leg_2}{60}
-\bibcite{sota_leg_3}{61}
-\bibcite{sota_leg_4}{62}
-\bibcite{sota_leg_5}{63}
-\bibcite{velodyne_datasheet}{64}
-\bibcite{a2m8_datasheet}{65}
-\bibcite{g4_datasheet}{66}
-\bibcite{tg30_datasheet}{67}
-\bibcite{x4_datasheet}{68}
-\bibcite{csm_implementation}{69}
-\bibcite{ndt_implementation}{70}
+\bibcite{lidar_navigation_1}{2}
+\bibcite{lidar_slam_4}{3}
+\bibcite{lidar_slam_5}{4}
+\bibcite{olson}{5}
+\bibcite{lidar_odom_1}{6}
+\bibcite{lidar}{7}
+\bibcite{LuMilios}{8}
+\bibcite{ICP}{9}
+\bibcite{weighted}{10}
+\bibcite{trimmedICP}{11}
+\bibcite{mbicp}{12}
+\bibcite{Martinez}{13}
+\bibcite{fgicp}{14}
+\bibcite{ICP_var_1}{15}
+\bibcite{ICP_var_2}{16}
+\bibcite{ICP_var_3}{17}
+\bibcite{ICP_var_4}{18}
+\bibcite{ICP_var_5}{19}
+\bibcite{Marchel}{20}
+\bibcite{vgicp}{21}
+\bibcite{plicp}{22}
+\bibcite{icp_comp_trade}{23}
+\bibcite{gpm}{24}
+\bibcite{ndt1}{25}
+\bibcite{Heng}{26}
+\bibcite{Jiang}{27}
+\bibcite{fmt2d}{28}
+\bibcite{pose_selection}{29}
+\bibcite{icte}{30}
+\bibcite{dataset_link}{31}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusions and Future Steps}{7}{section.6}}
+\newlabel{section:finale}{{VI}{7}{Conclusions and Future Steps}{section.6}{}}
+\@writefile{toc}{\contentsline {section}{References}{7}{section*.6}}
+\bibcite{sota_leg_1}{32}
+\bibcite{sota_leg_2}{33}
+\bibcite{sota_leg_3}{34}
+\bibcite{sota_leg_4}{35}
+\bibcite{sota_leg_5}{36}
+\bibcite{ndt_pso}{37}
+\bibcite{velodyne_datasheet}{38}
+\bibcite{a2m8_datasheet}{39}
+\bibcite{ydlidar_datasheets}{40}
+\bibcite{implementations}{41}

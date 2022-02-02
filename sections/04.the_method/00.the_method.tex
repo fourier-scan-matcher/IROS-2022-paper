@@ -1,18 +1,43 @@
-The panoramic 2D scan-matching problem is iteratively decomposed into two
-disjunctive sub-problems. The first is estimating the relative orientation of
+Problem \ref{prob:the_problem} is iteratively decomposed into two disjunctive
+sub-problems. The first is estimating the relative orientation of
 $\mathcal{S}_1$ with respect to $\mathcal{S}_0$ under the assumption that both
-are captured from the same location. The second is estimating the relative
-displacement of $\mathcal{S}_1$ with respect to $\mathcal{S}_0$ under the
-assumption that both are captured from poses of the same orientation. Solving
-the first sub-problem is followed by the solution to the second sub-problem.
-This process is iterated until termination conditions are met.
+are captured from the same location (subsection
+\ref{subsec:method_orientation_correction}). In order to do so, $\mathcal{S}_0$ is
+first transformed into a point-set (the map) by projection to the 2D plane. A
+number of map-scans are then captured from the projection origin, at
+consecutive angular intervals. The intervals' sizes are smaller than the
+sensor's angle increment in order for the magnitude of the angular
+approximation error to be lower than the angle increment.  The map-scans are
+then compared against $\mathcal{S}_1$ for similarity in the POMF matching
+sense. The output is an orientation difference estimate between each map-scan
+and $\mathcal{S}_1$. In order to increase discernibility between the least
+erroneous orientation estimate and the other estimates, the pose estimate is
+updated with each orientation estimate, and given over to the translation
+correction system, whose resulting location error is proportional to the
+poses's orientation error, for one iteration. The similarity between map-scans
+captured from these estimates within the map and $\mathcal{S}_1$ is captured in
+a per-ray range error metric. The final orientation estimate of $\mathcal{S}_1$
+is that of the pose estimate whose map-scan scores the lowest error according
+to this metric.
 
-The orientation and location estimation submethods are presented in subsections
-\ref{subsec:method_orientation_correction} and
-\ref{subsec:method_location_correction} respectively. Subsection
-\ref{subsec:method_pose_correction} presents the method of how these two
-are woven together into the system that solves Problem \ref{prob:the_problem}
-that is proposed in this work.
+The second sub-problem is estimating the relative translational displacement of
+$\mathcal{S}_1$ with respect to $\mathcal{S}_0$ under the assumption that both
+are captured from poses of the same orientation (subsection
+\ref{subsec:method_location_correction}). The solution is given via
+scan-to-map-scan matching by transforming $\mathcal{S}_0$ to a point-set and
+matching map-scans, derived from the pose estimate of $\mathcal{S}_1$ within
+the point-set, to $\mathcal{S}_1$ itself. The matching between the two is
+derived from first principles given the scans' periodicity and homorientedness;
+it is facilitated by iteratively updating the position estimate by a vector
+which is a function of the first term of the DFT of the difference between
+$\mathcal{S}_1$ and map-scans derived from the point-set of $\mathcal{S}_0$
+\cite{icte}.
+
+The solution to the first sub-problem is followed by that to the second
+sub-problem. This process is iterated until termination conditions are met.
+Subsection \ref{subsec:method_pose_correction} presents the method of how these
+two are woven together into the system that solves Problem
+\ref{prob:the_problem} that is proposed in this work.
 
 \subsection{Estimation of Relative Orientation}
   \label{subsec:method_orientation_correction}
