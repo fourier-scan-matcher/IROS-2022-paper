@@ -1,31 +1,32 @@
 The experimental procedure was conducted using a collection $D = \{D_k\}, k =
-1,\dots,5$ of five heterogeneous benchmark datasets, courtesy of the Department
-of Computer Science, University of Freiburg, comprising a total of $|D| =
-45402$ scan measurements \cite{dataset_link}.  For purposes of comparison
-against state-of-the-art scan-matching methods the experimental procedure is
-extended to the Normal Distributions Transform (NDT) scan-matching method
-\cite{ndt1}, FastGICP \cite{fgicp} and PLICP$\circ$GPM \cite{plicp}. The latter
-shall be denoted hereafter by the acronym CSM. GPM was used initially in order
-to overcome the angular realignment problems \cite{plicp} of PLICP. NDT,
-FastGICP, and CSM belong to the \textit{established} state-of-the-art methods
-of scan-matching \cite{vgicp}\cite{sota_leg_1}-\cite{sota_leg_5}. In addition,
-the experimental procedure is extended to FastVGICP \cite{vgicp} and NDT-PSO
-\cite{ndt_pso}.
+1,\dots,5$ of five heterogeneous benchmark datasets and sensor properties,
+courtesy of the Department of Computer Science, University of Freiburg,
+comprising a total of $|D| = 45402$ scan measurements \cite{dataset_link}.  For
+purposes of comparison against state-of-the-art scan-matching methods the
+experimental procedure is extended to the Normal Distributions Transform (NDT)
+scan-matching method \cite{ndt1}, FastGICP \cite{fgicp} and PLICP$\circ$GPM
+\cite{plicp}. The latter shall be denoted hereafter by the acronym CSM. GPM
+\cite{gpm} was used initially in order to overcome the angular realignment
+problems \cite{plicp} of PLICP. NDT, FastGICP, and CSM belong to the
+\textit{established} state-of-the-art methods of scan-matching
+\cite{vgicp}\cite{sota_leg_1}-\cite{sota_leg_5}. In addition, the experimental
+procedure is extended to FastVGICP \cite{vgicp} and NDT-PSO \cite{ndt_pso}.
 
-The experimental setup is the following. The rays of each dataset $D$ instance
-$D^d = 1,2,\dots,|D|$ are first projected to the $x-y$ plane around $\bm{r}^d$.
-The dataset's scans are not panoramic, therefore the remaining space is filled
-with a semicircular arc that joins the scan's two extreme ends. Alternative
-fashions for closing-off the environment have been found equivalent with
-respect to the performance of the tested methods. The resulting point-set is
-regarded as the environment $\bm{W}^d$ in which the range sensor operates. Then
-the pose $\bm{p}_0^d$ from which $\mathcal{S}_0^d$ is captured is generated
-randomly within the polygon formed by $\bm{W}^d$. The pose $\bm{p}_1^d$ from
-which the sensor captured $\mathcal{S}_1$ is then obtained by perturbing the
-components of $\bm{p}_0^d$ with quantities extracted from uniformly distributed
-error distributions $U_{xy}(-\overline{\delta}_{xy}, \overline{\delta}_{xy})$,
-$U_{\theta}(-\overline{\delta}_{\theta}, \overline{\delta}_{\theta})$;
-$\overline{\delta}_{xy}$, $\overline{\delta}_\theta$ $\in \mathbb{R}_{\geq 0}$.
+The experimental setup is the following. The rays of each dataset instance
+$D^d, d = 1,2,\dots,|D|$ are first projected to the $x-y$ plane around
+$\bm{r}^d$.  The dataset's scans are not panoramic, therefore the remaining
+space is filled with a semicircular arc that joins the scan's two extreme ends.
+Alternative fashions for closing-off the environment have been found equivalent
+with respect to the performance of the tested methods. The resulting point-set
+is regarded as the environment $\bm{W}^d$ in which the range sensor operates.
+Then the pose $\bm{p}_0^d$ from which $\mathcal{S}_0^d$ is captured is
+generated randomly within the polygon formed by $\bm{W}^d$. The pose
+$\bm{p}_1^d$ from which the sensor captured $\mathcal{S}_1$ is then obtained by
+perturbing the components of $\bm{p}_0^d$ with quantities extracted from
+uniformly distributed error distributions $U_{xy}(-\overline{\delta}_{xy},
+\overline{\delta}_{xy})$, $U_{\theta}(-\overline{\delta}_{\theta},
+\overline{\delta}_{\theta})$; $\overline{\delta}_{xy}$,
+$\overline{\delta}_\theta$ $\in \mathbb{R}_{\geq 0}$.
 
 Range scans $\mathcal{S}_0^d$ and $\mathcal{S}_1^d$ are then computed by
 locating the intersection points between $N_s$ rays emanating from $\bm{p}_0^d$
@@ -61,7 +62,7 @@ $\overline{\delta}_\theta$ were chosen as such by prior art tests \cite{plicp}.
 For each experiment all algorithms ran for $E = 10$ times across all instances
 of $D$. Therefore each method underwent a total of $10 \times 45402 \times 6
 \times 5 \sim O(10^8)$ experiments.  The orientation and position error
-distributions reported below are those across all $E \times D$ experiments of
+distributions reported below are those across all $E |D|$ experiments of
 the same configuration.  All experiments and algorithms were run serially, in
 C++, on a single thread, on a machine with a CPU frequency of $4.0$ GHz. The
 implementations of CSM, NDT, FastGICP, FastVGICP, and NDT-PSO were taken from

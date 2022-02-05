@@ -33,11 +33,12 @@ which is a function of the first term of the DFT of the difference between
 $\mathcal{S}_1$ and map-scans derived from the point-set of $\mathcal{S}_0$
 \cite{icte}.
 
-The solution to the first sub-problem is followed by that to the second
-sub-problem. This process is iterated until termination conditions are met.
-Subsection \ref{subsec:method_pose_correction} presents the method of how these
-two are woven together into the system that solves Problem
-\ref{prob:the_problem} that is proposed in this work.
+In order to solve the joint problem of estimation of position and orientation,
+these two methods are then joined in tandem in an iterative process (subsection
+\ref{subsec:method_pose_correction}). At each step the angular intervals at
+which map-scans are captured in the orientation correction process are
+progressively shortened. This facilitates finer angular and positional
+approximation of the sensor's true pose.
 
 \subsection{Estimation of Relative Orientation}
   \label{subsec:method_orientation_correction}

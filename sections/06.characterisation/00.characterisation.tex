@@ -1,0 +1,50 @@
+Figure \ref{fig:char_fsm_vs_FGI} depicts a comparison of FSM's alignment
+process against that of an ICP variant, namely FastGICP, for measurement noise
+with $\sigma_R = 0.03$ m. The top figure shows the initial configuration
+between two scans captured from poses differing by $\bm{T} = (0.35 \text{m},
+0.1 \text{m}, -60 \text{deg})$. While FastGICP progressively reduces the
+orientation error, FSM nearly eliminates it in one step. From there it provides
+finer approximations of the true orientation by increasing its angular sampling
+degree, which in turn allow it to eliminate the positional errors further. The
+CAER metric succeeds in navigating the error space better than FastGICP's
+internal error metric, especially at such high orientational and positional
+displacements. This fact makes FSM suitable in conditions of higher robot
+velocities (here up to $4.2$ m/s and $720$ deg/s). FSM converges with an error
+of $(0.0098 \text{m}, 0.08 \text{deg})$ in half as many iterations as FastGICP,
+whose final error is $(0.61 \text{m}, 9.94 \text{deg})$.
+
+\begin{figure}
+    \vspace{0.2cm}
+    \input{./figures/characterisation/fsm_vs_fgi.tex}
+    \caption{\small Comparison of alignment progress of FSM against FastGICP}%
+    \label{fig:char_fsm_vs_FGI}%
+\end{figure}
+
+Figure \ref{fig:char_max_range_test} shows the behaviour of FSM and an ICP
+variant, namely, CSM, in tests where the sensor's maximum range is limited.
+Specifically, it shows their mean orientational and positional errors in ten
+tests, for progressively smaller maximum sensor range, within the two
+environments depicted in the top row with white colour. The sensor is affected
+by noise of $\sigma_R = 0.05$ m. The sensor's first position is marked with a
+blue dot. The maximum displacement sensor poses is set to
+$(\overline{\delta}_{xy}, \overline{\delta}_{\theta}) = (0.05 \text{m}, 10 \text{deg})$
+and
+$(\overline{\delta}_{xy}, \overline{\delta}_{\theta}) = (0.20 \text{m}, 45 \text{deg})$.
+Altough one would expect that matching without the use of correspondences would
+fare worse than matching with it, FSM exhibits more robust and more accurate
+orientational errors than CSM. FSM's positional errors are equal to or lower
+than those of CSM.
+
+
+\begin{figure}\centering
+\vspace{-0.2cm}
+    \input{./figures/characterisation/max_range_test.tex}
+    \vspace{-2.0cm}
+    \caption{\small FSM's performance with respect to receding maximum sensor
+             range, compared to that of CSM. Conf$_a$ is configuration
+             $(\overline{\delta}_{xy}, \overline{\delta}_{\theta}) = (0.05 \text{m}, 10 \text{deg})$.
+             Conf$_b$ is
+             $(\overline{\delta}_{xy}, \overline{\delta}_{\theta}) = (0.20 \text{m}, 45 \text{deg})$
+             }%
+    \label{fig:char_max_range_test}%
+\end{figure}
