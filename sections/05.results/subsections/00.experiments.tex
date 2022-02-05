@@ -60,10 +60,10 @@ of the translational component at each map sampling degree $\nu$ was set at $I
 p} = 10$e-$5$. Maximal displacements $\overline{\delta}_{xy}$ and
 $\overline{\delta}_\theta$ were chosen as such by prior art tests \cite{plicp}.
 For each experiment all algorithms ran for $E = 10$ times across all instances
-of $D$. Therefore each method underwent a total of $10 \times 45402 \times 6
-\times 5 \sim O(10^8)$ experiments.  The orientation and position error
-distributions reported below are those across all $E |D|$ experiments of
-the same configuration.  All experiments and algorithms were run serially, in
-C++, on a single thread, on a machine with a CPU frequency of $4.0$ GHz. The
+of $D$; therefore each method underwent a total of $10 \times 45402 \times 6
+\times 5 \sim O(10^8)$ experiments. The orientation and position error
+distributions reported below are those across all $E \cdot |D|$ experiments of
+the same configuration.  All experiments and algorithms were run in C++, on a
+single thread, on a machine with a CPU frequency of $4.0$ GHz. The
 implementations of CSM, NDT, FastGICP, FastVGICP, and NDT-PSO were taken from
 \cite{implementations}.

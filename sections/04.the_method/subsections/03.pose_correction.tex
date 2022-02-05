@@ -21,8 +21,42 @@ relative to $\bm{s}$ by way of registering $\mathcal{S}_1$ to map $\bm{M}$.
            $\bm{M}$ by estimating first its relative orientation and then its
            location with respect to the input pose estimate}
   \label{fig:fsm_inner}
-  \vspace{-0.5cm}
+  %\vspace{-0.5cm}
 \end{figure}
+
+
+\begin{algorithm}
+  \caption{\texttt{FSM}}
+  \begin{spacing}{1.2}
+  \begin{algorithmic}[1]
+    \REQUIRE $\mathcal{S}_0$, $\mathcal{S}_1$, $\gamma$, [$\nu_{\min}$, $\nu_{\max}$, $I$, $\varepsilon_{\delta p}$]
+    \ENSURE $\hat{\bm{p}}_1(\hat{x}_1, \hat{y}_1, \hat{\theta}_1)$
+    \STATE $\hat{\bm{p}}_1 \leftarrow (0,0,0)$, $\nu \leftarrow \nu_{\min}$
+    \STATE $\bm{M} \leftarrow \texttt{project\_to\_2d}(\mathcal{S}_0, \hat{\bm{p}}_1)$
+    \WHILE{$\nu \leq \nu_{\max}$}
+      \FOR{$k \leftarrow 0,\dots, 2^\nu-1$}
+        \STATE $\mathcal{S}_V^k \leftarrow \texttt{scan\_map}(\bm{M}, \hat{\bm{p}}_1 + [0,0,k \gamma 2^{-\nu}])$
+        \STATE $\xi_1^k \leftarrow \arg\max \mathcal{F}^{-1}\{Q_{\mathcal{S}_V^k, \mathcal{S}_1}\}$ \hspace{1.55cm} (eq. \ref{eq:Q})
+        \STATE $\hat{\bm{p}}_1^k \leftarrow \hat{\bm{p}}_1^k + [0,0, \xi_1^k \gamma + k \gamma 2^{-\nu}]$ \hspace{0.75cm}(sec. \ref{subsec:method_orientation_correction})
+        \STATE $\hat{\bm{p}}_1^{k} \leftarrow \texttt{translate}(\hat{\bm{p}}_1^k, \bm{M}, \mathcal{S}_1, 1)$
+        \STATE $\bm{P}_{RPC} \leftarrow \{\bm{P}_{RPC}, \hat{\bm{p}}_1^{k}\}$
+        \STATE $\bm{C} \leftarrow \{\bm{C}, \texttt{CAER}(\mathcal{S}_1,\texttt{scan\_map}(\bm{M},\hat{\bm{p}}_1^{k}))\}$
+      \ENDFOR
+      \STATE $\hat{\bm{p}}_1^\prime \leftarrow \bm{P}_{RPC}(\arg\min \bm{C})$
+      \STATE $\hat{\bm{p}}_1^\prime \leftarrow \texttt{translate}(\hat{\bm{p}}_1^\prime, \bm{M}, \mathcal{S}_1, I);$  \hspace{0.65cm}(sec. \ref{subsec:method_location_correction})
+      \IF{$ \|\hat{\bm{p}}_1^\prime - \hat{\bm{p}}_1\| < \varepsilon_{\delta p}$}
+        \STATE $\nu = \nu + 1$
+      \ENDIF
+      \IF{$\hat{\bm{p}}_1^\prime$ not in $\bm{M}$}
+        \STATE generate new $\hat{\bm{p}}_1$, $\nu \leftarrow \nu_{\min}$, continue
+      \ENDIF
+      \STATE $\hat{\bm{p}}_1 \leftarrow \hat{\bm{p}}_1^\prime$
+    \ENDWHILE
+    \RETURN $\hat{\bm{p}}_1$
+  \end{algorithmic}
+  \end{spacing}
+  \label{alg:algorithm_fsm}
+\end{algorithm}
 
 Given an input pose estimate $\hat{\bm{p}}_1(\hat{x}_1, \hat{y}_1,
 \hat{\theta}_1)$, range scan $\mathcal{S}_1$, the map $\bm{M}$, and a sampling
@@ -61,9 +95,10 @@ estimate in $\bm{P}_{OC}$ and capturing the CAER for each of its displaced pose
 estimates in $\bm{P}_{RPC}$, it is possible to establish a pose error rank
 between pose estimates in $\bm{P}_{OC}$ and simultaneously retain only one pose
 estimate for the next iteration of the One-step Pose Estimation
-method.\footnote{Alternatively, correcting the position of $2^\nu$ pose
-estimates and feeding them back to the One-step Pose Estimation method would
-incur exponential costs in time of execution.} The pose estimate $\bm{p}_C \in
+method.%\footnote{Alternatively, correcting the position of $2^\nu$ pose
+%estimates and feeding them back to the One-step Pose Estimation method would
+%incur exponential costs in time of execution.}
+The pose estimate $\bm{p}_C \in
 \bm{P}_{OC}$ which, when translated once, records the minimum CAER among all
 similarly-treated pose estimates in $\bm{P}_{OC}$ is inputted to the Position
 Estimation method proper. The number of translation iterations $I$ it undergoes
