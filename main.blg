@@ -1,0 +1,71 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: ieeetran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: ./sections/bibliography_ieee.bib
+Warning--entry type for "datasets_link" isn't style-file defined
+--line 261 of file ./sections/bibliography_ieee.bib
+Warning--entry type for "velodyne_datasheet" isn't style-file defined
+--line 351 of file ./sections/bibliography_ieee.bib
+Warning--entry type for "a2m8_datasheet" isn't style-file defined
+--line 355 of file ./sections/bibliography_ieee.bib
+Warning--entry type for "ydlidar_datasheets" isn't style-file defined
+--line 359 of file ./sections/bibliography_ieee.bib
+Warning--entry type for "implementations" isn't style-file defined
+--line 363 of file ./sections/bibliography_ieee.bib
+-- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty year in Pfister
+Warning--empty year in Chetverikov
+Warning--empty year in Biber
+Warning--empty year in Censi
+
+Done.
+You've used 36 entries,
+            4024 wiz_defined-function locations,
+            1028 strings with 14453 characters,
+and the built_in function-call counts, 29832 in all, are:
+= -- 2324
+> -- 656
+< -- 269
++ -- 385
+- -- 114
+* -- 1429
+:= -- 4137
+add.period$ -- 92
+call.type$ -- 36
+change.case$ -- 36
+chr.to.int$ -- 648
+cite$ -- 40
+duplicate$ -- 2188
+empty$ -- 2535
+format.name$ -- 129
+if$ -- 6964
+int.to.chr$ -- 0
+int.to.str$ -- 36
+missing$ -- 380
+newline$ -- 141
+num.names$ -- 31
+pop$ -- 953
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 2253
+stack$ -- 0
+substring$ -- 1624
+swap$ -- 1797
+text.length$ -- 53
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 36
+warning$ -- 4
+while$ -- 133
+width$ -- 38
+write$ -- 363
+(There were 9 warnings)

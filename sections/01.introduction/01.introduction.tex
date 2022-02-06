@@ -6,16 +6,16 @@ overlap between the two scans, estimating the rigid-body transformation
 $\bm{T}$ that projects the endpoints of $\mathcal{S}_1$ to those of
 $\mathcal{S}_0$ with the least error is known as scan-matching. The solution to
 the scan-matching problem is central to methods of Localisation
-\cite{lidar_localisation_1}, Navigation
-\cite{lidar_navigation_1}, and Simultaneous
-Localisation and Mapping (SLAM) \cite{lidar_slam_4}\cite{lidar_slam_5}, as
+\cite{Ju2019}, Navigation
+\cite{Kumar2018}, and Simultaneous
+Localisation and Mapping (SLAM) \cite{Zhang2019,Pedrosa2020}, as
 $\bm{T}$ is the rigid-body transformation $\bm{p}_1$$-$$\bm{p}_0$: i.e. the
 solution to scan-matching provides localisation information at time $t_1$,
 relative to $\bm{p}_0$. For this reason, along with the high measurement
 accuracy of LIDAR sensors, scan-matching is also used as a means to improving,
 providing, or substituting odometric measurements (where available; fig.
 \ref{fig:laser_odometry}), as the latter are prone to unbounded and
-unpredictable tire and wheel slippage \cite{olson}\cite{lidar_odom_1}.
+unpredictable tire and wheel slippage \cite{Olson2009,Zhang2020}.
 
 LIDAR sensors with a field of view of $360^\circ$, i.e. panoramic sensors, were
 for years constrained to high price ranges, and most provided 3D measurements.
