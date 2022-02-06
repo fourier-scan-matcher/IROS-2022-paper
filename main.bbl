@@ -121,6 +121,20 @@ F.~Donoso, K.~Austin, and P.~McAree, ``{How do ICP variants perform when used
   for scan matching terrain point clouds?}'' \emph{Robotics and Autonomous
   Systems}, vol.~87, pp. 147--161, jan 2017.
 
+\bibitem{Biber}
+P.~Biber and W.~Strasser, ``{The normal distributions transform: a new approach
+  to laser scan matching},'' in \emph{Proceedings 2003 IEEE/RSJ International
+  Conference on Intelligent Robots and Systems (IROS 2003) (Cat.
+  No.03CH37453)}, vol.~3.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, pp.
+  2743--2748.
+
+\bibitem{Bouraine2020}
+S.~Bouraine, A.~Bougouffa, and O.~Azouaoui, ``{NDT-PSO, a New NDT based SLAM
+  Approach using Particle Swarm Optimization},'' in \emph{2020 16th
+  International Conference on Control, Automation, Robotics and Vision
+  (ICARCV)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, dec 2020, pp.
+  321--326.
+
 \bibitem{Filotheou2020a}
 A.~Filotheou, E.~Tsardoulias, A.~Dimitriou, A.~Symeonidis, and L.~Petrou,
   ``{Pose Selection and Feedback Methods in Tandem Combinations of Particle
@@ -156,13 +170,6 @@ A.~Filotheou, ``{Correspondenceless scan-to-map-scan matching of homoriented 2D
   \url{http://ais.informatik.uni-freiburg.de/slamevaluation/datasets.php}
 \BIBentrySTDinterwordspacing
 
-\bibitem{Biber}
-P.~Biber and W.~Strasser, ``{The normal distributions transform: a new approach
-  to laser scan matching},'' in \emph{Proceedings 2003 IEEE/RSJ International
-  Conference on Intelligent Robots and Systems (IROS 2003) (Cat.
-  No.03CH37453)}, vol.~3.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, pp.
-  2743--2748.
-
 \bibitem{Xu2018a}
 P.~Xu, F.~Gu, Z.~Song, and J.~Li, ``{Non-iterative multiple data registration
   method based on the motion screw theory and trackable features},'' in
@@ -194,13 +201,6 @@ Q.-H. Pham, N.-H. Tran, T.-T. Nguyen, and T.-P. Tran, ``{Online Robust
   Sliding-Windowed LiDAR SLAM in Natural Environments},'' in \emph{2021
   International Symposium on Electrical and Electronics Engineering
   (ISEE)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, apr 2021, pp. 172--177.
-
-\bibitem{Bouraine2020}
-S.~Bouraine, A.~Bougouffa, and O.~Azouaoui, ``{NDT-PSO, a New NDT based SLAM
-  Approach using Particle Swarm Optimization},'' in \emph{2020 16th
-  International Conference on Control, Automation, Robotics and Vision
-  (ICARCV)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, dec 2020, pp.
-  321--326.
 
 \bibitem{velodyne_datasheet}
 \BIBentryALTinterwordspacing
