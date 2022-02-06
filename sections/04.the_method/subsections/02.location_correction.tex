@@ -15,70 +15,60 @@ $\bm{M}_L$ is additive and finite. Under these assumptions the problem of
 into a problem of scan--to--map-scan matching, where the aim is registering
 scan $\mathcal{S}_1$ to map $\bm{M}_L$: i.e. estimating the pose $\bm{p}_1$
 from where $\mathcal{S}_1$ was captured within $\bm{M}_L$. Theorem
-\ref{prop:theorem_with_disturbance} \cite{icte} guarantees that the error of
+\ref{prop:theorem_without_disturbance} \cite{icte} guarantees that the error of
 the location estimate between the poses from which the two scans were captured
-is bounded in a neighbourhood of the origin, if the location component of the
-pose estimate of $\bm{p}_1$ is treated according to Theorem
-\ref{prop:theorem_without_disturbance}, when its initial value is set to
-$\hat{\bm{p}}_1 = \bm{s}$.
+is bounded in a neighbourhood of the origin, when $\hat{\bm{p}}_1 = \bm{s}$.
 
 
 \begin{theorem}
   \label{prop:theorem_without_disturbance}
-  Let a panoramic 2D range scan $\mathcal{S}_R$ be captured from a physical
-  range sensor from unknown pose $\bm{p} = (\bm{l},\theta)$, $\bm{l} = (x,y)$.
-  Let $\bm{M}$ be the map of the world in which the scan was captured. Let a
-  pose estimate $\hat{\bm{p}} = (\hat{\bm{l}}, \hat{\theta})$ reside in the
-  neighbourhood of $\bm{p}$ in the map's frame of reference. Additionally, let
-  $\hat{\theta} = \theta$. Assume that $\mathcal{S}_R$ is disturbance-free,
-  and that the map of the environment captures the latter perfectly. Then,
+  Let a panoramic 2D range scan $\mathcal{S}_1$ be captured from a physical
+  range sensor from unknown pose $\bm{p}_1 = (\bm{l}_1,\theta_1)$, $\bm{l}_1 = (x_1,y_1)$.
+  Let $\bm{M}_L$ be the map, i.e. the projection of panoramic 2D range scan
+  $\mathcal{S}_0$ from $\bm{s}(0,0,0)$. Let a
+  pose estimate $\hat{\bm{p}}_1 = (\hat{\bm{l}}_1, \hat{\theta}_1)$ reside in the
+  neighbourhood of $\bm{p}_1$ in the map's frame of reference. Additionally, let
+  $\hat{\theta}_1 = \theta_1$. Assume that $\mathcal{S}_0$ and/or $\mathcal{S}_1$
+  are affected by additive, bounded disturbances. Then,
   treating the estimate of the location of the sensor as a state variable
-  $\hat{\bm{l}}[k] = [\hat{x}[k], \hat{y}[k]]^\top$ and updating it according
+  $\hat{\bm{l}}_1[k] = [\hat{x}_1[k], \hat{y}_1[k]]^\top$ and updating it according
   to the difference equation
   \begin{align}
-    \hat{\bm{l}}[k+1] = \hat{\bm{l}}[k] + \bm{u}[k]
+    \hat{\bm{l}}_1[k+1] = \hat{\bm{l}}_1[k] + \bm{u}[k]
     \label{eq:difference_equation_without_disturbance}
   \end{align}
-  where $\hat{\bm{l}}[0] = \hat{\bm{l}} = [\hat{x}, \hat{y}]^{\top}$,
-  i.e. the supplied initial location estimate,
+  where $\hat{\bm{l}}_1[0] = \hat{\bm{l}}_1 = [\hat{x}_1, \hat{y}_1]^{\top}$,
+  i.e. the supplied initial location estimate, and $\bm{u}$ is
   \begin{align}
     \bm{u}[k] = \dfrac{1}{N_s}
     \begin{bmatrix}
-      \cos\hat{\theta} & \sin\hat{\theta} \\
-      \sin\hat{\theta} & - \cos\hat{\theta}
+      \cos\hat{\theta}_1 & \sin\hat{\theta}_1 \\
+      \sin\hat{\theta}_1 & - \cos\hat{\theta}_1
     \end{bmatrix}
     \begin{bmatrix}
-      X_{1,r}\big(\mathcal{S}_R, \mathcal{S}_V|_{\bm{\hat{p}}[k]}\big) \vspace{0.2cm} \\
-      X_{1,i}\big(\mathcal{S}_R, \mathcal{S}_V|_{\bm{\hat{p}}[k]}\big)
+      X_{1,r}\big(\mathcal{S}_1, \mathcal{S}_0|_{\bm{\hat{p}}_1[k]}\big) \vspace{0.2cm} \\
+      X_{1,i}\big(\mathcal{S}_1, \mathcal{S}_0|_{\bm{\hat{p}}_1[k]}\big)
     \end{bmatrix}
     \label{eq:control_vector_without_disturbance}
   \end{align}
   where $X_{1,r}(\cdot)$ and $X_{1,i}(\cdot)$ are, respectively, the real and
   imaginary parts of the complex quantity $X_1$:
   \begin{align}
-    X_1\big(\mathcal{S}_R, \mathcal{S}_V|_{\bm{\hat{p}}[k]}\big)
+    X_1\big(\mathcal{S}_1, \mathcal{S}_0|_{\bm{\hat{p}}_1[k]}\big)
       %= &X_{1,r}\big(\mathcal{S}_R, \mathcal{S}_V|_{\bm{\hat{p}}[k]}\big)
       %+ i X_{1,i}\big(\mathcal{S}_R, \mathcal{S}_V|_{\bm{\hat{p}}[k]}\big) \nonumber \\
-      = &\sum\limits_{n=0}^{N_s-1}(\mathcal{S}_R[n] - \mathcal{S}_V[n]|_{\bm{\hat{p}}[k]}) \cdot e^{-i \frac{2 \pi n}{N_s}} \label{eq:X1}
+      = &\sum\limits_{n=0}^{N_s-1}(\mathcal{S}_1[n] - \mathcal{S}_0[n]|_{\bm{\hat{p}}_1[k]}) \cdot e^{-i \frac{2 \pi n}{N_s}} \label{eq:X1}
   \end{align}
-  where $\mathcal{S}_R[n]$ and $\mathcal{S}_V[n]|_{\bm{\hat{p}}[k]}$ are,
-  respectively, the ranges of the $n$-th ray of real scan $\mathcal{S}_R$ and
-  map-scan $\mathcal{S}_V|_{\bm{\hat{p}}[k]}$ captured via raycasting the map
-  $\bm{M}$ from $\bm{\hat{p}}[k] = (\hat{\bm{l}}[k], \hat{\theta})$---then
-  $\hat{\bm{l}}[k]$ \textit{converges to} $\bm{l}$ \textit{uniformly
-  asymptotically as} $k \rightarrow \infty$.
+  where $\mathcal{S}_1[n]$ and $\mathcal{S}_0[n]|_{\bm{\hat{p}}[k]}$ are,
+  respectively, the ranges of the $n$-th ray of scan $\mathcal{S}_1$, and
+  map-scan $\mathcal{S}_0|_{\bm{\hat{p}}[k]}$ captured via raycasting the map
+  $\bm{M}_L$ from $\bm{\hat{p}}_1[k] = (\hat{\bm{l}}_1[k],
+  \hat{\theta}_1)$---then $\hat{\bm{l}}_1[k]$ is uniformly bounded for $k \geq
+  k_0$ and uniformly ultimately bounded in a neighbourhood of $\bm{l}_1$. Its
+  size depends on the suprema of the disturbance corrupting the range
+  measurements of the two scans.
 \end{theorem}
 
-\begin{theorem}
-  \label{prop:theorem_with_disturbance} Let the assumptions of Theorem
-  \ref{prop:theorem_without_disturbance} hold. Assume additionally that the
-  ranges of either or both real and virtual range scans $\mathcal{S}_R$ and
-  $\mathcal{S}_V$ are affected by additive, bounded disturbances. Then
-  $\hat{\bm{l}}[k]$ is uniformly bounded for $k \geq k_0$ and uniformly
-  ultimately bounded in a neighbourhood of $\bm{l}$. Its size depends on the
-  suprema of the disturbance corrupting the range measurements of the two
-  scans.
-\end{theorem}
 
 \begin{remark}
   \label{remark:loc_prop_or}

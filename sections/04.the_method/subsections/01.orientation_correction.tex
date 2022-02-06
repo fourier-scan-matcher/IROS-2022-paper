@@ -54,13 +54,13 @@ matching in one dimension \cite{fmt2d}.
 Let now $K$ denote the index of the $k$-th map scan
 $\mathcal{S}_0^K$ scoring the highest PD$_k$: $\text{PD}_K =
 \max \{\text{PD}_k\}$, $k = 0,\dots,2^\nu-1$. Let also $\Xi$ denote the integer
-multiple of angle increments $\gamma$ by which $\mathcal{S}_V^K$
+multiple of angle increments $\gamma$ by which $\mathcal{S}_0^K$
 should be rotated counter-clockwise in order to achieve PD$_K$:
 $\Xi = \arg\max\ q_{\mathcal{S}_0^K, \mathcal{S}_1}$.  Then the sensor's
 orientation difference becomes
 $\Delta\theta = \Xi\gamma + K \cdot \gamma/2^\nu + \delta\theta^\prime$.
 
-If map-scans $\mathcal{S}_V^k$ were computed by raycasting the map of the
+If map-scans $\mathcal{S}_0^k$ were computed by raycasting the map of the
 environment instead of $\bm{M}_R$ then the residual and unresolved orientation
 error $|\delta\theta^\prime| \in [0,\gamma / 2^{1+\nu}]$. In this case, however,
 $\bm{M}_R$ is an approximation of the environment's map in the locality of

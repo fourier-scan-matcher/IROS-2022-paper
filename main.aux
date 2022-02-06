@@ -62,7 +62,6 @@
 \newlabel{eq:difference_equation_without_disturbance}{{3}{4}{}{equation.4.3}{}}
 \newlabel{eq:control_vector_without_disturbance}{{4}{4}{}{equation.4.4}{}}
 \newlabel{eq:X1}{{5}{4}{}{equation.4.5}{}}
-\newlabel{prop:theorem_with_disturbance}{{II}{4}{}{theorem.2}{}}
 \newlabel{remark:loc_prop_or}{{I}{4}{}{remark.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {IV-C}Joint Estimation of Relative Orientation and Location}{4}{subsection.4.3}}
 \newlabel{subsec:method_pose_correction}{{IV-C}{4}{Joint Estimation of Relative Orientation and Location}{subsection.4.3}{}}
@@ -81,9 +80,9 @@
 \citation{sota_leg_5}
 \citation{vgicp}
 \citation{ndt_pso}
-\newlabel{eq:caer}{{6}{5}{Joint Estimation of Relative Orientation and Location}{equation.4.6}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  A profile of the CAER metric (eq. (\ref  {eq:caer})) from $10^6$ pairs of sample scans, depending on the distance $(\Delta x^2 + \Delta y^2)^{1/2}$ and relative orientation $\Delta \theta $ of the poses from where the two scans were captured. Pose estimates closer to the true pose in terms of orientation (a) exhibit lower CAER values than those further away from it and (b) produce lower location errors once inputted to the Location Estimation system\relax }}{5}{figure.caption.3}}
 \newlabel{fig:caer}{{3}{5}{\small A profile of the CAER metric (eq. (\ref {eq:caer})) from $10^6$ pairs of sample scans, depending on the distance $(\Delta x^2 + \Delta y^2)^{1/2}$ and relative orientation $\Delta \theta $ of the poses from where the two scans were captured. Pose estimates closer to the true pose in terms of orientation (a) exhibit lower CAER values than those further away from it and (b) produce lower location errors once inputted to the Location Estimation system\relax }{figure.caption.3}{}}
+\newlabel{eq:caer}{{6}{5}{Joint Estimation of Relative Orientation and Location}{equation.4.6}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {V}Results}{5}{section.5}}
 \newlabel{section:results}{{V}{5}{Results}{section.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {V-A}Experimental Design}{5}{subsection.5.1}}
@@ -93,14 +92,15 @@
 \citation{ydlidar_datasheets}
 \citation{plicp}
 \citation{implementations}
+\bibcite{lidar_localisation_1}{1}
+\bibcite{lidar_navigation_1}{2}
 \@writefile{toc}{\contentsline {subsection}{\numberline {V-B}Performance}{6}{subsection.5.2}}
 \newlabel{section:performance}{{V-B}{6}{Performance}{subsection.5.2}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {VI}Characterisation}{6}{section.6}}
 \newlabel{section:characterisation}{{VI}{6}{Characterisation}{section.6}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusions and Future Steps}{6}{section.7}}
 \newlabel{section:finale}{{VII}{6}{Conclusions and Future Steps}{section.7}{}}
-\bibcite{lidar_localisation_1}{1}
-\bibcite{lidar_navigation_1}{2}
+\@writefile{toc}{\contentsline {section}{References}{6}{section*.7}}
 \bibcite{lidar_slam_4}{3}
 \bibcite{lidar_slam_5}{4}
 \bibcite{olson}{5}
@@ -110,40 +110,34 @@
 \bibcite{ICP}{9}
 \bibcite{weighted}{10}
 \bibcite{trimmedICP}{11}
-\bibcite{mbicp}{12}
-\bibcite{Martinez}{13}
+\bibcite{plicp}{12}
+\bibcite{fgicp}{13}
+\bibcite{ICP_var_1}{14}
+\bibcite{ICP_var_2}{15}
+\bibcite{Marchel}{16}
+\bibcite{vgicp}{17}
+\bibcite{icp_comp_trade}{18}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  Distribution of orientation and position errors across a range of maximal positional and orientational displacements, for progressively larger sensor measurement noise levels. Each boxplot represents $10$ iterations over $\DOTSB \sum@ \slimits@ |D_k| \approx 45$$\cdot $$10^3$ random scan pairs for each configuration, $k=1,\dots  ,5$. Dots signify mean errors. FSM's errors are largely independent of the initial displacement of scans for a given level of sensor noise\relax }}{7}{figure.caption.4}}
 \newlabel{fig:error_distributions}{{4}{7}{\small Distribution of orientation and position errors across a range of maximal positional and orientational displacements, for progressively larger sensor measurement noise levels. Each boxplot represents $10$ iterations over $\sum |D_k| \approx 45$$\cdot $$10^3$ random scan pairs for each configuration, $k=1,\dots ,5$. Dots signify mean errors. FSM's errors are largely independent of the initial displacement of scans for a given level of sensor noise\relax }{figure.caption.4}{}}
-\@writefile{toc}{\contentsline {section}{References}{7}{section*.7}}
-\bibcite{fgicp}{14}
-\bibcite{ICP_var_1}{15}
-\bibcite{ICP_var_2}{16}
-\bibcite{ICP_var_3}{17}
-\bibcite{ICP_var_4}{18}
-\bibcite{ICP_var_5}{19}
-\bibcite{Marchel}{20}
-\bibcite{vgicp}{21}
-\bibcite{plicp}{22}
-\bibcite{icp_comp_trade}{23}
-\bibcite{pose_selection}{24}
-\bibcite{Heng}{25}
-\bibcite{Jiang}{26}
-\bibcite{fmt2d}{27}
-\bibcite{icte}{28}
-\bibcite{dataset_link}{29}
-\bibcite{ndt1}{30}
-\bibcite{gpm}{31}
-\bibcite{sota_leg_1}{32}
-\bibcite{sota_leg_2}{33}
-\bibcite{sota_leg_3}{34}
+\bibcite{pose_selection}{19}
+\bibcite{Heng}{20}
+\bibcite{Jiang}{21}
+\bibcite{fmt2d}{22}
+\bibcite{icte}{23}
+\bibcite{dataset_link}{24}
+\bibcite{ndt1}{25}
+\bibcite{gpm}{26}
+\bibcite{sota_leg_1}{27}
+\bibcite{sota_leg_2}{28}
+\bibcite{sota_leg_3}{29}
+\bibcite{sota_leg_4}{30}
+\bibcite{sota_leg_5}{31}
+\bibcite{ndt_pso}{32}
+\bibcite{velodyne_datasheet}{33}
+\bibcite{a2m8_datasheet}{34}
+\bibcite{ydlidar_datasheets}{35}
+\bibcite{implementations}{36}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  Comparison of alignment progress of FSM against FastGICP\relax }}{8}{figure.caption.5}}
 \newlabel{fig:char_fsm_vs_FGI}{{5}{8}{\small Comparison of alignment progress of FSM against FastGICP\relax }{figure.caption.5}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  FSM's performance with respect to receding maximum sensor range, compared to that of CSM. Conf$_a$ is configuration $(\overline  {\delta }_{xy}, \overline  {\delta }_{\theta }) = (0.05 \text  {m}, 10 \text  {deg})$. Conf$_b$ is $(\overline  {\delta }_{xy}, \overline  {\delta }_{\theta }) = (0.20 \text  {m}, 45 \text  {deg})$ \relax }}{8}{figure.caption.6}}
 \newlabel{fig:char_max_range_test}{{6}{8}{\small FSM's performance with respect to receding maximum sensor range, compared to that of CSM. Conf$_a$ is configuration $(\overline {\delta }_{xy}, \overline {\delta }_{\theta }) = (0.05 \text {m}, 10 \text {deg})$. Conf$_b$ is $(\overline {\delta }_{xy}, \overline {\delta }_{\theta }) = (0.20 \text {m}, 45 \text {deg})$ \relax }{figure.caption.6}{}}
-\bibcite{sota_leg_4}{35}
-\bibcite{sota_leg_5}{36}
-\bibcite{ndt_pso}{37}
-\bibcite{velodyne_datasheet}{38}
-\bibcite{a2m8_datasheet}{39}
-\bibcite{ydlidar_datasheets}{40}
-\bibcite{implementations}{41}

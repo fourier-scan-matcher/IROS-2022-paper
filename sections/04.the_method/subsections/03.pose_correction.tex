@@ -35,15 +35,15 @@ relative to $\bm{s}$ by way of registering $\mathcal{S}_1$ to map $\bm{M}$.
     \STATE $\bm{M} \leftarrow \texttt{project\_to\_2d}(\mathcal{S}_0, \hat{\bm{p}}_1)$
     \WHILE{$\nu \leq \nu_{\max}$}
       \FOR{$k \leftarrow 0,\dots, 2^\nu-1$}
-        \STATE $\mathcal{S}_V^k \leftarrow \texttt{scan\_map}(\bm{M}, \hat{\bm{p}}_1 + [0,0,k \gamma 2^{-\nu}])$
-        \STATE $\xi_1^k \leftarrow \arg\max \mathcal{F}^{-1}\{Q_{\mathcal{S}_V^k, \mathcal{S}_1}\}$ \hspace{1.55cm} (eq. \ref{eq:Q})
-        \STATE $\hat{\bm{p}}_1^k \leftarrow \hat{\bm{p}}_1^k + [0,0, \xi_1^k \gamma + k \gamma 2^{-\nu}]$ \hspace{0.75cm}(sec. \ref{subsec:method_orientation_correction})
-        \STATE $\hat{\bm{p}}_1^{k} \leftarrow \texttt{translate}(\hat{\bm{p}}_1^k, \bm{M}, \mathcal{S}_1, 1)$
+        \STATE $\mathcal{S}_0^k \leftarrow \texttt{scan\_map}(\bm{M}, \hat{\bm{p}}_1 + [0,0,k \gamma 2^{-\nu}])$
+        \STATE $\xi_1^k \leftarrow \arg\max \mathcal{F}^{-1}\{Q_{\mathcal{S}_0^k, \mathcal{S}_1}\}$ \hfill (eq. \ref{eq:Q})
+        \STATE $\hat{\bm{p}}_1^k \leftarrow \hat{\bm{p}}_1 + [0,0, \xi_1^k \gamma + k \gamma 2^{-\nu}]$ \hfill (sec. \ref{subsec:method_orientation_correction})
+        \STATE $\hat{\bm{p}}_1^{k} \leftarrow \texttt{translate}(\hat{\bm{p}}_1^k, \bm{M}, \mathcal{S}_1, 1)$ \hfill (sec. \ref{subsec:method_pose_correction})
         \STATE $\bm{P}_{RPC} \leftarrow \{\bm{P}_{RPC}, \hat{\bm{p}}_1^{k}\}$
         \STATE $\bm{C} \leftarrow \{\bm{C}, \texttt{CAER}(\mathcal{S}_1,\texttt{scan\_map}(\bm{M},\hat{\bm{p}}_1^{k}))\}$
       \ENDFOR
       \STATE $\hat{\bm{p}}_1^\prime \leftarrow \bm{P}_{RPC}(\arg\min \bm{C})$
-      \STATE $\hat{\bm{p}}_1^\prime \leftarrow \texttt{translate}(\hat{\bm{p}}_1^\prime, \bm{M}, \mathcal{S}_1, I);$  \hspace{0.65cm}(sec. \ref{subsec:method_location_correction})
+      \STATE $\hat{\bm{p}}_1^\prime \leftarrow \texttt{translate}(\hat{\bm{p}}_1^\prime, \bm{M}, \mathcal{S}_1, I);$  \hfill (sec. \ref{subsec:method_location_correction})
       \IF{$ \|\hat{\bm{p}}_1^\prime - \hat{\bm{p}}_1\| < \varepsilon_{\delta p}$}
         \STATE $\nu = \nu + 1$
       \ENDIF
@@ -83,10 +83,10 @@ of orientation and hence position with respect to $\bm{p}_1$ once inputted to
 the position estimation system (remark \ref{remark:loc_prop_or}). This
 divergence is captured by the Cumulative Absolute Error per Ray (CAER) metric:
 \begin{align}
-  \text{CAER}_k = & \sum\limits_{n=0}^{N_s-1} \Bigg| \mathcal{S}_1[n] - \mathcal{S}_V^k[n]\Big|_{(\hat{x}_1^k, \hat{y}_1^k, \hat{\theta}_1^k)} \Bigg|
+  \text{CAER}_k = & \sum\limits_{n=0}^{N_s-1} \Bigg| \mathcal{S}_1[n] - \mathcal{S}_0^k[n]\Big|_{(\hat{x}_1^k, \hat{y}_1^k, \hat{\theta}_1^k)} \Bigg|
   \label{eq:caer}
 \end{align}
-where $\mathcal{S}_V^k$ is the map-scan captured from
+where $\mathcal{S}_0^k$ is the map-scan captured from
 $(\hat{x}_1^k, \hat{y}_1^k, \hat{\theta}_1^k)$, $k$ = $0,\dots,2^\nu$$-$$1$,
 within $\bm{M}$. The CAER metric (fig. \ref{fig:caer})
 encodes at the same time a degree of alignment of position and orientation
