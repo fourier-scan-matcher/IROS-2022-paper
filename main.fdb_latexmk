@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex main"] 1644160103 "main.aux" "main.bbl" "main" 1644160104
+["bibtex main"] 1644162512 "main.aux" "main.bbl" "main" 1644162678
   "./ieeetran.bst" 1644150229 59147 b77491233300aaa15ba653115e44964a ""
-  "./sections/bibliography_ieee.bib" 1644160103 12264 90cf21b82cc6cf14153a526f0b326305 ""
-  "main.aux" 1644160104 10767 56a36da44af787353481df6b23a4ecdc ""
+  "./sections/bibliography_ieee.bib" 1644162504 12258 81dbaa3bbc2fb6f98e1cd4b090b5eb50 ""
+  "main.aux" 1644162678 10767 56a36da44af787353481df6b23a4ecdc ""
   "main.bcf" 0 -1 0 ""
   (generated)
   "main.blg"
   "main.bbl"
-["pdflatex"] 1644160103 "main.tex" "main.pdf" "main" 1644160104
+["pdflatex"] 1644162677 "main.tex" "main.pdf" "main" 1644162678
   "/etc/texmf/web2c/texmf.cnf" 1552154870 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
@@ -281,9 +281,9 @@
   "figures/odom_test_5_vs_6.eps" 1616858110 38153 c585f3d1e5c46f33df6555e975dbc27f ""
   "figures/odom_test_5_vs_6.tex" 1644160003 5668 3fd1aa24a13564e61bf05a81111cea9d ""
   "ieeeconf.cls" 1461425939 202167 7b37f8353df61c9733ed46143eff807a ""
-  "main.aux" 1644160104 10767 56a36da44af787353481df6b23a4ecdc ""
-  "main.bbl" 1644160103 10271 c06cdb3dc01cf47582cc0e6cbf386b84 "bibtex main"
-  "main.out" 1644160104 804 11a0679ccacd6cedbed500653dfb1176 ""
+  "main.aux" 1644162678 10767 56a36da44af787353481df6b23a4ecdc ""
+  "main.bbl" 1644162512 10272 052f15300e6e36c29361d62d1442016b "bibtex main"
+  "main.out" 1644162678 804 11a0679ccacd6cedbed500653dfb1176 ""
   "main.tex" 1644149906 3205 18fd1702a86f6e020d786b1d0fb4cec0 ""
   "sections/00.abstract/abstract.tex" 1643704729 2207 d69fa212098f4cf953913a2ac1a899ca ""
   "sections/01.introduction/01.introduction.tex" 1644150770 4376 edd67cba2c931bc31b67d7589b9a647a ""
@@ -292,7 +292,7 @@
   "sections/04.the_method/00.the_method.tex" 1644151569 3281 aa3c587a3050dbb19fc1d5fee5b12b56 ""
   "sections/04.the_method/subsections/01.orientation_correction.tex" 1644150839 4527 ae2c54e11056181b5a4ad0222da8c5ea ""
   "sections/04.the_method/subsections/02.location_correction.tex" 1644152851 4625 dcefe73f6714a7b76968dcb3d04096a8 ""
-  "sections/04.the_method/subsections/03.pose_correction.tex" 1644153073 10300 3c1c501df3fa4491b4440d5ed0d2cacd ""
+  "sections/04.the_method/subsections/03.pose_correction.tex" 1644162676 10289 c2eebe25153dc0e7303731c087e4f0b7 ""
   "sections/05.results/00.results.tex" 1643705091 404 afd5736ef073c89e626cdd720e14133b ""
   "sections/05.results/subsections/00.experiments.tex" 1644159925 4674 2e0dad5a69ffa75cafc7017c470e7d65 ""
   "sections/05.results/subsections/01.performance.tex" 1644159933 1935 98bece0ffb72bfc8300082f5d0e9cba4 ""
@@ -301,6 +301,6 @@
   "sections/pre_document.tex" 1644150260 2536 8b04601ee206b0e284e3452b2ab0d3f8 ""
   (generated)
   "main.out"
+  "main.log"
   "main.aux"
   "main.pdf"
-  "main.log"

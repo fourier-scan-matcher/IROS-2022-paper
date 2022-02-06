@@ -148,11 +148,11 @@ G.~Jiang, L.~Yin, G.~Liu, W.~Xi, and Y.~Ou, ``{FFT-Based Scan-Matching for SLAM
 \bibitem{Filotheou2022}
 A.~Filotheou, ``{Correspondenceless scan-to-map-scan matching of homoriented 2D
   scans for mobile robot localisation},'' \emph{Robotics and Autonomous
-  Systems}, vol. 149, p. 103957, mar 2022.
+  Systems}, vol. 149, mar 2022.
 
 \bibitem{datasets_link}
 \BIBentryALTinterwordspacing
-``{The datasets are available at}.'' [Online]. Available:
+``Datasets used in the experimental procedure.'' [Online]. Available:
   \url{http://ais.informatik.uni-freiburg.de/slamevaluation/datasets.php}
 \BIBentrySTDinterwordspacing
 

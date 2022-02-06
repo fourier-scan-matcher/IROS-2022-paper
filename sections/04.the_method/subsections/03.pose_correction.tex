@@ -135,7 +135,7 @@ describes FSM in pseudocode.
     \STATE $\hat{\bm{p}}_1 \leftarrow (0,0,0)$, $\nu \leftarrow \nu_{\min}$
     \STATE $\bm{M} \leftarrow \texttt{project\_to\_2d}(\mathcal{S}_0, \hat{\bm{p}}_1)$
     \WHILE{$\nu \leq \nu_{\max}$}
-      \STATE $\bm{P}_{RPC},  \bm{C} \leftarrow \{\}$
+      \STATE $\bm{P}_{RPC},  \bm{C} \leftarrow \{\varnothing\}$
       \FOR{$k \leftarrow 0,\dots, 2^\nu-1$}
         \STATE $\mathcal{S}_0^k \leftarrow \texttt{scan\_map}(\bm{M}, \hat{\bm{p}}_1 + [0,0,k \gamma 2^{-\nu}])$
         \STATE $\xi_1^k \leftarrow \arg\max \mathcal{F}^{-1}\{Q_{\mathcal{S}_0^k, \mathcal{S}_1}\}$ \hfill (eq. \ref{eq:Q})
@@ -150,7 +150,7 @@ describes FSM in pseudocode.
         \STATE $\nu = \nu + 1$
       \ENDIF
       \IF{$\hat{\bm{p}}_1^\prime$ not in $\bm{M}$}
-        \STATE generate new $\hat{\bm{p}}_1$ from $\hat{\bm{p}}_1$; $\nu \leftarrow \nu_{\min}$; continue
+        \STATE generate new $\hat{\bm{p}}_1$; $\nu \leftarrow \nu_{\min}$; continue
       \ENDIF
       \STATE $\hat{\bm{p}}_1 \leftarrow \hat{\bm{p}}_1^\prime$
     \ENDWHILE
