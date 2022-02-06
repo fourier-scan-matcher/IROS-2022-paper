@@ -55,16 +55,14 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {IV-B}Estimation of Relative Location}{3}{subsection.4.2}}
 \newlabel{subsec:method_location_correction}{{IV-B}{3}{Estimation of Relative Location}{subsection.4.2}{}}
 \newlabel{prop:theorem_without_disturbance}{{I}{3}{}{theorem.1}{}}
-\newlabel{eq:difference_equation_without_disturbance}{{3}{4}{}{equation.4.3}{}}
-\newlabel{eq:control_vector_without_disturbance}{{4}{4}{}{equation.4.4}{}}
-\newlabel{eq:X1}{{5}{4}{}{equation.4.5}{}}
+\newlabel{eq:control_vector_without_disturbance}{{3}{4}{}{equation.4.3}{}}
+\newlabel{eq:X1}{{4}{4}{}{equation.4.4}{}}
 \newlabel{remark:loc_prop_or}{{I}{4}{}{remark.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {IV-C}Joint Estimation of Relative Orientation and Location}{4}{subsection.4.3}}
 \newlabel{subsec:method_pose_correction}{{IV-C}{4}{Joint Estimation of Relative Orientation and Location}{subsection.4.3}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  FSM iteratively invokes the One-step Pose Estimation method. Given a pose estimate of where scan $\mathcal  {S}_1$ was captured within $\bm  {M}$, the method attempts to register $\mathcal  {S}_1$ to $\bm  {M}$ by estimating first its relative orientation and then its location with respect to the input pose estimate\relax }}{4}{figure.caption.2}}
 \newlabel{fig:fsm_inner}{{2}{4}{\small FSM iteratively invokes the One-step Pose Estimation method. Given a pose estimate of where scan $\mathcal {S}_1$ was captured within $\bm {M}$, the method attempts to register $\mathcal {S}_1$ to $\bm {M}$ by estimating first its relative orientation and then its location with respect to the input pose estimate\relax }{figure.caption.2}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {I}{\ignorespaces \texttt  {FSM}\relax }}{4}{algorithm.1}}
-\newlabel{alg:algorithm_fsm}{{I}{4}{\texttt {FSM}\relax }{ALC@unique.22}{}}
+\newlabel{eq:caer}{{5}{4}{Joint Estimation of Relative Orientation and Location}{equation.4.5}{}}
 \citation{datasets_link}
 \citation{Biber}
 \citation{Segal2009}
@@ -76,11 +74,12 @@
 \citation{Bouraine2020}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \relax \fontsize  {9}{10pt}\selectfont  A profile of the CAER metric (eq. (\ref  {eq:caer})) from $10^6$ pairs of sample scans, depending on the distance $(\Delta x^2 + \Delta y^2)^{1/2}$ and relative orientation $\Delta \theta $ of the poses from where the two scans were captured. Pose estimates closer to the true pose in terms of orientation (a) exhibit lower CAER values than those further away from it and (b) produce lower location errors once inputted to the Location Estimation system\relax }}{5}{figure.caption.3}}
 \newlabel{fig:caer}{{3}{5}{\small A profile of the CAER metric (eq. (\ref {eq:caer})) from $10^6$ pairs of sample scans, depending on the distance $(\Delta x^2 + \Delta y^2)^{1/2}$ and relative orientation $\Delta \theta $ of the poses from where the two scans were captured. Pose estimates closer to the true pose in terms of orientation (a) exhibit lower CAER values than those further away from it and (b) produce lower location errors once inputted to the Location Estimation system\relax }{figure.caption.3}{}}
-\newlabel{eq:caer}{{6}{5}{Joint Estimation of Relative Orientation and Location}{equation.4.6}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {V}Results}{5}{section.5}}
 \newlabel{section:results}{{V}{5}{Results}{section.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {V-A}Experimental Design}{5}{subsection.5.1}}
 \newlabel{section:experimental}{{V-A}{5}{Experimental Design}{subsection.5.1}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {I}{\ignorespaces \texttt  {FSM}\relax }}{5}{algorithm.1}}
+\newlabel{alg:algorithm_fsm}{{I}{5}{\texttt {FSM}\relax }{ALC@unique.23}{}}
 \citation{velodyne_datasheet}
 \citation{a2m8_datasheet}
 \citation{ydlidar_datasheets}
