@@ -163,12 +163,6 @@ P.~Biber and W.~Strasser, ``{The normal distributions transform: a new approach
   No.03CH37453)}, vol.~3.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, pp.
   2743--2748.
 
-\bibitem{Censi}
-A.~Censi, ``{Scan matching in a probabilistic framework},'' in
-  \emph{Proceedings 2006 IEEE International Conference on Robotics and
-  Automation, 2006. ICRA 2006.}\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
-  pp. 2291--2296.
-
 \bibitem{Xu2018a}
 P.~Xu, F.~Gu, Z.~Song, and J.~Li, ``{Non-iterative multiple data registration
   method based on the motion screw theory and trackable features},'' in
@@ -217,7 +211,7 @@ S.~Bouraine, A.~Bougouffa, and O.~Azouaoui, ``{NDT-PSO, a New NDT based SLAM
 \bibitem{a2m8_datasheet}
 \BIBentryALTinterwordspacing
 ``{RPLIDAR A2M8 datasheet}.'' [Online]. Available:
-  \url{https://cdn.sparkfun.com/assets/e/a/f/9/8/LD208{\_}SLAMTEC{\_}rplidar{\_}datasheet{\_}A2M8{\_}v1.0{\_}en.pdf}
+  \url{https://cdn.sparkfun.com/assets/e/a/f/9/8/LD208_SLAMTEC_rplidar_datasheet_A2M8_v1.0_en.pdf}
 \BIBentrySTDinterwordspacing
 
 \bibitem{ydlidar_datasheets}
@@ -228,7 +222,7 @@ S.~Bouraine, A.~Bougouffa, and O.~Azouaoui, ``{NDT-PSO, a New NDT based SLAM
 
 \bibitem{implementations}
 \BIBentryALTinterwordspacing
-``{Link to repositories for implementation of CSM, NDT, FastGICP, FastVGICP,
+``{Link to repositories for implementation of PLICP, NDT, FastGICP, FastVGICP,
   and NDT-PSO}.'' [Online]. Available:
   \url{https://gist.github.com/li9i/c159e282ce5a5ef34500b26c34499c08}
 \BIBentrySTDinterwordspacing

@@ -140,7 +140,6 @@ title = {{Generalized-ICP}},
 year = {2009}
 }
 @article{Wang2018a,
-abstract = {In large-scale and sparse scenes, such as farmland, orchards, mines, and substations, 3D simultaneous localization and mapping are challenging matters that need to address issues such as maintaining reliable data association for scarce environmental information and reducing the computational complexity of global optimization for large-scale scenes. To solve these problems, a real-time incremental simultaneous localization and mapping algorithm called MIM{\_}SLAM is proposed in this paper. This algorithm is applied in mobile robots to build a map on a non-flat road with a 3D LiDAR sensor. MIM{\_}SLAM's main contribution is that multi-level ICP (Iterative Closest Point) matching is used to solve the data association problem, a Fisher information matrix is used to describe the uncertainty of the estimated pose, and these poses are optimized by the incremental optimization method, which can greatly reduce the computational cost. Then, a map with a high consistency will be established. The proposed algorithm has been evaluated in the real indoor and outdoor scenes as well as two substations and benchmarking dataset from KITTI with the characteristics of sparse and large-scale. Results show that the proposed algorithm has a high mapping accuracy and meets the real-time requirements.},
 author = {Wang, Jingchuan and Zhao, Ming and Chen, Weidong},
 doi = {10.3390/app8122432},
 issn = {2076-3417},
@@ -153,7 +152,6 @@ volume = {8},
 year = {2018}
 }
 @article{Tian2019a,
-abstract = {Iterative closest point (ICP) is a method commonly used to perform scan-matching and registration. To be a simple and robust algorithm, it is still computationally expensive, and it has been regarded as having a crucial challenge especially in a real-time application as used for the simultaneous localization and mapping (SLAM) problem. For these reasons, this paper presents a new method for the acceleration of ICP with an assisted intensity. Unlike the conventional ICP, this method is proposed to reduce the computational cost and avoid divergences. An initial transformation guess is computed with an assisted intensity for their relative rigid-body transformation. Moreover, a target function is proposed to determine the best initial transformation guess based on the statistic of their spatial distances and intensity residuals. Additionally, this method is also proposed to reduce the iteration number. The Anderson acceleration is utilized for increasing the iteration speed which has better ability than the Picard iteration procedure. The proposed algorithm is operated in real time with a single core central processing unit (CPU) thread. Hence, it is suitable for the robot which has limited computation resources. To validate the novelty, this proposed method is evaluated on the SEMANTIC3D.NET benchmark dataset. According to comparative results, the proposed method is declared as having better accuracy and robustness than the conventional ICP methods.},
 author = {Tian, Yingzhong and Liu, Xining and Li, Long and Wang, Wenbin},
 doi = {10.3390/s19092124},
 issn = {1424-8220},
@@ -166,7 +164,6 @@ volume = {19},
 year = {2019}
 }
 @article{Marchel2020,
-abstract = {SLAM technology is increasingly used to self-locate mobile robots in an unknown environment. One of the methods used in this technology is called scan matching. Increasing evidence is placed on the accuracy and speed of the methods used in terms of navigating mobile robots. The aim of this article is to present a modification to the standard method of Iterative Closest Point (ICP) environment scan matching using the authors' three original weighting factors based on the error modeling. The presented modification was supported by a simulation study whose aim was not exclusively to check the effect of the factors but also to examine the effect of the number of points in scans on the correct and accurate development of the rotation matrix and the translation vector. The study demonstrated both an increase in the accuracy of ICP results following the implementation of the proposed modification and a noticeable increase in accuracy with an increase in the mapping device's angular resolution. The proposed method has a positive impact on reducing number of iteration and computing time. The research results have shown to be promising and will be extended to 3D space in the future.},
 author = {Marchel, {\L}ukasz and Specht, Cezary and Specht, Mariusz},
 doi = {10.3390/en13225939},
 issn = {1996-1073},
@@ -224,7 +221,6 @@ title = {{A Novel Scan Matching Method for Mobile Robot Based on Phase Only Matc
 year = {2018}
 }
 @article{Jiang2018,
-abstract = {Simultaneous Localization and Mapping (SLAM) is an active area of robot research. SLAM with a laser range finder (LRF) is effective for localization and navigation. However, commercial robots usually have to use low-cost LRF sensors, which result in lower resolution and higher noise. Traditional scan-matching algorithms may often fail while the robot is running too quickly in complex environments. In order to enhance the stability of matching in the case of large pose differences, this paper proposes a new method of scan-matching mainly based on Fast Fourier Transform (FFT) as well as its application with a low-cost LRF sensor. In our method, we change the scan data within a range of distances from the laser to various images. FFT is applied to the images to determine the rotation angle and translation parameters. Meanwhile, a new kind of feature based on missing data is proposed to determine the rough estimation of the rotation angle under some representative scenes, such as corridors. Finally, Iterative Closest Point (ICP) is applied to determine the best match. Experimental results show that the proposed method can improve the scan-matching and SLAM performance for low-cost LRFs in complex environments.},
 author = {Jiang, Guolai and Yin, Lei and Liu, Guodong and Xi, Weina and Ou, Yongsheng},
 doi = {10.3390/app9010041},
 issn = {2076-3417},
@@ -271,15 +267,6 @@ pages = {2743--2748},
 publisher = {IEEE},
 title = {{The normal distributions transform: a new approach to laser scan matching}},
 volume = {3}
-}
-@inproceedings{Censi,
-author = {Censi, A.},
-booktitle = {Proceedings 2006 IEEE International Conference on Robotics and Automation, 2006. ICRA 2006.},
-doi = {10.1109/ROBOT.2006.1642044},
-isbn = {0-7803-9505-0},
-pages = {2291--2296},
-publisher = {IEEE},
-title = {{Scan matching in a probabilistic framework}},
 }
 @inproceedings{Xu2018a,
 author = {Xu, Pei and Gu, Feifei and Song, Zhan and Li, Jun},
@@ -354,13 +341,13 @@ url = {https://visimind.com/wp-content/uploads/2018/12/LiDAR-Product-Brochure.pd
 }
 @url{a2m8_datasheet,
 title = {{RPLIDAR A2M8 datasheet}},
-url = {https://cdn.sparkfun.com/assets/e/a/f/9/8/LD208{\_}SLAMTEC{\_}rplidar{\_}datasheet{\_}A2M8{\_}v1.0{\_}en.pdf}
+url = {https://cdn.sparkfun.com/assets/e/a/f/9/8/LD208_SLAMTEC_rplidar_datasheet_A2M8_v1.0_en.pdf}
 }
 @url{ydlidar_datasheets,
 title = {{YDLIDAR sensors' datasheets}},
 url = {https://www.manualshelf.com/brand/ydlidar}
 }
 @url{implementations,
-title = {{Link to repositories for implementation of CSM, NDT, FastGICP, FastVGICP, and NDT-PSO}},
+title = {{Link to repositories for implementation of PLICP, NDT, FastGICP, FastVGICP, and NDT-PSO}},
 url = {https://gist.github.com/li9i/c159e282ce5a5ef34500b26c34499c08}
 }

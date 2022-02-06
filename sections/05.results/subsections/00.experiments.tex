@@ -4,11 +4,9 @@ courtesy of the Department of Computer Science, University of Freiburg,
 comprising a total of $|D| = 45402$ scan measurements \cite{datasets_link}.
 For purposes of comparison against state-of-the-art scan-matching methods the
 experimental procedure is extended to the Normal Distributions Transform (NDT)
-scan-matching method \cite{Biber}, FastGICP \cite{Segal2009} and
-PLICP$\circ$GPM \cite{Censi2008b}. The latter shall be denoted hereafter by the
-acronym CSM. GPM \cite{Censi} was used initially in order to overcome the
-angular realignment problems \cite{Censi2008b} of PLICP. NDT, FastGICP, and CSM
-belong to the \textit{established} state-of-the-art methods of scan-matching
+scan-matching method \cite{Biber}, FastGICP \cite{Segal2009} and PLICP
+\cite{Censi2008b}.  NDT, FastGICP, and PLICP belong to the \textit{established}
+state-of-the-art methods of scan-matching
 \cite{Koide2021,Xu2018a,Sobreira2019a,Pishehvari2019a,Qingshan2019a,Pham2021a}.
 In addition, the experimental procedure is extended to FastVGICP
 \cite{Pham2021a} and NDT-PSO \cite{Bouraine2020}.
@@ -66,5 +64,5 @@ across all instances of $D$; therefore each method underwent a total of $10
 position error distributions reported below are those across all $E \cdot |D|$
 experiments of the same configuration.  All experiments and algorithms were run
 in C++, on a single thread, on a machine with a CPU frequency of $4.0$ GHz. The
-implementations of CSM, NDT, FastGICP, FastVGICP, and NDT-PSO were taken from
+implementations of PLICP, NDT, FastGICP, FastVGICP, and NDT-PSO were taken from
 \cite{implementations}.
