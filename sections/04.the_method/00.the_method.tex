@@ -13,8 +13,8 @@ sense. The output is an orientation difference estimate between each map-scan
 and $\mathcal{S}_1$. In order to increase discernibility between the least
 erroneous orientation estimate and the other estimates, the pose estimate is
 updated with each orientation estimate, and given over to the translation
-correction system, whose resulting location error is proportional to the
-poses's orientation error, for one iteration. The similarity between map-scans
+correction system, whose resulting location error is proportional to a
+pose's orientation error, for one iteration. The similarity between map-scans
 captured from these estimates within the map and $\mathcal{S}_1$ is captured in
 a per-ray range error metric. The final orientation estimate of $\mathcal{S}_1$
 is that of the pose estimate whose map-scan scores the lowest error according
@@ -24,7 +24,7 @@ The second sub-problem is estimating the relative translational displacement of
 $\mathcal{S}_1$ with respect to $\mathcal{S}_0$ under the assumption that both
 are captured from poses of the same orientation (subsection
 \ref{subsec:method_location_correction}). The solution is given via
-scan-to-map-scan matching by transforming $\mathcal{S}_0$ to a point-set and
+scan-to-map-scan matching by transforming $\mathcal{S}_0$ to a point-set, and
 matching map-scans, derived from the pose estimate of $\mathcal{S}_1$ within
 the point-set, to $\mathcal{S}_1$ itself. The matching between the two is
 derived from first principles given the scans' periodicity and homorientedness;

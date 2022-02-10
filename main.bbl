@@ -58,8 +58,7 @@ S.~Zhang, L.~Xiao, Y.~Nie, B.~Dai, and C.~Hu, ``{Lidar Odometry and Mapping
 
 \bibitem{Cooper2018b}
 M.~Cooper, J.~Raquet, and R.~Patton, ``{Range Information Characterization of
-  the Hokuyo UST-20LX LIDAR Sensor},'' \emph{Photonics}, vol.~5, no.~2, p.~12,
-  may 2018.
+  the Hokuyo UST-20LX LIDAR Sensor},'' \emph{Photonics}, 2018.
 
 \bibitem{FengLu1994}
 {Feng Lu} and Milios, ``{Robot pose estimation in unknown environments by
@@ -113,7 +112,7 @@ Y.~Tian, X.~Liu, L.~Li, and W.~Wang, ``{Intensity-Assisted ICP for Fast
 K.~Koide, M.~Yokozuka, S.~Oishi, and A.~Banno, ``{Voxelized GICP for Fast and
   Accurate 3D Point Cloud Registration},'' in \emph{2021 IEEE International
   Conference on Robotics and Automation (ICRA)}.\hskip 1em plus 0.5em minus
-  0.4em\relax IEEE, may 2021, pp. 11\,054--11\,059.
+  0.4em\relax IEEE, 2021.
 
 \bibitem{Donoso2017a}
 F.~Donoso, K.~Austin, and P.~McAree, ``{How do ICP variants perform when used
@@ -142,6 +141,14 @@ S.~Bouraine, A.~Bougouffa, and O.~Azouaoui, ``{NDT-PSO, a New NDT based SLAM
   International Conference on Control, Automation, Robotics and Vision
   (ICARCV)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, dec 2020, pp.
   321--326.
+
+\bibitem{Wang2018b}
+\BIBentryALTinterwordspacing
+Y.-T. Wang, C.-C. Peng, A.~Ravankar, and A.~Ravankar, ``{A Single LiDAR-Based
+  Feature Fusion Indoor Localization Algorithm},'' \emph{Sensors}, vol.~18,
+  no.~4, p. 1294, apr 2018. [Online]. Available:
+  \url{http://www.mdpi.com/1424-8220/18/4/1294}
+\BIBentrySTDinterwordspacing
 
 \bibitem{Filotheou2020a}
 A.~Filotheou, E.~Tsardoulias, A.~Dimitriou, A.~Symeonidis, and L.~Petrou,

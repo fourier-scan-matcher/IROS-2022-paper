@@ -9,17 +9,21 @@ research using ICP being still ongoing
 ICP variants, and the availability of its source code. ICP and its variants,
 however, exhibit varying performance \cite{Donoso2017a}, limited by the noise
 level in the input scans, the choice of prior, and the configuration of the
-parameters governing their response \cite{Filotheou2022a}. The vast majority of
-all matching methods adopt ICP's approach of establishing correspondences
-between the two input scans, using various assumptions, mechanisms (e.g. points
-to distributions \cite{Biber,Bouraine2020}), and types of sources (e.g.
-features instead of points; a detailed review of scan-matching methods may be
-found in \cite{Filotheou2020a}). The major problem with establishing
-correspondences is that the process becomes more inefficient and error-prone as
-measurement noise or displacement between sensor poses increases.
+parameters governing their response (a detailed account may be found in
+\cite{Filotheou2022a}). The vast majority of all matching methods adopt ICP's
+approach of establishing correspondences between the two input scans, using
+various assumptions, mechanisms (e.g. the Normal Distributions Transform
+\cite{Biber,Bouraine2020} which models points to distributions), and types of
+sources (e.g. features instead of points \cite{Wang2018b}; a detailed review of
+scan-matching methods may be found in \cite{Filotheou2020a}). The major problem
+with establishing correspondences is that the process becomes more inefficient
+and error-prone as measurement noise or displacement between sensor poses
+increases. By contrast, the method introduced in this paper does not operate by
+establishing correspondences, and its accuracy does not depend on the
+rotational or translational displacement between sensor poses for a given level
+of measurement noise.
 
-By contrast, the method introduced in this paper does not operate by
-establishing correspondences. Its rotational component is most akin to those of
+FSM's rotational component is most akin to those of
 \cite{Yu2018} and \cite{Jiang2018}. They use Phase-Only Matched Filtering
 (POMF) \cite{Qin-ShengChen1994} in both rotation and translation components;
 the former in one dimension and the latter in two dimensions. In the latter,

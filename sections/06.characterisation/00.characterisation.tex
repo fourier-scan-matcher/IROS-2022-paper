@@ -9,15 +9,15 @@ degree, which in turn allow it to eliminate the positional errors further. The
 CAER metric succeeds in navigating the error space better than FastGICP's
 internal error metric, especially at such high orientational and positional
 displacements. This fact makes FSM suitable in conditions of higher robot
-velocities (here up to $4.2$ m/s and $720$ deg/s). FSM converges with an error
+velocities (here up to $7.28$ m/s and $720$ deg/s). FSM converges with an error
 of $(0.0098 \text{m}, 0.08 \text{deg})$ in half as many iterations as FastGICP,
 whose final error is $(0.61 \text{m}, 9.94 \text{deg})$.
 
 \begin{figure}
     \vspace{0.2cm}
     \input{./figures/characterisation/fsm_vs_fgi.tex}
-    \caption{\small Comparison of alignment progress of FSM against FastGICP
-             for $\sigma_R = 0.03$ m}%
+    \caption{\small Comparison of alignment progress and evolution of errors
+             between FastGICP and FSM for $\sigma_R = 0.03$ m}%
     \label{fig:char_fsm_vs_FGI}%
 \end{figure}
 
@@ -31,7 +31,7 @@ blue dot. The maximum displacement between sensor poses is set to
 $(\overline{\delta}_{xy}, \overline{\delta}_{\theta}) = (0.05 \text{m}, 10 \text{deg})$
 and
 $(\overline{\delta}_{xy}, \overline{\delta}_{\theta}) = (0.20 \text{m}, 45 \text{deg})$.
-Altough one would expect that matching without the use of correspondences would
+Although one would expect that matching without the use of correspondences would
 fare worse than matching with it, FSM exhibits more robust and more accurate
 orientational errors than PLICP. In terms of position, FSM's errors are, on
 the average, equal to or lower than those of PLICP.
