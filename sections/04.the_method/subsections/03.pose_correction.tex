@@ -142,7 +142,8 @@ describes FSM in pseudocode.
         \STATE $\hat{\bm{p}}_1^k \leftarrow \hat{\bm{p}}_1 + [0,0, \xi_1^k \gamma + k \gamma 2^{-\nu}]$ \hfill (sec. \ref{subsec:method_orientation_correction})
         \STATE $\hat{\bm{p}}_1^{k} \leftarrow \texttt{translate}(\hat{\bm{p}}_1^k, \bm{M}, \mathcal{S}_1, 1)$ \hfill (sec. \ref{subsec:method_pose_correction})
         \STATE $\bm{P}_{RPC} \leftarrow \{\bm{P}_{RPC}, \hat{\bm{p}}_1^{k}\}$
-        \STATE $\bm{C} \leftarrow \{\bm{C}, \texttt{CAER}(\mathcal{S}_1,\texttt{scan\_map}(\bm{M},\hat{\bm{p}}_1^{k}))\}$ \hfill (eq. \ref{eq:caer})
+        \STATE $\mathcal{S}_0^k \leftarrow \texttt{scan\_map}(\bm{M},\hat{\bm{p}}_1^{k})$
+        \STATE $\bm{C} \leftarrow \{\bm{C}, \texttt{CAER}(\mathcal{S}_1, \mathcal{S}_0^k)\}$ \hfill (eq. \ref{eq:caer})
       \ENDFOR
       \STATE $\hat{\bm{p}}_1^\prime \leftarrow \bm{P}_{RPC}[\arg\min \bm{C}]$
       \STATE $\hat{\bm{p}}_1^\prime \leftarrow \texttt{translate}(\hat{\bm{p}}_1^\prime, \bm{M}, \mathcal{S}_1, I);$  \hfill (sec. \ref{subsec:method_location_correction})

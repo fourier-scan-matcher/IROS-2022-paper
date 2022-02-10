@@ -7,8 +7,8 @@
     \vspace{-2.5cm}
     \caption{\small Distribution of orientation and position errors across a
              range of maximal positional and orientational displacements, for
-             progressively larger sensor measurement noise levels. Each boxplot
-             represents $10$ iterations over $\sum|D_k| \approx
+             progressively larger sensor measurement noise levels sd. Each
+             boxplot represents $10$ iterations over $\sum|D_k| \approx
              45$$\cdot$$10^3$ random scan pairs for each configuration,
              $k=1,\dots,5$. Dots signify mean errors. FSM's errors are largely
              independent of the initial displacement of scans for a given level
@@ -21,16 +21,16 @@ Figure \ref{fig:error_distributions} shows the distribution of rotation and
 translation errors across all experiments for all tested algorithms.  FSM's
 position and orientation errors are equal to or lower than the most accurate
 method for each displacement and sensor noise configuration. As displacements
-and sensor noise levels increase, its errors increase at a lower rate than any
-tested method. The magnitude of FSM's errors is largely independent of the
-displacement of the two input scans for a given level of sensor noise (fig.
-\ref{fig:laser_odometry}). In terms of orientation, $72\%$-$74\%$ of FSM's
-errors resulted below $\gamma / 2^{\nu_{max}+1} = 0.0625$ deg when $\sigma_R =
-0.01$ m, and $33\%$-$36\%$ when $\sigma_R = 0.20$ m.  The juxtaposition of the
-six methods' errors at high levels of sensor noise highlight the robustness
-afforded to FSM by the Discrete Fourier transform and its properties.  In terms
-of execution time, PLICP ranged between $4.8$-$17.5$ ms, NDT $8.1$-$19.9$ ms,
-FastGICP $3$-$9$ ms, FastVGICP $3.8$-$6.8$ ms, NDT-PSO $190$-$200$ ms, and FSM
-between $13.2$ and $16.7$ ms.  The measurement frequency of modern LIDAR
-sensors ranges from $12$-$20$ Hz; therefore FSM runs in real time in modern
-processors.
+and sensor noise levels increase, its errors increase at a lower rate than
+those of any tested method. The magnitude of FSM's errors is largely
+independent of the displacement of the two input scans for a given level of
+sensor noise (fig.  \ref{fig:laser_odometry}). In terms of orientation,
+$72\%$-$74\%$ of FSM's errors resulted below $\gamma / 2^{\nu_{\max}+1} =
+0.0625$ deg when $\sigma_R = 0.01$ m, and $33\%$-$36\%$ when $\sigma_R = 0.20$
+m.  The juxtaposition of the six methods' errors at high levels of sensor noise
+highlight the robustness afforded to FSM by the Discrete Fourier transform and
+its properties.  In terms of execution time, PLICP ranged between $4.8$-$17.5$
+ms, NDT $8.1$-$19.9$ ms, FastGICP $3$-$9$ ms, FastVGICP $3.8$-$6.8$ ms, NDT-PSO
+$190$-$200$ ms, and FSM between $17.7$ and $23.7$ ms.  The measurement
+frequency of modern LIDAR sensors ranges from $12$-$20$ Hz; therefore FSM runs
+in real time in modern processors.

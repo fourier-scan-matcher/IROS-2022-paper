@@ -83,7 +83,7 @@ S.~Pfister, K.~Kriechbaum, S.~Roumeliotis, and J.~Burdick, ``{Weighted range
 D.~Chetverikov, D.~Svirko, D.~Stepanov, and P.~Krsek, ``{The Trimmed Iterative
   Closest Point algorithm},'' in \emph{Object recognition supported by user
   interaction for service robots}, vol.~3.\hskip 1em plus 0.5em minus
-  0.4em\relax IEEE Comput. Soc, pp. 545--548.
+  0.4em\relax IEEE Comput. Soc.
 
 \bibitem{Censi2008b}
 A.~Censi, ``{An ICP variant using a point-to-line metric},'' in \emph{2008 IEEE
@@ -102,8 +102,7 @@ J.~Wang, M.~Zhao, and W.~Chen, ``{MIM{\_}SLAM: A Multi-Level ICP Matching
 
 \bibitem{Tian2019a}
 Y.~Tian, X.~Liu, L.~Li, and W.~Wang, ``{Intensity-Assisted ICP for Fast
-  Registration of 2D-LIDAR},'' \emph{Sensors}, vol.~19, no.~9, p. 2124, may
-  2019.
+  Registration of 2D-LIDAR},'' \emph{Sensors}, vol.~19, no.~9, p. 2124, 2019.
 
 \bibitem{Marchel2020}
 {\L}.~Marchel, C.~Specht, and M.~Specht, ``{Testing the Accuracy of the
@@ -182,7 +181,7 @@ H.~Sobreira, C.~M. Costa, I.~Sousa, L.~Rocha, J.~Lima, P.~C. M.~A. Farias,
   P.~Costa, and A.~P. Moreira, ``{Map-Matching Algorithms for Robot
   Self-Localization: A Comparison Between Perfect Match, Iterative Closest
   Point and Normal Distributions Transform},'' \emph{Journal of Intelligent
-  {\&} Robotic Systems}, vol.~93, no. 3-4, pp. 533--546, mar 2019.
+  {\&} Robotic Systems}, vol.~93, no. 3-4, pp. 533--546, 2019.
 
 \bibitem{Pishehvari2019a}
 A.~Pishehvari, U.~Iurgel, S.~Lessmann, L.~Roese-Koerner, and B.~Tibken,

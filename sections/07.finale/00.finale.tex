@@ -1,15 +1,15 @@
-This paper has presented a scan-matching method for panoramic LIDAR sensors.
-The approach rests on properties of the DFT, which afford it increased
-robustness and accuracy compared to established scan-matching approaches in the
-face of measurement noise exhibited by real-life sensors. Since FSM does not
-rely on correspondences or features, and may operate under missing range
-information, it is also suitable for unstructured and outdoor environments.
+This paper has presented a real-time scan-matching method for panoramic 2D LIDAR
+sensors. The approach rests on properties of the DFT, which afford it
+increased robustness and accuracy compared to state-of-the-art scan-matching
+approaches in the face of measurement noise exhibited by real-life sensors.
+FSM does not rely on correspondences or features, and may operate under missing
+range information; it is suitable for unstructured and outdoor environments,
+even with high-frequency components.
 
-Future work will focus on extension to 3D LIDAR sensors, where the slices not
-parallel to the ground may provide vertical motion information according to
-the sine of each slice's pitch angle, and tests on more diverse environments,
-such as those with high-frequency components.
+Future work will focus on extending FSM to 3D LIDAR sensors, either by extension
+to the slices not parallel to the ground, which may provide vertical motion
+information according to the sine of each slice's pitch angle, or by
+generalising its two main submethods to the 3D/6DOF space.
 
-The C++ code of the
-proposed method, along with the implementation of the conducted experiments is
-available at \url{https://github.com/li9i/fsm}.
+The C++ code of the proposed method, along with the implementation of the
+conducted experiments is available at \url{https://github.com/li9i/fsm}.
