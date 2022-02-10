@@ -9,15 +9,15 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: ./sections/bibliography_ieee.bib
 Warning--entry type for "datasets_link" isn't style-file defined
---line 275 of file ./sections/bibliography_ieee.bib
+--line 281 of file ./sections/bibliography_ieee.bib
 Warning--entry type for "velodyne_datasheet" isn't style-file defined
---line 334 of file ./sections/bibliography_ieee.bib
+--line 340 of file ./sections/bibliography_ieee.bib
 Warning--entry type for "a2m8_datasheet" isn't style-file defined
---line 338 of file ./sections/bibliography_ieee.bib
+--line 344 of file ./sections/bibliography_ieee.bib
 Warning--entry type for "ydlidar_datasheets" isn't style-file defined
---line 342 of file ./sections/bibliography_ieee.bib
+--line 348 of file ./sections/bibliography_ieee.bib
 Warning--entry type for "implementations" isn't style-file defined
---line 346 of file ./sections/bibliography_ieee.bib
+--line 352 of file ./sections/bibliography_ieee.bib
 -- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -26,45 +26,45 @@ Warning--empty year in Chetverikov
 Warning--empty year in Biber
 
 Done.
-You've used 35 entries,
+You've used 36 entries,
             4024 wiz_defined-function locations,
-            1020 strings with 14271 characters,
-and the built_in function-call counts, 28308 in all, are:
-= -- 2190
-> -- 634
-< -- 248
-+ -- 369
-- -- 113
-* -- 1364
-:= -- 3951
-add.period$ -- 89
-call.type$ -- 35
-change.case$ -- 35
-chr.to.int$ -- 594
-cite$ -- 38
-duplicate$ -- 2087
-empty$ -- 2421
-format.name$ -- 128
-if$ -- 6591
+            1022 strings with 14421 characters,
+and the built_in function-call counts, 26898 in all, are:
+= -- 2065
+> -- 623
+< -- 206
++ -- 347
+- -- 114
+* -- 1298
+:= -- 3854
+add.period$ -- 91
+call.type$ -- 36
+change.case$ -- 36
+chr.to.int$ -- 474
+cite$ -- 39
+duplicate$ -- 2039
+empty$ -- 2353
+format.name$ -- 136
+if$ -- 6232
 int.to.chr$ -- 0
-int.to.str$ -- 35
-missing$ -- 370
-newline$ -- 138
-num.names$ -- 30
-pop$ -- 934
+int.to.str$ -- 36
+missing$ -- 378
+newline$ -- 143
+num.names$ -- 31
+pop$ -- 960
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2128
+skip$ -- 2028
 stack$ -- 0
-substring$ -- 1485
-swap$ -- 1693
-text.length$ -- 50
+substring$ -- 1190
+swap$ -- 1587
+text.length$ -- 48
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 35
+type$ -- 36
 warning$ -- 3
-while$ -- 123
-width$ -- 37
-write$ -- 352
+while$ -- 108
+width$ -- 38
+write$ -- 361
 (There were 8 warnings)

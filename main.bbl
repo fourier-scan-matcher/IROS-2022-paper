@@ -31,7 +31,7 @@ X.~Ju, D.~Xu, X.~Zhao, W.~Yao, and H.~Zhao, ``{Learning Scene Adaptive
 N.~Kumar and Z.~Vamossy, ``{Laser Scan Matching in Robot Navigation},'' in
   \emph{2018 IEEE 12th International Symposium on Applied Computational
   Intelligence and Informatics (SACI)}.\hskip 1em plus 0.5em minus 0.4em\relax
-  IEEE, may 2018, pp. 000\,241--000\,246.
+  IEEE, may 2018.
 
 \bibitem{Zhang2019}
 H.~Zhang, N.~Chen, G.~Fan, and D.~Yang, ``{An improved scan matching algorithm
@@ -48,7 +48,7 @@ E.~Pedrosa, A.~Pereira, and N.~Lau, ``{Fast Grid SLAM Based on Particle Filter
 \bibitem{Olson2009}
 E.~Olson, ``{Real-time correlative scan matching},'' in \emph{2009 IEEE
   International Conference on Robotics and Automation}.\hskip 1em plus 0.5em
-  minus 0.4em\relax IEEE, may 2009, pp. 4387--4393.
+  minus 0.4em\relax IEEE, may 2009.
 
 \bibitem{Zhang2020}
 S.~Zhang, L.~Xiao, Y.~Nie, B.~Dai, and C.~Hu, ``{Lidar Odometry and Mapping
@@ -77,7 +77,7 @@ S.~Pfister, K.~Kriechbaum, S.~Roumeliotis, and J.~Burdick, ``{Weighted range
   sensor matching algorithms for mobile robot displacement estimation},'' in
   \emph{Proceedings 2002 IEEE International Conference on Robotics and
   Automation (Cat. No.02CH37292)}, vol.~2.\hskip 1em plus 0.5em minus
-  0.4em\relax IEEE, pp. 1667--1674.
+  0.4em\relax IEEE.
 
 \bibitem{Chetverikov}
 D.~Chetverikov, D.~Svirko, D.~Stepanov, and P.~Krsek, ``{The Trimmed Iterative
@@ -88,7 +88,7 @@ D.~Chetverikov, D.~Svirko, D.~Stepanov, and P.~Krsek, ``{The Trimmed Iterative
 \bibitem{Censi2008b}
 A.~Censi, ``{An ICP variant using a point-to-line metric},'' in \emph{2008 IEEE
   International Conference on Robotics and Automation}.\hskip 1em plus 0.5em
-  minus 0.4em\relax IEEE, may 2008, pp. 19--25.
+  minus 0.4em\relax IEEE, 2008.
 
 \bibitem{Segal2009}
 A.~Segal, D.~Haehnel, and S.~Thrun, ``{Generalized-ICP},'' in \emph{Robotics:
@@ -119,6 +119,15 @@ K.~Koide, M.~Yokozuka, S.~Oishi, and A.~Banno, ``{Voxelized GICP for Fast and
 F.~Donoso, K.~Austin, and P.~McAree, ``{How do ICP variants perform when used
   for scan matching terrain point clouds?}'' \emph{Robotics and Autonomous
   Systems}, vol.~87, pp. 147--161, jan 2017.
+
+\bibitem{Filotheou2022a}
+\BIBentryALTinterwordspacing
+A.~Filotheou, A.~Tzitzis, E.~Tsardoulias, A.~Dimitriou, A.~Symeonidis,
+  G.~Sergiadis, and L.~Petrou, ``{Passive Global Localisation of Mobile Robot
+  via 2D Fourier-Mellin Invariant Matching},'' \emph{Journal of Intelligent
+  {\&} Robotic Systems}, vol. 104, no.~2, 2022. [Online]. Available:
+  \url{https://link.springer.com/10.1007/s10846-021-01535-7}
+\BIBentrySTDinterwordspacing
 
 \bibitem{Biber}
 P.~Biber and W.~Strasser, ``{The normal distributions transform: a new approach
@@ -204,19 +213,18 @@ Q.-H. Pham, N.-H. Tran, T.-T. Nguyen, and T.-P. Tran, ``{Online Robust
 \bibitem{velodyne_datasheet}
 \BIBentryALTinterwordspacing
 ``{VELODYNE sensors' datasheet}.'' [Online]. Available:
-  \url{https://visimind.com/wp-content/uploads/2018/12/LiDAR-Product-Brochure.pdf}
+  \url{https://bit.ly/34oSJFq}
 \BIBentrySTDinterwordspacing
 
 \bibitem{a2m8_datasheet}
 \BIBentryALTinterwordspacing
-``{RPLIDAR A2M8 datasheet}.'' [Online]. Available:
-  \url{https://cdn.sparkfun.com/assets/e/a/f/9/8/LD208_SLAMTEC_rplidar_datasheet_A2M8_v1.0_en.pdf}
+``{RPLIDAR A2M8 datasheet}.'' [Online]. Available: \url{https://bit.ly/3GDm9fR}
 \BIBentrySTDinterwordspacing
 
 \bibitem{ydlidar_datasheets}
 \BIBentryALTinterwordspacing
 ``{YDLIDAR sensors' datasheets}.'' [Online]. Available:
-  \url{https://www.manualshelf.com/brand/ydlidar}
+  \url{https://bit.ly/34OTDKT}
 \BIBentrySTDinterwordspacing
 
 \bibitem{implementations}
