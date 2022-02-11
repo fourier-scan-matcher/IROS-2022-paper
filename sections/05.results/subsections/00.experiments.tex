@@ -25,16 +25,15 @@ perturbing the components of $\bm{p}_0^d$ with quantities extracted from
 uniformly distributed error distributions $U_{xy}(-\overline{\delta}_{xy},
 \overline{\delta}_{xy})$, $U_{\theta}(-\overline{\delta}_{\theta},
 \overline{\delta}_{\theta})$; $\overline{\delta}_{xy}$,
-$\overline{\delta}_\theta$ $\in \mathbb{R}_{\geq 0}$.
-
-Range scans $\mathcal{S}_0^d$ and $\mathcal{S}_1^d$ are then computed by
-locating the intersection points between $N_s$ rays emanating from $\bm{p}_0^d$
-and $\bm{p}_1^d$, respectively, and the polygon formed by $\bm{W}^d$ across an
-angular field of view $\lambda = 2\pi$. The inputs to all algorithms are
-then set to $\mathcal{S}_0^d$ and $\mathcal{S}_1^d$. Their output is
-$\bm{p}_1^{\prime d}$. The roto-translation
-$\hat{\bm{T}}^d = \bm{p}_1^{\prime d}$ is the estimate of the motion
-$\bm{T}^d = \bm{p}_1^d - \bm{p}_0^d$ of the range sensor.
+$\overline{\delta}_\theta$ $\in \mathbb{R}_{\geq 0}$.  Range scans
+$\mathcal{S}_0^d$ and $\mathcal{S}_1^d$ are then computed by locating the
+intersection points between $N_s$ rays emanating from $\bm{p}_0^d$ and
+$\bm{p}_1^d$, respectively, and the polygon formed by $\bm{W}^d$ across an
+angular field of view $\lambda = 2\pi$. The inputs to all algorithms are then
+set to $\mathcal{S}_0^d$ and $\mathcal{S}_1^d$. Their output is
+$\bm{p}_1^{\prime d}$. The roto-translation $\hat{\bm{T}}^d = \bm{p}_1^{\prime
+d}$ is the estimate of the motion $\bm{T}^d = \bm{p}_1^d - \bm{p}_0^d$ of the
+range sensor.
 
 For every pose estimate $\bm{p}_1^{\prime d}$ outputted by each algorithm, its
 offset from the actual pose $\bm{p}_1^d$ is recorded in the form of the

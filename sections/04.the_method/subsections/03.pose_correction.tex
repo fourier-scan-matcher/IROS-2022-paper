@@ -31,7 +31,7 @@ first calculates $2^\nu$ pose estimates of $\bm{p}_1$: $\bm{P}_{OC} =
 \{(\hat{x}_1, \hat{y}_1, \hat{\theta}_1^k)\}$, $k = 0,\dots,2^\nu$$-$$1$,
 according to the orientation estimation method described in section
 \ref{subsec:method_orientation_correction}. The initial pose estimate of
-$\bm{p}_1$ is $\hat{\bm{p}}_1 = \bm{s}$.
+$\bm{p}_1$ is $\hat{\bm{p}}_1 = \bm{s}(0,0,0)$.
 If scans $\mathcal{S}_0$ and $\mathcal{S}_1$ were captured from the same
 location, then the Percent Discrimination metric (eq. \ref{eq:pd}) would
 suffice in serving as an accurate determinant of the orientation of $\bm{p}_1$.
@@ -61,7 +61,7 @@ estimate in $\bm{P}_{OC}$ and capturing the CAER for each of its displaced pose
 estimates in $\bm{P}_{RPC}$, it is possible to establish a pose error rank
 between pose estimates in $\bm{P}_{OC}$ and simultaneously retain only one pose
 estimate for the next iteration of the One-step Pose Estimation
-method.%\footnote{Alternatively, correcting the position of $2^\nu$ pose
+method. %\footnote{Alternatively, correcting the position of $2^\nu$ pose
 %estimates and feeding them back to the One-step Pose Estimation method would
 %incur exponential costs in time of execution.}
 The pose estimate $\bm{p}_C \in

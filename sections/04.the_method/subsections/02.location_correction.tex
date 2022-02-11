@@ -35,7 +35,7 @@ captured is bounded in a neighbourhood of the origin, when $\hat{\bm{p}}_1 =
   $\hat{\bm{l}}_1[k] = [\hat{x}_1[k], \hat{y}_1[k]]^\top$ and updating it according
   to the difference equation $\hat{\bm{l}}_1[k+1] = \hat{\bm{l}}_1[k] + \bm{u}[k]$,
   where $\hat{\bm{l}}_1[0] = \hat{\bm{l}}_1 = [\hat{x}_1, \hat{y}_1]^{\top}$,
-  i.e. the supplied initial location estimate, and $\bm{u}$ is
+  i.e. the supplied initial location estimate, with $\bm{u}$ being
   \begin{align}
     \bm{u}[k] = \dfrac{1}{N_s}
     \begin{bmatrix}
@@ -56,9 +56,9 @@ captured is bounded in a neighbourhood of the origin, when $\hat{\bm{p}}_1 =
       %+ i X_{1,i}\big(\mathcal{S}_R, \mathcal{S}_V|_{\bm{\hat{p}}[k]}\big) \nonumber \\
       = &\sum\limits_{n=0}^{N_s-1}(\mathcal{S}_1[n] - \mathcal{S}_0[n]|_{\bm{\hat{p}}_1[k]}) \cdot e^{-i \frac{2 \pi n}{N_s}} \label{eq:X1}
   \end{align}
-  where $\mathcal{S}_1[n]$ and $\mathcal{S}_0[n]|_{\bm{\hat{p}}[k]}$ are,
+  where $\mathcal{S}_1[n]$ and $\mathcal{S}_0[n]|_{\bm{\hat{p}}_1[k]}$ are,
   respectively, the ranges of the $n$-th ray of scan $\mathcal{S}_1$, and
-  map-scan $\mathcal{S}_0|_{\bm{\hat{p}}[k]}$ captured via raycasting the map
+  map-scan $\mathcal{S}_0|_{\bm{\hat{p}}_1[k]}$ captured via raycasting the map
   $\bm{M}_L$ from $\bm{\hat{p}}_1[k] = (\hat{\bm{l}}_1[k],
   \hat{\theta}_1)$---then $\hat{\bm{l}}_1[k]$ is uniformly bounded for $k \geq
   k_0$ and uniformly ultimately bounded in a neighbourhood of $\bm{l}_1$. Its
