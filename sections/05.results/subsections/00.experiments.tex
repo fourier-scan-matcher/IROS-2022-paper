@@ -12,23 +12,23 @@ In addition, the experimental procedure is extended to FastVGICP
 \cite{Pham2021a} and NDT-PSO \cite{Bouraine2020}.
 
 The experimental setup is the following. The rays of each dataset instance
-$D^d, d = 1,2,\dots,|D|$ are first projected to the $x-y$ plane around
-$\bm{r}^d$.  The dataset's scans are not panoramic, therefore the remaining
-space is filled with a semicircular arc that joins the scan's two extreme ends.
-Alternative fashions for closing-off the environment have been found equivalent
-with respect to the performance of the tested methods. The resulting point-set
-is regarded as the environment $\bm{W}^d$ in which the range sensor operates.
-Then the pose $\bm{p}_0^d$ from which $\mathcal{S}_0^d$ is captured is
-generated randomly within the polygon formed by $\bm{W}^d$. The pose
-$\bm{p}_1^d$ from which the sensor captured $\mathcal{S}_1$ is then obtained by
-perturbing the components of $\bm{p}_0^d$ with quantities extracted from
-uniformly distributed error distributions $U_{xy}(-\overline{\delta}_{xy},
-\overline{\delta}_{xy})$, $U_{\theta}(-\overline{\delta}_{\theta},
-\overline{\delta}_{\theta})$; $\overline{\delta}_{xy}$,
-$\overline{\delta}_\theta$ $\in \mathbb{R}_{\geq 0}$.  Range scans
-$\mathcal{S}_0^d$ and $\mathcal{S}_1^d$ are then computed by locating the
-intersection points between $N_s$ rays emanating from $\bm{p}_0^d$ and
-$\bm{p}_1^d$, respectively, and the polygon formed by $\bm{W}^d$ across an
+$D^d, d = 1,2,\dots,|D|$ are first projected to the $x-y$ plane around the
+reported ground truth pose for that instance, $\bm{r}^d$.  The dataset's scans
+are not panoramic, therefore the remaining space is filled with a semicircular
+arc that joins the scan's two extreme ends.  Alternative fashions for
+closing-off the environment have been found equivalent with respect to the
+performance of the tested methods. The resulting point-set is regarded as the
+environment $\bm{W}^d$ in which the range sensor operates.  Then the pose
+$\bm{p}_0^d$ from which $\mathcal{S}_0^d$ is captured is generated randomly
+within the polygon formed by $\bm{W}^d$. The pose $\bm{p}_1^d$ from which the
+sensor captured $\mathcal{S}_1$ is then obtained by perturbing the components
+of $\bm{p}_0^d$ with quantities extracted from uniformly distributed error
+distributions $U_{xy}(-\overline{\delta}_{xy}, \overline{\delta}_{xy})$,
+$U_{\theta}(-\overline{\delta}_{\theta}, \overline{\delta}_{\theta})$;
+$\overline{\delta}_{xy}$, $\overline{\delta}_\theta$ $\in \mathbb{R}_{\geq 0}$.
+Range scans $\mathcal{S}_0^d$ and $\mathcal{S}_1^d$ are then computed by
+locating the intersection points between $N_s$ rays emanating from $\bm{p}_0^d$
+and $\bm{p}_1^d$, respectively, and the polygon formed by $\bm{W}^d$ across an
 angular field of view $\lambda = 2\pi$. The inputs to all algorithms are then
 set to $\mathcal{S}_0^d$ and $\mathcal{S}_1^d$. Their output is
 $\bm{p}_1^{\prime d}$. The roto-translation $\hat{\bm{T}}^d = \bm{p}_1^{\prime

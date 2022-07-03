@@ -35,7 +35,8 @@ fixed pose $\bm{s}(x_s, y_s, \theta_s)$, producing point-set $\bm{M}_R$.
 $\bm{M}_R$ will hereafter be referred to as the map. Then compute $2^\nu$
 map-scans (def. \ref{def:definition_3}) $\mathcal{S}_0^k$,
 $k = 0,\dots,2^\nu-1$, starting from orientation $\theta_s$, at $\gamma / 2^\nu$
-angular increments. Then the orientation estimation process is carried out once
+angular increments, where $\nu \in \mathbb{Z}_{\geq 0}$ is the map's angular
+sampling degree. Then the orientation estimation process is carried out once
 between $\mathcal{S}_1$ and map scan $\mathcal{S}_0^k$ taken from orientation
 $\theta_0^k = \theta_s + k \cdot \gamma / 2^\nu$, for a total of $2^\nu$ times.
 An alignment metric between the $k$-th map scan $\mathcal{S}_0^k$ and scan
@@ -65,7 +66,7 @@ environment instead of $\bm{M}_R$ then the residual and unresolved orientation
 error $|\delta\theta^\prime| \in [0,\gamma / 2^{1+\nu}]$. In this case, however,
 $\bm{M}_R$ is an approximation of the environment's map in the locality of
 $\bm{p}_0$. Depending on the magnitude of the sensor's angle increment and
-the arbitrariness of the environment, this approximation may be viewed as
+the arbitrariness of the environment this approximation may be viewed as
 induced local perturbations in the map of the environment. This holds true
 in the general case as well, where $\mathcal{S}_0$ and $\mathcal{S}_1$ are
 captured from different locations. Therefore attaining
